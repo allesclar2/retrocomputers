@@ -67,3 +67,55 @@ if (soundList) {
         `;
     }).join("");
 }
+const lightbox = document.getElementById("image-lightbox");
+const lightboxImage = document.getElementById("lightbox-image");
+const closeLightbox = document.getElementById("close-lightbox");
+
+
+
+document.addEventListener("click", function (event) {
+
+    const image = event.target.closest(".cpu-list img");
+
+    if (!image) {
+        return;
+    }
+
+    lightboxImage.src = image.src;
+    lightboxImage.alt = image.alt;
+
+    lightbox.classList.add("active");
+});
+
+
+
+closeLightbox.addEventListener("click", function () {
+
+    lightbox.classList.remove("active");
+
+    lightboxImage.src = "";
+});
+
+
+
+lightbox.addEventListener("click", function (event) {
+
+    if (event.target === lightbox) {
+
+        lightbox.classList.remove("active");
+
+        lightboxImage.src = "";
+    }
+});
+
+
+
+document.addEventListener("keydown", function (event) {
+
+    if (event.key === "Escape") {
+
+        lightbox.classList.remove("active");
+
+        lightboxImage.src = "";
+    }
+});
