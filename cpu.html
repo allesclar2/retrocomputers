@@ -47,14 +47,22 @@
   <script type="text/javascript" src="https://counter.websiteout.com/js/2/0/0/1"></script>
 </footer>
 
-    <div class="image-lightbox" id="image-lightbox">
-            <!-- intially a span was used, but this was changed to a button to comply with accessibilty requirements for users. -->
+<div
+    class="image-lightbox"
+    id="image-lightbox"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Enlarged CPU image"
+><!-- intially a span was used, but this was changed to a button to comply with accessibilty requirements for users. -->
     <button
-    class="close-button"
-    id="close-lightbox"
-    type="button"
-    aria-label="Close image"
->
+        class="close-button"
+        id="close-lightbox"
+        type="button"
+        aria-label="Close image"
+    >
+        ×
+    </button>
+
     <img id="lightbox-image" src="" alt="">
 </div>
 

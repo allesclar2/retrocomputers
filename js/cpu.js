@@ -10,10 +10,16 @@ if (cpuList) {
                 ${
                     cpu.image
                         ? `
-                            <img
-                                src="${cpu.image}"
-                                alt="${cpu.name}"
-                            >
+                     <button
+                        class="cpu-image-button"
+                        type="button"
+                        aria-label="Enlarge image of ${cpu.name}"
+                    >
+    <img
+        src="${cpu.image}"
+        alt=""
+    >
+                        </button>
 
                             <p class="site-link-citation">
                                 Image from
@@ -86,16 +92,19 @@ const closeLightbox = document.getElementById("close-lightbox");
 
 document.addEventListener("click", function (event) {
 
-    const image = event.target.closest(".cpu-list img");
+    const button = event.target.closest(".cpu-image-button");
 
-    if (!image) {
+    if (!button) {
         return;
     }
 
+    const image = button.querySelector("img");
+
     lightboxImage.src = image.src;
-    lightboxImage.alt = image.alt;
+    lightboxImage.alt = button.getAttribute("aria-label");
 
     lightbox.classList.add("active");
+    closeLightbox.focus();
 });
 
 
