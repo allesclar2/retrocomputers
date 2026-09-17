@@ -65,7 +65,7 @@ const closeLightbox = document.getElementById("close-lightbox");
 
 document.addEventListener("click", function (event) {
 
-    const image = event.target.closest(".cpu-list img");
+    const image = event.target.closest(".os-list img");
 
     if (!image) {
         return;
