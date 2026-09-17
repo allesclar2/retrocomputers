@@ -48,7 +48,9 @@ header h1 {
     font-size: 3rem;
     text-transform: uppercase;
     letter-spacing: 4px;
+    margin: 0 0 20px;
 }
+
 
 nav {
     display: flex;
@@ -197,9 +199,14 @@ main h2 {
         padding: 20px;
     }
 
-    header h1 {
-        font-size: 2rem;
-    }
+.logo {
+    width: 200px;
+    margin-bottom: 15px;
+}
+
+header h1 {
+    font-size: 2rem;
+}
 
     nav {
         flex-wrap: wrap;
@@ -526,9 +533,8 @@ margin: 0;
 }
 
 .logo {
-    position: absolute;
-    top: 50px;
-    left: 50px;
-    width: 360px;
+    display: block;
+    width: 300px;
     height: auto;
+    margin: 0 auto 20px;
 }
