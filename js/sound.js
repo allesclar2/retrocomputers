@@ -10,16 +10,22 @@ if (soundList) {
                 ${
                     sound.image
                         ? `
-                            <img
-                                src="${sound.image}"
-                                alt="${sound.name}"
-                                class="sound-image"
+                            <button
+                                class="image-button"
+                                type="button"
+                                aria-label="Enlarge image of ${sound.name}"
                             >
+                                <img
+                                    src="${sound.image}"
+                                    alt=""
+                                >
+                            </button>
+
                             <p class="site-link-citation">
                                 Image from
                                 <a href="${sound.url}" target="_blank" rel="noopener noreferrer">
                                 The Retro Web (n.d.).
-                                </a>                                
+                                </a>
                             </p>
                         `
                         : `
@@ -67,27 +73,27 @@ if (soundList) {
         `;
     }).join("");
 }
+
 const lightbox = document.getElementById("image-lightbox");
 const lightboxImage = document.getElementById("lightbox-image");
 const closeLightbox = document.getElementById("close-lightbox");
 
-
-
 document.addEventListener("click", function (event) {
 
-    const image = event.target.closest(".sound-list img");
+    const button = event.target.closest(".image-button");
 
-    if (!image) {
+    if (!button) {
         return;
     }
 
+    const image = button.querySelector("img");
+
     lightboxImage.src = image.src;
-    lightboxImage.alt = image.alt;
+    lightboxImage.alt = button.getAttribute("aria-label");
 
     lightbox.classList.add("active");
+    closeLightbox.focus();
 });
-
-
 
 closeLightbox.addEventListener("click", function () {
 
@@ -95,8 +101,6 @@ closeLightbox.addEventListener("click", function () {
 
     lightboxImage.src = "";
 });
-
-
 
 lightbox.addEventListener("click", function (event) {
 
@@ -107,8 +111,6 @@ lightbox.addEventListener("click", function (event) {
         lightboxImage.src = "";
     }
 });
-
-
 
 document.addEventListener("keydown", function (event) {
 

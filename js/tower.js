@@ -7,18 +7,29 @@ if (towerList) {
         return `
             <article class="tower-card">
 
-                ${tower.image ?`
-                    <img
-                        src="${tower.image}"
-                        alt="${tower.name || "Computer case"}"
-                    >
+                ${
+                    tower.image
+                        ? `
+                            <button
+                                class="image-button"
+                                type="button"
+                                aria-label="Enlarge image of ${tower.name || "Computer case"}"
+                            >
+                                <img
+                                    src="${tower.image}"
+                                    alt=""
+                                >
+                            </button>
+
                             <p class="site-link-citation">
                                 Image from
                                 <a href="${tower.url}" target="_blank" rel="noopener noreferrer">
                                 Dan's Data, n.d.
-                                </a>                                
+                                </a>
                             </p>
-                ` : ""}
+                        `
+                        : ""
+                }
 
                 <h3>${tower.name || "Not listed"}</h3>
 
@@ -31,23 +42,22 @@ const lightbox = document.getElementById("image-lightbox");
 const lightboxImage = document.getElementById("lightbox-image");
 const closeLightbox = document.getElementById("close-lightbox");
 
-
-
 document.addEventListener("click", function (event) {
 
-    const image = event.target.closest(".tower-list img");
+    const button = event.target.closest(".image-button");
 
-    if (!image) {
+    if (!button) {
         return;
     }
 
+    const image = button.querySelector("img");
+
     lightboxImage.src = image.src;
-    lightboxImage.alt = image.alt;
+    lightboxImage.alt = button.getAttribute("aria-label");
 
     lightbox.classList.add("active");
+    closeLightbox.focus();
 });
-
-
 
 closeLightbox.addEventListener("click", function () {
 
@@ -55,8 +65,6 @@ closeLightbox.addEventListener("click", function () {
 
     lightboxImage.src = "";
 });
-
-
 
 lightbox.addEventListener("click", function (event) {
 
@@ -67,8 +75,6 @@ lightbox.addEventListener("click", function (event) {
         lightboxImage.src = "";
     }
 });
-
-
 
 document.addEventListener("keydown", function (event) {
 

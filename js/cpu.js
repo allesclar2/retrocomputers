@@ -10,8 +10,7 @@ if (cpuList) {
                 ${
                     cpu.image
                         ? `
-                     <button
-                        class="cpu-image-button"
+                     <button class="image-button"
                         type="button"
                         aria-label="Enlarge image of ${cpu.name}"
                     >
@@ -92,7 +91,7 @@ const closeLightbox = document.getElementById("close-lightbox");
 
 document.addEventListener("click", function (event) {
 
-    const button = event.target.closest(".cpu-image-button");
+    const button = event.target.closest(".image-button");
 
     if (!button) {
         return;

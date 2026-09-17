@@ -499,26 +499,26 @@ main h2 {
         font-size: 36px;
     }
 }
-.cpu-image-button {
-    display: block;
-    width: 100%;
-    max-width: 300px;
-    margin: 0 auto 15px;
-    padding: 0;
-    border: none;
-    background: transparent;
-    cursor: pointer;
+.image-button {
+display: block;
+width: 100%;
+max-width: 300px;
+margin: 0 auto 15px;
+padding: 0;
+border: none;
+background: transparent;
+cursor: pointer;
 }
 
-.cpu-image-button:focus-visible {
-    outline: 3px solid #ffcc00;
-    outline-offset: 4px;
+.image-button:focus-visible {
+outline: 3px solid #ffcc00;
+outline-offset: 4px;
 }
 
-.cpu-image-button img {
-    width: 100%;
-    height: 200px;
-    object-fit: contain;
-    display: block;
-    margin: 0;
+.image-button img {
+width: 100%;
+height: 200px;
+object-fit: contain;
+display: block;
+margin: 0;
 }
