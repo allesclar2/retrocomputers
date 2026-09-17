@@ -1,0 +1,195 @@
+<!-- ######### - Created by Adam Clark, final version 14-09-2026.
+######### - No form of AI has been used, Category AITS descriptor is 1(No AI)
+######### - All sources for reference accounted for. Previously used and known knowledge used for vast majority of logic.
+######### - Where further reading has been needed, i have included the reference link to the guide at the start of the appropriate area of code. -->
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <title>Retro Computer Collection</title>
+<!-- Due to number of independent styles required for each asset, a css file has been created -->
+    <link rel="stylesheet" href="style.css">
+<!-- A 3rd party 3d model viewer. Guide for futher reading and coding help, https://modelviewer.dev/ -->
+    <script type="module"
+        src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js">
+    </script>
+</head>
+
+<body>
+    <a class="skip-link" href="#main-content">
+Skip to main content
+    </a>
+
+<header>
+    <h1>*** IN DEVELOPEMENT *** </h1>
+    <h1>Retro Computers</h1>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#parts">Parts</a>
+        <a href="#search">Search</a>
+        <a href="#about">About</a>
+    </nav>  
+</header>
+
+<main id="main-content">
+    <section id="home">
+    <h2>Welcome to the Retro Computers Collection</h2>
+    <p>An interactive website which shows my personal collection of classic computer hardware from the 1980s, 1990s and early 2000s.</p>
+    </section>
+
+    <section id="parts">
+    <h2>Computer Parts</h2>
+    <div class="categories">
+
+        <a href="cpu.html" class="category">
+            <h3>CPU</h3>
+        </a>
+
+        <a href="gpu.html" class="category">
+            <h3>Graphics Cards</h3>
+        </a>
+
+        <a href="sound.html" class="category">
+            <h3>Sound Cards</h3>
+        </a>
+
+        <a href="motherboard.html" class="category">
+            <h3>Motherboards</h3>
+        </a>
+
+        <a href="os.html" class="category">
+            <h3>Operating Systems</h3>
+        </a>
+
+        <a href="tower.html" class="category">
+            <h3>Cases</h3>
+        </a>
+
+</div>
+
+    </section>
+
+    <section id="featured">
+        <h2>Featured Parts</h2>
+        <div class="parts">
+    
+
+<article>
+    <img src="featured/voodoo.jpg" alt="3dfx Voodoo graphics card">
+    <h3>3dfx Voodoo 2 12MB Graphics Card</h3>
+    <p>A legendary graphics card from the 1990s.</p>
+
+    <a href="#" class="model-link site-link" data-model="featured/voodoo.glb">
+        View 3D Model
+    </a>
+    <!-- Owner of 3d Model reference -->
+    <p class="site-link-citation"> 3D model: 
+        <a href="https://sketchfab.com/3d-models/videocard-3dfx-voodoo-2-6d3f9151b11b46f184dcae4c0ed22479" target="_blank">VideoCard 3Dfx VooDoo 2</a>
+         by Хлюпич, licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY</a>. 
+        </p>
+  </article>
+
+<article>
+    <img src="featured/motherboard.jpg" alt="Motherboard">
+    <h3> Socket AM3 M3A770DE Motherboard</h3>
+    <p>A classic computer motherboard from the 2000s.</p>
+
+    <a href="#" class="model-link site-link" data-model="featured/motherboard.glb">
+        View 3D Model
+    </a>
+    <!-- Owner of 3d Model reference -->
+    <p class="site-link-citation"> 3D model: 
+        <a href="https://sketchfab.com/3d-models/motherboard-cd605439b788488d83d1c97d4547c9fc" target="_blank">Motherboard</a>
+         by Nadya Sarieva, licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY</a>. 
+        </p>
+</article>
+
+<article>
+    <img src="featured/amdathlon3000.jpg" alt="AMD Athlon 3200+ processor">
+    <h3>AMD Athlon XP 3000+</h3>
+    <p>A popular processor from the early 2000s.</p>
+
+    <a href="#" class="model-link site-link" data-model="featured/amdathlonxp.glb">
+        View 3D Model
+    </a>
+    <!-- Owner of 3d Model reference -->
+    <p class="site-link-citation"> 3D model: 
+        <a href="https://sketchfab.com/3d-models/amd-athlon-xp-3000-socket462-8713dd83f1434eb2a84fe0ce3e3744a7" target="_blank">AMD Athlon XP 3000+ Socket462</a>
+         by Хлюпич, licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY</a>. 
+        </p>
+</article>
+
+
+        </div>
+
+        <!-- 3D MODEL - appears underneath the featured parts image -->
+    <div id="modelViewer" class="model-viewer-container">
+
+        <button id="closeModel" class="model-close">
+            Close 3D Model
+        </button>
+
+<model-viewer
+    id="model3D"
+    alt="3D computer component"
+    camera-controls
+    auto-rotate
+    shadow-intensity="1"
+    exposure="1"
+    loading="eager"
+    reveal="auto"
+    style="width: 100%; height: 100%; background: #eeeeee;">
+</model-viewer>
+
+    </div>
+    </section>
+
+
+<section id="about">
+    <h2>About</h2>
+    <p>A small archive dedicated to classic computer hardware and technology.</p>
+</section>
+
+
+</main>
+<footer>
+    <p>© 2026 Retro Computer Parts by A.Clark</p>
+    <p>Academic Purposes Only</p>
+
+  <script type="text/javascript" src="https://counter.websiteout.com/js/7/3/0/0"></script>
+</footer>
+<!-- A 3rd party 3d model viewer. Guide for futher reading and coding help, https://modelviewer.dev/ -->
+<script>
+    const viewer = document.getElementById("modelViewer");
+    const model3D = document.getElementById("model3D");
+    const closeModel = document.getElementById("closeModel");
+    const modelLinks = document.querySelectorAll(".model-link");
+
+    modelLinks.forEach(function(link) {
+        link.addEventListener("click", function(event) {
+            event.preventDefault();
+
+            const modelFile = link.getAttribute("data-model");
+
+            model3D.src = "./" + modelFile;
+
+            viewer.classList.add("show");
+
+            viewer.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+        });
+    });
+
+    closeModel.addEventListener("click", function() {
+        viewer.classList.remove("show");
+    });
+</script>
+
+
+</body>
+</html>
