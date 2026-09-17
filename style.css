@@ -37,7 +37,9 @@ body {
 
 header {
     margin-bottom: 30px;
+    padding: 20px;
     text-align: center;
+    background-color: #050805;
 }
 
 header h1 {
@@ -164,7 +166,7 @@ nav a:hover {
 }
 
 main h2 {
-    color: #00ff41;
+    color: #b7ffbf;
     font-family: "Courier New", monospace;
     text-transform: uppercase;
     letter-spacing: 2px;
