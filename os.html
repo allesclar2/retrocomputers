@@ -48,7 +48,13 @@
     </footer>
 
         <div class="image-lightbox" id="image-lightbox">
-    <span class="close-button" id="close-lightbox">&times;</span>
+            <!-- intially a span was used, but this was changed to a button to comply with accessibilty requirements for users. -->
+    <button
+    class="close-button"
+    id="close-lightbox"
+    type="button"
+    aria-label="Close image"
+>
     <img id="lightbox-image" src="" alt="">
 </div>
 

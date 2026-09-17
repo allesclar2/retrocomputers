@@ -454,7 +454,12 @@ main h2 {
 }
 
 
-.cpu-list img {
+.cpu-list img,
+.motherboard-list img,
+.gpu-list img,
+.sound-list img,
+.os-list img,
+.tower-list img {
     cursor: pointer;
 
     transition:
@@ -462,12 +467,18 @@ main h2 {
         box-shadow 0.2s ease;
 }
 
-.cpu-list img:hover {
+.cpu-list img:hover,
+.motherboard-list img:hover,
+.gpu-list img:hover,
+.sound-list img:hover,
+.os-list img:hover,
+.tower-list img:hover {
     transform: scale(1.03);
 
     box-shadow:
         0 0 15px rgba(0, 255, 65, 0.5);
 }
+
 
 
 @media (max-width: 700px) {
