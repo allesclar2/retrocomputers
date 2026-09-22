@@ -44,6 +44,76 @@
 
         <div class="os-list" id="os-list"></div>
 
+        <div id="contact" aria-hidden="true">
+
+    <div class="contact-box">
+
+        <button
+            type="button"
+            id="closeContact"
+            class="contact-close"
+            aria-label="Close contact form">
+            &times;
+        </button>
+
+        <h2 id="contactTitle">CONTACT</h2>
+
+        <p>
+            Send a message about the Retro Computer Collection.
+        </p>
+
+        <p
+            id="formFeedback"
+            class="form-feedback"
+            aria-live="polite">
+        </p>
+
+        <form id="contactForm">
+
+            <label for="contactName">NAME</label>
+
+            <input
+                type="text"
+                id="contactName"
+                name="name"
+                required>
+
+            <label for="contactEmail">EMAIL</label>
+
+            <input
+                type="email"
+                id="contactEmail"
+                name="email"
+                required>
+
+            <label for="contactSubject">SUBJECT</label>
+
+            <input
+                type="text"
+                id="contactSubject"
+                name="subject"
+                required>
+
+            <label for="contactMessage">MESSAGE</label>
+
+            <textarea
+                id="contactMessage"
+                name="message"
+                rows="7"
+                required></textarea>
+
+            <button
+                type="submit"
+                class="contact-submit">
+                [ SEND MESSAGE ]
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
     </main>
 
     <footer>
@@ -75,6 +145,7 @@
     <script src="js/owned.js"></script>
     <script src="js/app.js"></script>
     <script src="js/os.js"></script>
+    <script src="js/contact.js"></script>
 
 </body>
 
