@@ -1,0 +1,1085 @@
+<!-- ######### - Created by Adam Clark, final version 14-09-2026.
+######### - No form of AI has been used, Category AITS descriptor is 1(No AI)
+######### - All sources for reference accounted for. Previously used and known knowledge used for vast majority of logic.
+######### - Where further reading has been needed, i have included the reference link to the guide at the start of the appropriate area of code. -->
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <link rel="icon" href="favicon.png" type="image/x-icon">
+    <title>Retro Computer Collection</title>
+<!-- Due to number of independent styles required for each asset, a css file has been created -->
+    <link rel="stylesheet" href="style.css">
+<!-- A 3rd party 3d model viewer. Guide for futher reading and coding help, https://modelviewer.dev/ -->
+    <script type="module"
+        src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js">
+    </script>
+</head>
+
+<body>
+
+    <a class="skip-link" href="#main-content">
+Skip to main content
+    </a>
+
+<header>
+
+    <img src="images/logo.png" alt="Retro Computers Collection" class="logo">
+
+    <h1>Retro Computers Collection</h1>
+ 
+    <nav aria-label="Main navigation">
+       <a href="#home">Home</a>
+      <a href="#featured">Featured</a>
+       <a href="#parts">Computer Parts</a>
+       <a href="#search">Search Retro Games</a>
+       <a href="#systems">Systems</a>
+      <a href="#about">About</a>
+<a href="#" id="contactLink">Contact</a>
+
+    </nav>  
+   
+
+
+</header>
+
+
+<main id="main-content">
+
+    <section id="home" class="terminal-hero">
+
+    <img
+        src="images/computer-background.jpg"
+        alt=""
+        class="hero-background">
+
+    <div class="terminal-content">
+
+        <div class="terminal-prompt">
+            C:\RETRO_COLLECTION&gt;
+        </div>
+
+        <h2>RETRO COMPUTERS<br>COLLECTION</h2>
+
+        <p>
+            An interactive website which shows my personal collection
+            of classic computer hardware from the 1980s, 1990s and early 2000s.
+        </p>
+
+        <p>
+            Featuring a search API for reliving all those classic
+            computer games of the era.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+    <section class="stats" aria-label="Collection statistics">
+
+        <div class="stat">
+            <strong>42</strong>
+            <span>COMPUTERS</span>
+        </div>
+
+        <div class="stat">
+            <strong>18</strong>
+            <span>SYSTEMS</span>
+        </div>
+
+        <div class="stat">
+            <strong>27</strong>
+            <span>GAMES</span>
+        </div>
+
+        <div class="stat">
+            <strong>1982–2004</strong>
+            <span>COLLECTION ERA</span>
+        </div>
+
+    </section>
+
+
+    <section id="search">
+
+        <h2>&gt; SEARCH THE GAME ARCHIVE</h2>
+
+        <p>
+            Search the RAWG database for classic and modern games.
+        </p>
+
+        <label for="gameSearch">C:\GAMES\SEARCH&gt;</label>
+
+        <input
+            type="search"
+            id="gameSearch"
+            placeholder="Enter a game title..."
+            autocomplete="off"
+        >
+
+        <div id="searchResults">
+            <p>Enter a game title to search.</p>
+        </div>
+
+    </section>
+
+
+<section id="systems">
+
+    <h2>&gt; EXPLORE SYSTEMS</h2>
+
+    <p>Browse the collection by computer era.</p>
+
+    <div class="decade-timeline">
+
+        <button type="button" class="decade" data-decade="1980s">
+            <strong>1980</strong>
+            <span>THE BEGINNING</span>
+        </button>
+
+        <button type="button" class="decade" data-decade="1990s">
+            <strong>1990</strong>
+            <span>THE GOLDEN AGE</span>
+        </button>
+
+        <button type="button" class="decade" data-decade="2000s">
+            <strong>2000</strong>
+            <span>THE NEXT GENERATION</span>
+        </button>
+
+    </div>
+
+    <div id="systemCollection" class="system-collection" aria-live="polite">
+
+        <p class="system-placeholder">
+            Select a decade to view the systems in the collection.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+
+    <section id="featured">
+
+        <h2>&gt; FEATURED HARDWARE</h2>
+
+        <div class="parts">
+
+            <article>
+
+                <img
+                    src="featured/voodoo.jpg"
+                    alt="3dfx Voodoo 2 graphics card">
+
+                <div class="card-label">
+                    GRAPHICS
+                </div>
+
+                <h3>3dfx Voodoo 2 12MB</h3>
+
+                <p>
+                    A legendary 1990s 3D graphics card.
+                </p>
+
+                <button
+                    type="button"
+                    class="model-link site-link"
+                    data-model="featured/voodoo.glb">
+                    [ VIEW 3D MODEL ]
+                </button>
+
+                <p class="site-link-citation">
+                    3D model:
+                    <a
+                        href="https://sketchfab.com/3d-models/videocard-3dfx-voodoo-2-6d3f9151b11b46f184dcae4c0ed22479"
+                        target="_blank"
+                        rel="noopener">
+                        VideoCard 3Dfx VooDoo 2
+                    </a>
+                    by Хлюпич, licensed under
+                    <a
+                        href="https://creativecommons.org/licenses/by/4.0/"
+                        target="_blank"
+                        rel="noopener">
+                        CC BY
+                    </a>.
+                </p>
+
+            </article>
+
+
+            <article>
+
+                <img
+                    src="featured/motherboard.jpg"
+                    alt="Socket AM3 M3A770DE motherboard">
+
+                <div class="card-label">
+                    MOTHERBOARD
+                </div>
+
+                <h3>Socket AM3 M3A770DE</h3>
+
+                <p>
+                    A classic motherboard from the 2000s.
+                </p>
+
+                <button
+                    type="button"
+                    class="model-link site-link"
+                    data-model="featured/motherboard.glb">
+                    [ VIEW 3D MODEL ]
+                </button>
+
+                <p class="site-link-citation">
+                    3D model:
+                    <a
+                        href="https://sketchfab.com/3d-models/motherboard-cd605439b788488d83d1c97d4547c9fc"
+                        target="_blank"
+                        rel="noopener">
+                        Motherboard
+                    </a>
+                    by Nadya Sarieva, licensed under
+                    <a
+                        href="https://creativecommons.org/licenses/by/4.0/"
+                        target="_blank"
+                        rel="noopener">
+                        CC BY
+                    </a>.
+                </p>
+
+            </article>
+
+
+            <article>
+
+                <img
+                    src="featured/amdathlon3000.jpg"
+                    alt="AMD Athlon XP 3000+ processor">
+
+                <div class="card-label">
+                    PROCESSOR
+                </div>
+
+                <h3>AMD Athlon XP 3000+</h3>
+
+                <p>
+                    A popular processor from the early 2000s.
+                </p>
+
+                <button
+                    type="button"
+                    class="model-link site-link"
+                    data-model="featured/amdathlonxp.glb">
+                    [ VIEW 3D MODEL ]
+                </button>
+
+                <p class="site-link-citation">
+                    3D model:
+                    <a
+                        href="https://sketchfab.com/3d-models/amd-athlon-xp-3000-socket462-8713dd83f1434eb2a84fe0ce3e3744a7"
+                        target="_blank"
+                        rel="noopener">
+                        AMD Athlon XP 3000+ Socket462
+                    </a>
+                    by Хлюпич, licensed under
+                    <a
+                        href="https://creativecommons.org/licenses/by/4.0/"
+                        target="_blank"
+                        rel="noopener">
+                        CC BY
+                    </a>.
+                </p>
+
+            </article>
+
+        </div>
+
+
+        <div
+            id="modelViewer"
+            class="model-viewer-container">
+
+            <button
+                id="closeModel"
+                class="model-close">
+                [ CLOSE 3D MODEL ]
+            </button>
+
+            <model-viewer
+                id="model3D"
+                alt="3D computer component"
+                camera-controls
+                auto-rotate
+                shadow-intensity="1"
+                exposure="1"
+                loading="eager"
+                reveal="auto"
+                style="width: 100%; height: 100%; background: #101510;">
+            </model-viewer>
+
+        </div>
+
+    </section>
+
+
+    <section id="parts">
+
+        <h2>&gt; COMPUTER HARDWARE</h2>
+
+        <div class="categories">
+
+            <a href="cpu.html" class="category">
+                <h3>CPU</h3>
+            </a>
+
+            <a href="gpu.html" class="category">
+                <h3>GRAPHICS</h3>
+            </a>
+
+            <a href="sound.html" class="category">
+                <h3>SOUND</h3>
+            </a>
+
+            <a href="motherboard.html" class="category">
+                <h3>MOTHERBOARDS</h3>
+            </a>
+
+            <a href="os.html" class="category">
+                <h3>OPERATING SYSTEMS</h3>
+            </a>
+
+            <a href="tower.html" class="category">
+                <h3>CASES</h3>
+            </a>
+
+        </div>
+
+    </section>
+
+    <section id="about">
+
+        <h2>&gt; ABOUT THE COLLECTION</h2>
+
+        <p>
+            A small archive dedicated to classic computer hardware,
+            software and technology.
+        </p>
+
+    </section>
+
+
+    <section class="terminal-status">
+
+        <span>STATUS:</span>
+        <strong>ONLINE</strong>
+
+        <span>DATABASE:</span>
+        <strong>CONNECTED</strong>
+
+        <span>SYSTEM:</span>
+        <strong>RETRO_COLLECTION</strong>
+
+    </section>
+
+
+    <div id="contact" aria-hidden="true">
+
+        <div class="contact-box">
+
+            <button
+                type="button"
+                id="closeContact"
+                class="contact-close"
+                aria-label="Close contact form">
+                &times;
+            </button>
+
+            <h2 id="contactTitle">CONTACT</h2>
+
+            <p>
+                Send a message about the Retro Computer Collection.
+            </p>
+
+            <p
+                id="formFeedback"
+                class="form-feedback"
+                aria-live="polite">
+            </p>
+
+            <form id="contactForm">
+
+                <label for="contactName">NAME</label>
+
+                <input
+                    type="text"
+                    id="contactName"
+                    name="name"
+                    required>
+
+                <label for="contactEmail">EMAIL</label>
+
+                <input
+                    type="email"
+                    id="contactEmail"
+                    name="email"
+                    required>
+
+                <label for="contactSubject">SUBJECT</label>
+
+                <input
+                    type="text"
+                    id="contactSubject"
+                    name="subject"
+                    required>
+
+                <label for="contactMessage">MESSAGE</label>
+
+                <textarea
+                    id="contactMessage"
+                    name="message"
+                    rows="7"
+                    required></textarea>
+
+                <button
+                    type="submit"
+                    class="contact-submit">
+                    [ SEND MESSAGE ]
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</main>
+
+<footer>
+    <p>© 2026 Retro Computer Parts by A.Clark</p>
+    <p>Academic Purposes Only</p>
+</footer>
+
+
+  <script type="text/javascript" src="https://counter.websiteout.com/js/2/0/0/1"></script>
+<!-- A 3rd party 3d model viewer. Guide for futher reading and coding help, https://modelviewer.dev/ -->
+<script>
+    const viewer = document.getElementById("modelViewer");
+    const model3D = document.getElementById("model3D");
+    const closeModel = document.getElementById("closeModel");
+    const modelLinks = document.querySelectorAll(".model-link");
+
+    modelLinks.forEach(function(link) {
+        link.addEventListener("click", function(event) {
+            event.preventDefault();
+
+            const modelFile = link.getAttribute("data-model");
+
+            model3D.src = "./" + modelFile;
+
+            viewer.classList.add("show");
+
+            viewer.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+        });
+    });
+
+    closeModel.addEventListener("click", function() {
+        viewer.classList.remove("show");
+    });
+</script>
+
+<script>
+const gameSearch = document.getElementById("gameSearch");
+const searchResults = document.getElementById("searchResults");
+
+const RAWG_API_KEY = "3a612cb3b10a46748b4b81778a5bce30";
+
+let searchTimeout;
+
+gameSearch.addEventListener("input", function () {
+
+    const searchTerm = gameSearch.value.trim();
+
+    clearTimeout(searchTimeout);
+
+    if (searchTerm.length < 2) {
+
+        searchResults.innerHTML =
+            "<p>Enter at least 2 characters.</p>";
+
+        return;
+    }
+
+    searchTimeout = setTimeout(function () {
+
+        searchRAWG(searchTerm);
+
+    }, 400);
+
+});
+
+
+async function searchRAWG(searchTerm) {
+
+    searchResults.innerHTML =
+        "<p>Searching...</p>";
+
+    const url =
+        "https://api.rawg.io/api/games" +
+        "?key=" + encodeURIComponent(RAWG_API_KEY) +
+        "&search=" + encodeURIComponent(searchTerm) +
+        "&page_size=8";
+
+    try {
+
+        const response = await fetch(url);
+
+        const data = await response.json();
+
+        if (!response.ok) {
+
+            console.error("RAWG error:", data);
+
+            searchResults.innerHTML =
+                "<p>RAWG error " +
+                response.status +
+                ": " +
+                (data.detail || "Request failed.") +
+                "</p>";
+
+            return;
+        }
+
+        displayGames(data.results);
+
+    } catch (error) {
+
+        console.error("Search error:", error);
+
+        searchResults.innerHTML =
+            "<p>Unable to connect to the RAWG API.</p>";
+    }
+}
+
+
+function displayGames(games) {
+
+    if (!games || games.length === 0) {
+
+        searchResults.innerHTML =
+            "<p>No games found.</p>";
+
+        return;
+    }
+
+    searchResults.innerHTML = "";
+
+    games.forEach(function (game) {
+
+        const result = document.createElement("button");
+
+        result.type = "button";
+        result.className = "search-result";
+
+        const title = document.createElement("strong");
+
+        title.textContent = game.name;
+
+        const releaseDate = document.createElement("span");
+
+        releaseDate.textContent =
+            game.released
+                ? "Released: " + game.released
+                : "Release date unknown";
+
+        result.appendChild(title);
+        result.appendChild(releaseDate);
+
+        result.addEventListener("click", function () {
+
+            getGameDetails(game.id);
+
+        });
+
+        searchResults.appendChild(result);
+
+    });
+}
+
+
+async function getGameDetails(gameId) {
+
+    searchResults.innerHTML =
+        "<p>Loading game information...</p>";
+
+    const url =
+        "https://api.rawg.io/api/games/" +
+        gameId +
+        "?key=" +
+        encodeURIComponent(RAWG_API_KEY);
+
+    try {
+
+        const response = await fetch(url);
+
+        const game = await response.json();
+
+        if (!response.ok) {
+
+            console.error("RAWG error:", game);
+
+            searchResults.innerHTML =
+                "<p>RAWG error " +
+                response.status +
+                ": " +
+                (game.detail || "Unable to load game.") +
+                "</p>";
+
+            return;
+        }
+
+        displayGameDetails(game);
+
+    } catch (error) {
+
+        console.error("Game details error:", error);
+
+        searchResults.innerHTML =
+            "<p>Unable to connect to the RAWG API.</p>";
+    }
+}
+
+
+function displayGameDetails(game) {
+
+    searchResults.innerHTML = "";
+
+    const details = document.createElement("div");
+
+    details.className = "game-details";
+
+
+    const gameHeader = document.createElement("div");
+
+    gameHeader.className = "game-header";
+
+
+    if (game.background_image) {
+
+        const image = document.createElement("img");
+
+        image.src = game.background_image;
+
+        image.alt = game.name;
+
+        gameHeader.appendChild(image);
+    }
+
+
+    const gameInfo = document.createElement("div");
+
+    gameInfo.className = "game-info";
+
+
+    const title = document.createElement("h3");
+
+    title.textContent = game.name;
+
+    gameInfo.appendChild(title);
+
+
+    const release = document.createElement("p");
+
+    release.innerHTML =
+        "<strong>Released:</strong> " +
+        (game.released || "Unknown");
+
+    gameInfo.appendChild(release);
+
+
+    const rating = document.createElement("p");
+
+    rating.innerHTML =
+        "<strong>Rating:</strong> " +
+        (game.rating ? game.rating + " / 5" : "Unknown");
+
+    gameInfo.appendChild(rating);
+
+
+    if (game.genres && game.genres.length > 0) {
+
+        const genres = document.createElement("p");
+
+        genres.innerHTML =
+            "<strong>Genre:</strong> " +
+            game.genres
+                .map(function (genre) {
+                    return genre.name;
+                })
+                .join(", ");
+
+        gameInfo.appendChild(genres);
+    }
+
+
+    if (game.developers && game.developers.length > 0) {
+
+        const developers = document.createElement("p");
+
+        developers.innerHTML =
+            "<strong>Developer:</strong> " +
+            game.developers
+                .map(function (developer) {
+                    return developer.name;
+                })
+                .join(", ");
+
+        gameInfo.appendChild(developers);
+    }
+
+
+    if (game.publishers && game.publishers.length > 0) {
+
+        const publishers = document.createElement("p");
+
+        publishers.innerHTML =
+            "<strong>Publisher:</strong> " +
+            game.publishers
+                .map(function (publisher) {
+                    return publisher.name;
+                })
+                .join(", ");
+
+        gameInfo.appendChild(publishers);
+    }
+
+
+    if (game.platforms && game.platforms.length > 0) {
+
+        const platforms = document.createElement("p");
+
+        platforms.innerHTML =
+            "<strong>Platforms:</strong> " +
+            game.platforms
+                .map(function (platform) {
+                    return platform.platform.name;
+                })
+                .join(", ");
+
+        gameInfo.appendChild(platforms);
+    }
+
+
+    gameHeader.appendChild(gameInfo);
+
+    details.appendChild(gameHeader);
+
+
+    if (game.description_raw) {
+
+        const descriptionTitle = document.createElement("h4");
+
+        descriptionTitle.textContent = "Description";
+
+        details.appendChild(descriptionTitle);
+
+
+        const description = document.createElement("p");
+
+        description.textContent = game.description_raw;
+
+        details.appendChild(description);
+    }
+
+
+    if (game.metacritic) {
+
+        const metacritic = document.createElement("p");
+
+        metacritic.className = "metacritic";
+
+        metacritic.innerHTML =
+            "<strong>Metacritic:</strong> " +
+            game.metacritic;
+
+        details.appendChild(metacritic);
+    }
+
+
+    if (game.website) {
+
+        const website = document.createElement("a");
+
+        website.href = game.website;
+
+        website.target = "_blank";
+
+        website.rel = "noopener";
+
+        website.textContent =
+            "Official Game Website";
+
+        website.className =
+            "game-website";
+
+        details.appendChild(website);
+    }
+
+
+    searchResults.appendChild(details);
+}
+</script>
+
+<script>
+const contactLink = document.getElementById("contactLink");
+const contactModal = document.getElementById("contact");
+const closeContact = document.getElementById("closeContact");
+const contactForm = document.getElementById("contactForm");
+const formFeedback = document.getElementById("formFeedback");
+
+function closeContactModal() {
+    contactModal.classList.remove("show");
+    contactModal.setAttribute("aria-hidden", "true");
+}
+
+contactLink.addEventListener("click", function(event) {
+    event.preventDefault();
+    contactModal.classList.add("show");
+    contactModal.setAttribute("aria-hidden", "false");
+});
+
+closeContact.addEventListener("click", closeContactModal);
+
+contactModal.addEventListener("click", function(event) {
+    if (event.target === contactModal) {
+        closeContactModal();
+    }
+});
+
+document.addEventListener("keydown", function(event) {
+    if (event.key === "Escape") {
+        closeContactModal();
+    }
+});
+
+contactForm.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const name = document.getElementById("contactName").value.trim();
+    const email = document.getElementById("contactEmail").value.trim();
+    const subject = document.getElementById("contactSubject").value.trim();
+    const message = document.getElementById("contactMessage").value.trim();
+
+    formFeedback.textContent = "";
+    formFeedback.className = "form-feedback";
+
+    if (name.length < 2) {
+        formFeedback.textContent = "Please enter your name.";
+        formFeedback.classList.add("error");
+        document.getElementById("contactName").focus();
+        return;
+    }
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        formFeedback.textContent = "Please enter a valid email address.";
+        formFeedback.classList.add("error");
+        document.getElementById("contactEmail").focus();
+        return;
+    }
+
+    if (subject.length < 2) {
+        formFeedback.textContent = "Please enter a subject.";
+        formFeedback.classList.add("error");
+        document.getElementById("contactSubject").focus();
+        return;
+    }
+
+    if (message.length < 10) {
+        formFeedback.textContent = "Please enter a message containing at least 10 characters.";
+        formFeedback.classList.add("error");
+        document.getElementById("contactMessage").focus();
+        return;
+    }
+
+    const body =
+        "Name: " + name + "\n\n" +
+        "Email: " + email + "\n\n" +
+        "Message:\n" + message;
+
+    const mailto =
+        "mailto:Adam.K.Clark2@student.shu.ac.uk" +
+        "?subject=" + encodeURIComponent(subject) +
+        "&body=" + encodeURIComponent(body);
+
+    formFeedback.textContent = "Opening your email application...";
+    formFeedback.classList.add("success");
+
+    window.location.href = mailto;
+});
+</script>
+
+<script>
+const decadeButtons = document.querySelectorAll(".decade");
+const systemCollection = document.getElementById("systemCollection");
+
+const systems = {
+    "1980s": [
+        {
+            name: "System Placeholder 1",
+            year: "1980",
+            image: "images/placeholder-system.jpg",
+            description: "Placeholder description for a computer system from the 1980s."
+        },
+        {
+            name: "System Placeholder 2",
+            year: "1980",
+            image: "images/placeholder-system.jpg",
+            description: "Placeholder description for a computer system from the 1980s."
+        },
+        {
+            name: "System Placeholder 3",
+            year: "1980",
+            image: "images/placeholder-system.jpg",
+            description: "Placeholder description for a computer system from the 1980s."
+        }
+    ],
+
+    "1990s": [
+        {
+            name: "System Placeholder 1",
+            year: "1990",
+            image: "images/placeholder-system.jpg",
+            description: "Placeholder description for a computer system from the 1990s."
+        },
+        {
+            name: "System Placeholder 2",
+            year: "1990",
+            image: "images/placeholder-system.jpg",
+            description: "Placeholder description for a computer system from the 1990s."
+        },
+        {
+            name: "System Placeholder 3",
+            year: "1990",
+            image: "images/placeholder-system.jpg",
+            description: "Placeholder description for a computer system from the 1990s."
+        }
+    ],
+
+    "2000s": [
+        {
+            name: "System Placeholder 1",
+            year: "2000",
+            image: "images/placeholder-system.jpg",
+            description: "Placeholder description for a computer system from the 2000s."
+        },
+        {
+            name: "System Placeholder 2",
+            year: "2000",
+            image: "images/placeholder-system.jpg",
+            description: "Placeholder description for a computer system from the 2000s."
+        },
+        {
+            name: "System Placeholder 3",
+            year: "2000",
+            image: "images/placeholder-system.jpg",
+            description: "Placeholder description for a computer system from the 2000s."
+        }
+    ]
+};
+
+decadeButtons.forEach(function(button) {
+
+    button.addEventListener("click", function() {
+
+        const decade = button.dataset.decade;
+
+        if (button.classList.contains("active")) {
+
+            button.classList.remove("active");
+            systemCollection.classList.remove("show");
+
+            return;
+        }
+
+        decadeButtons.forEach(function(otherButton) {
+            otherButton.classList.remove("active");
+        });
+
+        button.classList.add("active");
+
+        const selectedSystems = systems[decade];
+
+        systemCollection.innerHTML = "";
+
+        const heading = document.createElement("h3");
+
+        heading.textContent = "> " + decade + " SYSTEMS";
+
+        systemCollection.appendChild(heading);
+
+        const grid = document.createElement("div");
+
+        grid.className = "system-grid";
+
+        selectedSystems.forEach(function(system) {
+
+            const card = document.createElement("article");
+
+            card.className = "system-card";
+
+            const image = document.createElement("img");
+
+            image.src = system.image;
+            image.alt = system.name;
+
+            const title = document.createElement("h4");
+
+            title.textContent = system.name;
+
+            const year = document.createElement("p");
+
+            year.className = "system-year";
+
+            year.textContent = "YEAR: " + system.year;
+
+            const description = document.createElement("p");
+
+            description.textContent = system.description;
+
+            card.appendChild(image);
+            card.appendChild(title);
+            card.appendChild(year);
+            card.appendChild(description);
+
+            grid.appendChild(card);
+        });
+
+        systemCollection.appendChild(grid);
+
+        systemCollection.classList.add("show");
+
+        systemCollection.scrollIntoView({
+            behavior: "smooth",
+            block: "nearest"
+        });
+    });
+});
+</script>
+
+
+
+
+
+
+</body>
+</html>
