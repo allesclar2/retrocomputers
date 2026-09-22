@@ -978,41 +978,73 @@ decadeButtons.forEach(function(button) {
 
         selectedSystems.forEach(function(system) {
 
-            const card = document.createElement("article");
+    const card = document.createElement("article");
 
-            card.className = "system-card";
+    card.className = "system-card";
 
-            const image = document.createElement("img");
+    const image = document.createElement("img");
 
-            image.src = system.tower.image;
-            image.alt = system.tower.name;
+    image.src = system.tower.image;
+    image.alt = system.tower.name;
 
-            const title = document.createElement("h4");
+    const title = document.createElement("h4");
 
-            title.textContent = system.motherboard.name;
+    title.textContent = system.motherboard.name;
 
-            const year = document.createElement("p");
+    const year = document.createElement("p");
 
-            year.className = "system-year";
+    year.className = "system-year";
 
-            year.textContent = "YEAR: " + system.year;
+    year.textContent = "YEAR: " + system.cpu.released;
 
-            const description = document.createElement("p");
+    const tower = document.createElement("p");
 
-            description.textContent =
-                system.cpu.name +
-                " • " +
-                system.cpu.clockspeed +
-                " • " +
-                system.gpu.name;
+    tower.innerHTML =
+        "<strong>CASE:</strong> " +
+        system.tower.name;
 
-            card.appendChild(image);
-            card.appendChild(title);
-            card.appendChild(year);
-            card.appendChild(description);
+    const cpu = document.createElement("p");
 
-            grid.appendChild(card);
-        });
+    cpu.innerHTML =
+        "<strong>CPU:</strong> " +
+        system.cpu.name +
+        " (" +
+        system.cpu.clockspeed +
+        ")";
+
+    const gpu = document.createElement("p");
+
+    gpu.innerHTML =
+        "<strong>GPU:</strong> " +
+        system.gpu.name +
+        " (" +
+        system.gpu.RamSize +
+        ")";
+
+    const sound = document.createElement("p");
+
+    sound.innerHTML =
+        "<strong>SOUND:</strong> " +
+        system.sound.name;
+
+    const os = document.createElement("p");
+
+    os.innerHTML =
+        "<strong>OS:</strong> " +
+        system.os.name;
+
+    card.appendChild(image);
+    card.appendChild(title);
+    card.appendChild(year);
+    card.appendChild(tower);
+    card.appendChild(cpu);
+    card.appendChild(gpu);
+    card.appendChild(sound);
+    card.appendChild(os);
+
+    grid.appendChild(card);
+});
+
 
         if (selectedSystems.length === 0) {
 
