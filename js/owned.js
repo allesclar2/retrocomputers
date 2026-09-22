@@ -1,7 +1,9 @@
 const owned = [
     {
         id: "system-01",
-        tower: { 
+        year: 1996,
+
+        tower: {
             name: "Original Packard Bell case",
             image: "images/pbexecutive.jpg",
             url: "https://www.youtube.com/watch?v=ylCUulJf-eI&t=9s"
@@ -21,7 +23,7 @@ const owned = [
             manufacturer: "Intel",
             released: "1995",
             format: "Socket 7",
-            clockspeed: "133Mhz",
+            clockspeed: "133MHz",
             url: "https://theretroweb.com/chips/1024",
             image: "images/Intel Pentium I.jpg"
         },
@@ -49,12 +51,15 @@ const owned = [
             name: "Windows 3.11 Workgroups",
             released: "1992",
             url: "https://en.wikipedia.org/wiki/Windows_3.1",
-            image: "images/windows311.jpg"            
+            image: "images/windows311.jpg"
         }
     },
+
     {
         id: "system-02",
-                tower: { 
+        year: 1999,
+
+        tower: {
             name: "Original Packard Bell case",
             image: "images/pbclub40.jpg",
             url: "https://www.youtube.com/watch?v=0VLybzT3Dyc"
@@ -108,10 +113,12 @@ const owned = [
 
     {
         id: "system-03",
+        year: 2001,
+
         tower: {
             name: "Lian Li PC-50",
-        image: "images/lianlipc50.jpg",
-        url: "https://www.dansdata.com/jullls.htm"
+            image: "images/lianlipc50.jpg",
+            url: "https://www.dansdata.com/jullls.htm"
         },
 
         motherboard: {
@@ -163,11 +170,12 @@ const owned = [
 
     {
         id: "system-04",
+        year: 2002,
 
         tower: {
             name: "Lian Li PC-60",
-        image: "images/lianlipc60.jpg",
-        url: "https://www.dansdata.com/pc60.htm"
+            image: "images/lianlipc60.jpg",
+            url: "https://www.dansdata.com/pc60.htm"
         },
 
         motherboard: {
@@ -218,11 +226,14 @@ const owned = [
 
     {
         id: "system-05",
+        year: 2004,
+
         tower: {
             name: "Lian Li PC-60",
-        image: "images/lianlipc60.jpg",
-        url: "https://www.dansdata.com/pc60.htm"
+            image: "images/lianlipc60.jpg",
+            url: "https://www.dansdata.com/pc60.htm"
         },
+
         motherboard: {
             name: "ASRock K7S41GX",
             manufacturer: "ASRock",
@@ -271,11 +282,14 @@ const owned = [
 
     {
         id: "system-06",
+        year: 2007,
+
         tower: {
             name: "Lian Li PC-70",
-        image: "images/lianlipc70.jpg",
-        url: "https://www.dansdata.com/pc70.htm"
+            image: "images/lianlipc70.jpg",
+            url: "https://www.dansdata.com/pc70.htm"
         },
+
         motherboard: {
             name: "ASUS P5K",
             manufacturer: "ASUS",
@@ -305,14 +319,14 @@ const owned = [
             url: "https://theretroweb.com/expansioncards/s/nvidia-geforce-8800gt"
         },
 
-sound: {
-    name: "Sound Blaster Audigy 2",
-    manufacturer: "Creative",
-    released: "2002",
-    Interface: "PCI",
-    image: "images/Audigy2.jpg",
-    url: "https://theretroweb.com/expansioncards/s/creative-sound-blaster-audigy-2-sb0240"
-},
+        sound: {
+            name: "Sound Blaster Audigy 2",
+            manufacturer: "Creative",
+            released: "2002",
+            Interface: "PCI",
+            image: "images/Audigy2.jpg",
+            url: "https://theretroweb.com/expansioncards/s/creative-sound-blaster-audigy-2-sb0240"
+        },
 
         os: {
             name: "Windows XP Professional 32-bit",
@@ -324,10 +338,12 @@ sound: {
 
     {
         id: "system-07",
+        year: 2008,
+
         tower: {
             name: "Original HP case",
             image: "images/hpcase.jpg",
-            url:"https://support.hp.com/gb-en/product/product-specs/hp-xw4600-workstation/3429268"
+            url: "https://support.hp.com/gb-en/product/product-specs/hp-xw4600-workstation/3429268"
         },
 
         motherboard: {
@@ -359,16 +375,14 @@ sound: {
             url: "https://theretroweb.com/chips/11752"
         },
 
-sound: {
-    name: "Sound Blaster Audigy 2 ZS",
-    manufacturer: "Creative",
-    released: "2003",
-    Interface: "PCI",
-    additional: "Sound Blaster Audigy 2 ZS",
-    image: "images/Audigy 2 ZS.jpg",
-    url: "https://theretroweb.com/expansioncards/s/creative-sound-blaster-audigy-2-zs-sb0350"
-},
-
+        sound: {
+            name: "Sound Blaster Audigy 2 ZS",
+            manufacturer: "Creative",
+            released: "2003",
+            Interface: "PCI",
+            image: "images/Audigy 2 ZS.jpg",
+            url: "https://theretroweb.com/expansioncards/s/creative-sound-blaster-audigy-2-zs-sb0350"
+        },
 
         os: {
             name: "Windows 7 Professional 64-bit",
@@ -380,11 +394,14 @@ sound: {
 
     {
         id: "system-08",
-                tower: {
+        year: 2014,
+
+        tower: {
             name: "Original Dell case",
             image: "images/dellcase.jpg",
-            url:"https://www.hardware-corner.net/desktop-models/Dell-OptiPlex-9020-SFF/"
+            url: "https://www.hardware-corner.net/desktop-models/Dell-OptiPlex-9020-SFF/"
         },
+
         motherboard: {
             name: "OptiPlex 9020 SFF",
             manufacturer: "Dell",

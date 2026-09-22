@@ -136,22 +136,23 @@ Skip to main content
 
     <div class="decade-timeline">
 
-        <button type="button" class="decade" data-decade="1980s">
-            <strong>1990</strong>
-            <span>THE BEGINNING</span>
-        </button>
+    <button type="button" class="decade" data-decade="1990s">
+        <strong>1990</strong>
+        <span>THE BEGINNING</span>
+    </button>
 
-        <button type="button" class="decade" data-decade="1990s">
-            <strong>2000</strong>
-            <span>THE GOLDEN AGE</span>
-        </button>
+    <button type="button" class="decade" data-decade="2000s">
+        <strong>2000</strong>
+        <span>THE GOLDEN AGE</span>
+    </button>
 
-        <button type="button" class="decade" data-decade="2000s">
-            <strong>2010</strong>
-            <span>THE NEXT GENERATION</span>
-        </button>
+    <button type="button" class="decade" data-decade="2010s">
+        <strong>2010</strong>
+        <span>THE NEXT GENERATION</span>
+    </button>
 
-    </div>
+</div>
+
 
     <div id="systemCollection" class="system-collection" aria-live="polite">
 
@@ -928,74 +929,11 @@ contactForm.addEventListener("submit", function(event) {
 });
 </script>
 
+<script src="owned.js"></script>
+
 <script>
 const decadeButtons = document.querySelectorAll(".decade");
 const systemCollection = document.getElementById("systemCollection");
-
-const systems = {
-    "1980s": [
-        {
-            name: "System Placeholder 1",
-            year: "1980",
-            image: "images/placeholder-system.jpg",
-            description: "Placeholder description for a computer system from the 1980s."
-        },
-        {
-            name: "System Placeholder 2",
-            year: "1980",
-            image: "images/placeholder-system.jpg",
-            description: "Placeholder description for a computer system from the 1980s."
-        },
-        {
-            name: "System Placeholder 3",
-            year: "1980",
-            image: "images/placeholder-system.jpg",
-            description: "Placeholder description for a computer system from the 1980s."
-        }
-    ],
-
-    "1990s": [
-        {
-            name: "System Placeholder 1",
-            year: "1990",
-            image: "images/placeholder-system.jpg",
-            description: "Placeholder description for a computer system from the 1990s."
-        },
-        {
-            name: "System Placeholder 2",
-            year: "1990",
-            image: "images/placeholder-system.jpg",
-            description: "Placeholder description for a computer system from the 1990s."
-        },
-        {
-            name: "System Placeholder 3",
-            year: "1990",
-            image: "images/placeholder-system.jpg",
-            description: "Placeholder description for a computer system from the 1990s."
-        }
-    ],
-
-    "2000s": [
-        {
-            name: "System Placeholder 1",
-            year: "2000",
-            image: "images/placeholder-system.jpg",
-            description: "Placeholder description for a computer system from the 2000s."
-        },
-        {
-            name: "System Placeholder 2",
-            year: "2000",
-            image: "images/placeholder-system.jpg",
-            description: "Placeholder description for a computer system from the 2000s."
-        },
-        {
-            name: "System Placeholder 3",
-            year: "2000",
-            image: "images/placeholder-system.jpg",
-            description: "Placeholder description for a computer system from the 2000s."
-        }
-    ]
-};
 
 decadeButtons.forEach(function(button) {
 
@@ -1017,7 +955,14 @@ decadeButtons.forEach(function(button) {
 
         button.classList.add("active");
 
-        const selectedSystems = systems[decade];
+        const decadeStart = parseInt(decade.substring(0, 4));
+
+        const selectedSystems = owned.filter(function(system) {
+
+            return system.year >= decadeStart &&
+                   system.year < decadeStart + 10;
+
+        });
 
         systemCollection.innerHTML = "";
 
@@ -1039,12 +984,12 @@ decadeButtons.forEach(function(button) {
 
             const image = document.createElement("img");
 
-            image.src = system.image;
-            image.alt = system.name;
+            image.src = system.tower.image;
+            image.alt = system.tower.name;
 
             const title = document.createElement("h4");
 
-            title.textContent = system.name;
+            title.textContent = system.motherboard.name;
 
             const year = document.createElement("p");
 
@@ -1054,7 +999,12 @@ decadeButtons.forEach(function(button) {
 
             const description = document.createElement("p");
 
-            description.textContent = system.description;
+            description.textContent =
+                system.cpu.name +
+                " • " +
+                system.cpu.clockspeed +
+                " • " +
+                system.gpu.name;
 
             card.appendChild(image);
             card.appendChild(title);
@@ -1063,6 +1013,16 @@ decadeButtons.forEach(function(button) {
 
             grid.appendChild(card);
         });
+
+        if (selectedSystems.length === 0) {
+
+            const emptyMessage = document.createElement("p");
+
+            emptyMessage.textContent =
+                "No systems found for this decade.";
+
+            grid.appendChild(emptyMessage);
+        }
 
         systemCollection.appendChild(grid);
 
@@ -1074,6 +1034,10 @@ decadeButtons.forEach(function(button) {
         });
     });
 });
+
+
+
+
 </script>
 
 
