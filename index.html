@@ -897,11 +897,22 @@ decadeButtons.forEach(function(button) {
 
     card.className = "system-card";
 
-    const image = document.createElement("img");
+const images = document.createElement("div");
 
-    image.src = system.tower.image2;
-    image.src = system.tower.image3;
-    image.alt = system.tower.name;
+images.className = "system-images";
+
+const image2 = document.createElement("img");
+
+image2.src = system.tower.image2;
+image2.alt = system.tower.name;
+
+const image3 = document.createElement("img");
+
+image3.src = system.tower.image3;
+image3.alt = system.tower.name;
+
+images.appendChild(image2);
+images.appendChild(image3);
 
     const title = document.createElement("h4");
 
@@ -949,7 +960,9 @@ decadeButtons.forEach(function(button) {
         "<strong>OS:</strong> " +
         system.os.name;
 
-    card.appendChild(image);
+    
+
+card.appendChild(images);
     card.appendChild(title);
     card.appendChild(year);
     card.appendChild(tower);

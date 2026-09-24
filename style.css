@@ -1154,3 +1154,12 @@ footer p {
         grid-template-columns: 1fr;
     }
 }
+.system-images {
+    display: flex;
+    gap: 10px;
+}
+
+.system-images img {
+    width: 50%;
+    height: auto;
+}
