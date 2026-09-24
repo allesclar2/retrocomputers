@@ -118,7 +118,9 @@ const owned = [
 
         tower: {
             name: "Lian Li PC-50",
-            image: "images/system3a.jpg",
+            image: "images/lianlipc50.jpg",
+            image2: "images/system3a.jpg",
+            image3: "images/system3b.jpg",
             url: "https://www.dansdata.com/jullls.htm"
         },
 
@@ -176,6 +178,8 @@ const owned = [
         tower: {
             name: "Lian Li PC-60",
             image: "images/lianlipc60.jpg",
+            image2: "images/system4a.jpg",
+            image3: "images/system4b.jpg",
             url: "https://www.dansdata.com/pc60.htm"
         },
 
