@@ -3,6 +3,7 @@ const owned = [
         id: "system-01",
         year: 1996,
 
+
         tower: {
             name: "Original Packard Bell case",
             image: "images/pbexecutive.jpg",
@@ -117,7 +118,7 @@ const owned = [
 
         tower: {
             name: "Lian Li PC-50",
-            image: "images/lianlipc50.jpg",
+            image: "images/system3a.jpg",
             url: "https://www.dansdata.com/jullls.htm"
         },
 
