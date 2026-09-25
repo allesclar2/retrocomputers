@@ -29,7 +29,7 @@ towerList.innerHTML = uniqueTowers.map(system => {
                             <p class="site-link-citation">
                                 Image from
                                 <a href="${tower.url}" target="_blank" rel="noopener noreferrer">
-                                Dan's Data, n.d.
+                                A. Clark, 2026.
                                 </a>
                             </p>
                         `

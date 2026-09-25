@@ -7,6 +7,8 @@ const owned = [
         tower: {
             name: "Packard Bell Executive",
             image: "images/pbexecutive.jpg",
+            image2: "images/system1a.jpg",
+            image3: "images/system1b.jpg",
             url: "https://www.youtube.com/watch?v=ylCUulJf-eI&t=9s"
         },
 
@@ -63,6 +65,8 @@ const owned = [
         tower: {
             name: "Packard Bell Club 40",
             image: "images/pbclub40.jpg",
+            image2: "images/system2a.jpg",
+            image3: "images/system2b.jpg",
             url: "https://www.youtube.com/watch?v=0VLybzT3Dyc"
         },
 
@@ -236,6 +240,8 @@ const owned = [
         tower: {
             name: "Lian Li PC-60",
             image: "images/lianlipc60.jpg",
+            image2: "images/system5a.jpg",
+            image3: "images/system5b.jpg",
             url: "https://www.dansdata.com/pc60.htm"
         },
 
@@ -292,6 +298,8 @@ const owned = [
         tower: {
             name: "Lian Li PC-70",
             image: "images/lianlipc70.jpg",
+            image2: "images/system6a.jpg",
+            image3: "images/system6b.jpg",
             url: "https://www.dansdata.com/pc70.htm"
         },
 
@@ -348,6 +356,8 @@ const owned = [
         tower: {
             name: "Original HP case",
             image: "images/hpcase.jpg",
+            image2: "images/system7a.jpg",
+            image3: "images/system7b.jpg",
             url: "https://support.hp.com/gb-en/product/product-specs/hp-xw4600-workstation/3429268"
         },
 
@@ -404,6 +414,8 @@ const owned = [
         tower: {
             name: "Original Dell case",
             image: "images/dellcase.jpg",
+            image2: "images/system8a.jpg",
+            image3: "images/system8b.jpg",
             url: "https://www.hardware-corner.net/desktop-models/Dell-OptiPlex-9020-SFF/"
         },
 
