@@ -5,7 +5,7 @@ const owned = [
 
 
         tower: {
-            name: "Original Packard Bell case",
+            name: "Packard Bell Executive",
             image: "images/pbexecutive.jpg",
             url: "https://www.youtube.com/watch?v=ylCUulJf-eI&t=9s"
         },
@@ -61,7 +61,7 @@ const owned = [
         year: 1999,
 
         tower: {
-            name: "Original Packard Bell case",
+            name: "Packard Bell Club 40",
             image: "images/pbclub40.jpg",
             url: "https://www.youtube.com/watch?v=0VLybzT3Dyc"
         },
