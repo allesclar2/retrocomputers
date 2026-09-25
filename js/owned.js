@@ -351,7 +351,7 @@ const owned = [
 
     {
         id: "system-07",
-        year: 2008,
+        year: 2010,
 
         tower: {
             name: "Original HP case",
