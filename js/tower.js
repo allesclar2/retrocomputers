@@ -1,7 +1,12 @@
 const towerList = document.getElementById("tower-list");
 
 if (towerList) {
-    towerList.innerHTML = owned.map(system => {
+    const uniqueTowers = Array.from(
+    new Map(owned.map(system => [system.tower.name, system])).values()
+);
+
+towerList.innerHTML = uniqueTowers.map(system => {
+
         const { tower } = system;
         
         return `
