@@ -28,7 +28,6 @@ towerList.innerHTML = uniqueTowers.map(system => {
 
                             <p class="site-link-citation">
                                 Image from
-                                <a href="${tower.url}" target="_blank" rel="noopener noreferrer">
                                 A. Clark, 2026.
                                 </a>
                             </p>
@@ -37,6 +36,23 @@ towerList.innerHTML = uniqueTowers.map(system => {
                 }
 
                 <h3>${tower.name || "Not listed"}</h3>
+
+                <p>
+                    ${
+                        tower.url
+                            ? `
+                                <a
+                                    href="${gpu.url}"
+                                    class="site-link"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    View Case details
+                                </a>
+                            `
+                            : ""
+                    }
+                </p>
 
             </article>
         `;
