@@ -1161,19 +1161,21 @@ footer p {
 
 .system-images .image-button {
     width: 50%;
-    height: auto;
+    height: 155px;
     padding: 0;
     margin: 0;
-    background: #020502;
     border: 1px solid #123d1b;
+    background: transparent;
     cursor: pointer;
     overflow: hidden;
 }
 
 .system-images .image-button img {
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: fill;
     display: block;
+    margin: 0;
 }
 
 .system-images .image-button:hover,
