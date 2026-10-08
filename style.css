@@ -1247,3 +1247,87 @@ footer p {
     background: #020502;
     color: #b8d8b8;
 }
+
+.message-popup {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.92);
+}
+
+.message-popup.show {
+    display: flex;
+}
+
+.message-popup-box {
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    padding: 25px;
+    background: #040904;
+    color: #b8d8b8;
+    border: 1px solid #00ff41;
+    box-shadow:
+        0 0 25px rgba(0, 255, 65, 0.25),
+        inset 0 0 20px rgba(0, 255, 65, 0.03);
+    text-align: center;
+}
+
+.message-popup-box h2 {
+    margin: 0 0 15px;
+    padding-bottom: 8px;
+    color: #00ff41;
+    border-bottom: 1px solid #185f28;
+    font-family: "Courier New", monospace;
+    font-size: 16px;
+}
+
+.message-popup-box p {
+    margin: 15px 0;
+    color: #9bc49f;
+    font-family: "Courier New", monospace;
+    font-size: 12px;
+}
+
+.message-popup-close {
+    position: absolute;
+    top: 7px;
+    right: 10px;
+    border: none;
+    background: transparent;
+    color: #00ff41;
+    font-family: "Courier New", monospace;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.message-popup-close:hover,
+.message-popup-close:focus {
+    color: #ff5555;
+    outline: none;
+}
+
+.message-popup-ok {
+    margin-top: 10px;
+    padding: 7px 15px;
+    background: #061006;
+    color: #00ff41;
+    border: 1px solid #1c7c31;
+    border-radius: 0;
+    font-family: "Courier New", monospace;
+    font-size: 11px;
+    cursor: pointer;
+}
+
+.message-popup-ok:hover,
+.message-popup-ok:focus {
+    background: #00ff41;
+    color: #001900;
+    border-color: #00ff41;
+    box-shadow: 0 0 10px rgba(0, 255, 65, 0.35);
+    outline: none;
+}

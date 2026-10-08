@@ -4,6 +4,36 @@ const closeContact = document.getElementById("closeContact");
 const contactForm = document.getElementById("contactForm");
 const formFeedback = document.getElementById("formFeedback");
 
+const messagePopup = document.getElementById("messagePopup");
+const closeMessagePopup = document.getElementById("closeMessagePopup");
+const messagePopupOk = document.getElementById("messagePopupOk");
+
+function showMessagePopup(mailto) {
+
+    messagePopup.classList.add("show");
+    messagePopup.setAttribute("aria-hidden", "false");
+
+    messagePopupOk.focus();
+
+    messagePopupOk.onclick = function() {
+        hideMessagePopup();
+        window.location.href = mailto;
+    };
+}
+
+function hideMessagePopup() {
+    messagePopup.classList.remove("show");
+    messagePopup.setAttribute("aria-hidden", "true");
+}
+
+closeMessagePopup.addEventListener("click", hideMessagePopup);
+
+
+messagePopup.addEventListener("click", function(event) {
+    if (event.target === messagePopup) {
+        hideMessagePopup();
+    }
+});
 function closeContactModal() {
     contactModal.classList.remove("show");
     contactModal.setAttribute("aria-hidden", "true");
@@ -87,8 +117,7 @@ contactForm.addEventListener("submit", function(event) {
         "?subject=" + encodeURIComponent(subject) +
         "&body=" + encodeURIComponent(body);
 
-    formFeedback.textContent = "Opening your email application...";
-    formFeedback.classList.add("success");
+   
 
-    window.location.href = mailto;
+    showMessagePopup(mailto);
 });
