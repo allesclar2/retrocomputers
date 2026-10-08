@@ -19,7 +19,7 @@
 </head>
 
 <body>
-
+<!-- allows users to whom use keyboard and screen readers to bypass directly to main page -->
     <a class="skip-link" href="#main-content">
 Skip to main content
     </a>
@@ -104,7 +104,7 @@ Skip to main content
 
     </section>
 
-
+<!-- This section allows the user to search and pull data from the API data base for games (RAWG). The search results a then pulled from the system using javascript. -->
     <section id="search">
 
         <h2>&gt; SEARCH THE GAME ARCHIVE</h2>
@@ -137,6 +137,7 @@ Skip to main content
 
     <div class="decade-timeline">
 
+        <!-- buttons have been created to allow the user to show a specific time period of computer system, using Javascript the relevent informaitno is pulled from the website. -->
     <button type="button" class="decade" data-decade="1990s">
         <strong>1990</strong>
         <span>THE BEGINNING</span>
@@ -154,6 +155,7 @@ Skip to main content
 
 </div>
 
+<!-- this uses a container which uses a placeholder to show the user a default layout for decade, when the user selects a specifc decade, javascript is used to load the selected period computer systems. -->
 
     <div id="systemCollection" class="system-collection" aria-live="polite">
 
@@ -166,7 +168,8 @@ Skip to main content
 </section>
 
 
-
+<!-- this is the featured part of the website, this loads three historical items i owned, and loads a 3d model into the browser for the user to interactive with. 3d models are not my own but cited.
+ Further reading on implementing the 3d viewer and javascript coding was obtained from  https://modelviewer.dev/ -->
 
     <section id="featured">
 
@@ -331,7 +334,7 @@ Skip to main content
 
     </section>
 
-
+<!-- placeholder at the bottom of the website to allow the user to navigate to pages to specific types of hardware -->
     <section id="parts">
 
         <h2>&gt; COMPUTER HARDWARE</h2>
@@ -397,7 +400,7 @@ Skip to main content
 
     </section>
 
-
+<!-- contact form used to collect information from the user and allow them to send a message via a default mailing application. It uses a seperate js file in contact.js -->
     <div id="contact" aria-hidden="true">
 
         <div class="contact-box">
@@ -539,6 +542,7 @@ Skip to main content
     </script>
 
   <script type="text/javascript" src="https://counter.websiteout.com/js/2/0/0/1"></script>
+
 <!-- A 3rd party 3d model viewer. Guide for futher reading and coding help, https://modelviewer.dev/ -->
 <script>
     const viewer = document.getElementById("modelViewer");
@@ -568,14 +572,16 @@ Skip to main content
     });
 </script>
 
+<!-- this is the api Javascript. RAWG API documentaitno was used as a refeferenced when implmenting the game searcha dn API detail pull requests. https://rawg.io/apidocs -->
 <script>
 const gameSearch = document.getElementById("gameSearch");
 const searchResults = document.getElementById("searchResults");
 
+// potential security flaw as anyone viewing the html code can see the api key. a stronger solution would be to have the service side keep the key private.
 const RAWG_API_KEY = "3a612cb3b10a46748b4b81778a5bce30";
 
 let searchTimeout;
-
+// search functional input of the API function, requires at least 2 characters to search before API call.
 gameSearch.addEventListener("input", function () {
 
     const searchTerm = gameSearch.value.trim();
@@ -589,7 +595,7 @@ gameSearch.addEventListener("input", function () {
 
         return;
     }
-
+// this search timeout is to prevent multiple search requests being made as a user is typing, editing their input.
     searchTimeout = setTimeout(function () {
 
         searchRAWG(searchTerm);
@@ -598,7 +604,7 @@ gameSearch.addEventListener("input", function () {
 
 });
 
-
+// this sends the user search string to the RAWG API and processes the returned data
 async function searchRAWG(searchTerm) {
 
     searchResults.innerHTML =
@@ -631,7 +637,7 @@ async function searchRAWG(searchTerm) {
         }
 
         displayGames(data.results);
-
+// catch errors and "no game data" checks are used to give the user useful error messages, ie no game found or error with database
     } catch (error) {
 
         console.error("Search error:", error);
@@ -641,7 +647,7 @@ async function searchRAWG(searchTerm) {
     }
 }
 
-
+//this creates the result interface from the game searched in the API pull, allowing the user to select which game they want the detail to be shown.
 function displayGames(games) {
 
     if (!games || games.length === 0) {
@@ -686,7 +692,7 @@ function displayGames(games) {
     });
 }
 
-
+// with the game selection now made, a full API pull is made for the game selected, this makes for more efficient data usage rather than pulling all the game data everytime a search is done.
 async function getGameDetails(gameId) {
 
     searchResults.innerHTML =
@@ -729,7 +735,7 @@ async function getGameDetails(gameId) {
     }
 }
 
-
+// this constructs the detailed game information on the main web page. It pulls a default image of the game as well as background infomrmation on the game.
 function displayGameDetails(game) {
 
     searchResults.innerHTML = "";
@@ -755,7 +761,7 @@ function displayGameDetails(game) {
         gameHeader.appendChild(image);
     }
 
-
+// game information varies from metacritic, rating, genres, title, webpage etc. All pulled from the RAWG API. This is all shown in the main webpage for the user.
     const gameInfo = document.createElement("div");
 
     gameInfo.className = "game-info";
@@ -911,7 +917,7 @@ function displayGameDetails(game) {
 </script>
 
 
-
+<!-- this segement of javasript is used to population the decade/system owned section of the webpage. -->
 <script src="js/owned.js"></script>
 
 <script>
@@ -920,6 +926,7 @@ const systemCollection = document.getElementById("systemCollection");
 
 decadeButtons.forEach(function(button) {
 
+    // when a decade period is selected, the default screen is hidden and the age period appropraite systems is shown to the user
     button.addEventListener("click", function() {
 
         const decade = button.dataset.decade;
@@ -1053,8 +1060,9 @@ images.appendChild(imageButton3);
         "<strong>OS:</strong> " +
         system.os.name;
 
-    
+    // System cards are dynaimically generated and displayed in the webpages display grid, allowing the ability to show each individual component. This is how each system is broken down into manageable bits. All the cards are built using the data in owned.js
 
+    // Keeping the hardware infomraiton in owned.js allows the same component to be displayed accournt multiple systsems when required. This aids the card system for when images and information are dynamically required
 card.appendChild(images);
     card.appendChild(title);
     card.appendChild(year);
@@ -1089,7 +1097,7 @@ card.appendChild(images);
     });
 });
 
-// Light Box coding to allow the user to hover over an image, select it and for it to pop up at 2x size.
+// Light Box coding to allow the user to click over an image, select it and for it to pop up at 2x size.
 
 const lightbox = document.getElementById("image-lightbox");
 const lightboxImage = document.getElementById("lightbox-image");
