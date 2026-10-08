@@ -38,6 +38,7 @@ contactForm.addEventListener("submit", function(event) {
     const subject = document.getElementById("contactSubject").value.trim();
     const message = document.getElementById("contactMessage").value.trim();
     const interests = document.querySelectorAll('input[name="interests"]:checked')
+    const experience = document.getElementById("contactExperience").value.trim();
 
     formFeedback.textContent = "";
     formFeedback.className = "form-feedback";
@@ -48,12 +49,13 @@ contactForm.addEventListener("submit", function(event) {
             return;
         }
 
-        if (message === "") {
-            event.preventDefault();
-            window.alert("Please enter a message.");
-            return;
-        }
 
+    if (experience === "") {
+    formFeedback.textContent = "Please select your level of experience.";
+    formFeedback.classList.add("error");
+    document.getElementById("contactExperience").focus();
+    return;
+}
     if (name.length < 2) {
         formFeedback.textContent = "Please enter your name.";
         formFeedback.classList.add("error");
