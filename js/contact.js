@@ -17,6 +17,7 @@ function showMessagePopup(mailto) {
 
     messagePopupOk.onclick = function() {
         hideMessagePopup();
+        closeContactModal();
         window.location.href = mailto;
     };
 }
