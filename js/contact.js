@@ -37,9 +37,22 @@ contactForm.addEventListener("submit", function(event) {
     const email = document.getElementById("contactEmail").value.trim();
     const subject = document.getElementById("contactSubject").value.trim();
     const message = document.getElementById("contactMessage").value.trim();
+    const interests = document.querySelectorAll('input[name="interests"]:checked')
 
     formFeedback.textContent = "";
     formFeedback.className = "form-feedback";
+
+    if (interests.length === 0) {
+            event.preventDefault();
+            window.alert("Please select at least one area of interest.");
+            return;
+        }
+
+        if (message === "") {
+            event.preventDefault();
+            window.alert("Please enter a message.");
+            return;
+        }
 
     if (name.length < 2) {
         formFeedback.textContent = "Please enter your name.";
