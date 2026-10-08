@@ -1187,16 +1187,24 @@ footer p {
 
 #contactExperience {
     width: 100%;
-    padding: 12px;
-    background: #101510;
-    color: #00ff66;
-    border: 1px solid #00ff66;
-    font-family: inherit;
-    font-size: 1rem;
+    padding: 8px;
+    background: #020502;
+    color: #b8d8b8;
+    border: 1px solid #185f28;
+    border-radius: 0;
+    font-family: "Courier New", monospace;
+    font-size: 12px;
     box-sizing: border-box;
+    cursor: pointer;
+}
+
+#contactExperience:focus {
+    border-color: #00ff41;
+    outline: none;
+    box-shadow: 0 0 7px rgba(0, 255, 65, 0.15);
 }
 
 #contactExperience option {
-    background: #101510;
-    color: #00ff66;
+    background: #020502;
+    color: #b8d8b8;
 }
