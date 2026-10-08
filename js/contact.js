@@ -37,7 +37,6 @@ contactForm.addEventListener("submit", function(event) {
     const email = document.getElementById("contactEmail").value.trim();
     const subject = document.getElementById("contactSubject").value.trim();
     const message = document.getElementById("contactMessage").value.trim();
-    const interests = document.querySelectorAll('input[name="interests"]:checked')
     const experience = document.getElementById("contactExperience").value.trim();
 
     formFeedback.textContent = "";
