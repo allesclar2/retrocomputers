@@ -735,6 +735,45 @@ section > p {
     box-shadow: 0 0 7px rgba(0, 255, 65, 0.15);
 }
 
+.contact-box select {
+    width: 100%;
+    padding: 8px 35px 8px 8px;
+    background-color: #020502;
+    color: #b8d8b8;
+    border: 1px solid #185f28;
+    border-radius: 0;
+    font-family: "Courier New", monospace;
+    font-size: 12px;
+    box-sizing: border-box;
+    cursor: pointer;
+
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    background-image:
+        linear-gradient(45deg, transparent 50%, #00ff41 50%),
+        linear-gradient(135deg, #00ff41 50%, transparent 50%);
+    background-position:
+        calc(100% - 14px) 50%,
+        calc(100% - 9px) 50%;
+    background-size:
+        5px 5px,
+        5px 5px;
+    background-repeat: no-repeat;
+}
+
+.contact-box select:focus {
+    border-color: #00ff41;
+    outline: none;
+    box-shadow: 0 0 7px rgba(0, 255, 65, 0.15);
+}
+
+.contact-box select option {
+    background-color: #020502;
+    color: #b8d8b8;
+}
+
 .contact-close {
     position: absolute;
     top: 8px;
