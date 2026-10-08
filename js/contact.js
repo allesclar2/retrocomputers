@@ -43,12 +43,6 @@ contactForm.addEventListener("submit", function(event) {
     formFeedback.textContent = "";
     formFeedback.className = "form-feedback";
 
-    if (interests.length === 0) {
-            event.preventDefault();
-            window.alert("Please select at least one area of interest.");
-            return;
-        }
-
 
     if (experience === "") {
     formFeedback.textContent = "Please select your level of experience.";
