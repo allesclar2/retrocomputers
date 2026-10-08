@@ -2,11 +2,12 @@ html {
     scrollbar-gutter: stable;
     scroll-behavior: smooth;
 }
-
+/* applies the same box sizing to all elements */
 * {
     box-sizing: border-box;
 }
 
+/* this is the main webpage layout, this is based on a retro computer terminal theme */
 body {
     margin: 0px;
     padding: 0px;
@@ -27,6 +28,7 @@ body {
     overflow-x: hidden;
 }
 
+/* abit of CRT thrown in here */
 body::before {
     content: "";
     position: fixed;
@@ -40,7 +42,7 @@ body::before {
         );
     background-size: 100% 4px;
 }
-
+/* this is an accesibiilty skip link. */
 .skip-link {
     position: absolute;
     top: -100px;
@@ -57,6 +59,7 @@ body::before {
     top: 10px;
 }
 
+/* main holder for the logo of the website */
 header {
     width: 0px;
     height: 0px;
@@ -67,6 +70,7 @@ header {
     box-shadow: none;
 }
 
+/* this hides the heading by default but allows access to screen readers. */
 header h1 {
     position: absolute;
     width: 1px;
@@ -79,6 +83,7 @@ header h1 {
     border: 0px;
 }
 
+/* ensures the logo is in the top left corner */
 .logo {
     display: block;
     position: fixed;
@@ -97,6 +102,7 @@ header h1 {
         0 0 10px rgba(0, 255, 65, 0.08);
 }
 
+/* fixed navigation bar at the top */
 nav {
     display: flex;
     align-items: center;
@@ -123,7 +129,7 @@ nav {
 nav::-webkit-scrollbar {
     display: none;
 }
-
+/* the main navigation links and spacing for the page */
 nav ul {
     display: flex;
     align-items: center;
@@ -158,7 +164,7 @@ nav a {
     white-space: nowrap;
     touch-action: manipulation;
 }
-
+/* this allows the user to highlight a navigation link when hovered over. */
 nav a:hover,
 nav a:focus-visible {
     color: #001900;
@@ -167,6 +173,7 @@ nav a:focus-visible {
     box-shadow: 0 0 10px rgba(0, 255, 65, 0.35);
     outline: none;
 }
+/* Centres the main conent and limits maxmimum width */
 
 main {
     width: calc(100% - 16px);
@@ -178,7 +185,7 @@ section {
     margin: 35px 0 10px;
     scroll-margin-top: 62px;
 }
-
+/* adds spacing between sections*/
 section > h2 {
     margin: 0 0 8px;
     padding: 8px 10px;
@@ -197,7 +204,7 @@ section > h2 {
 section > p {
     color: #82ad88;
 }
-
+/* this is the home panel and terminal appearance (hero).*/
 #home {
     position: relative;
     width: 100%;
@@ -252,7 +259,7 @@ section > p {
     filter: grayscale(60%) contrast(1.2);
     z-index: 0px;
 }
-
+/* this is a dark overlay used to improve text readibiliy over the background imiage, intiially used as a fadeout image for effect. */
 .terminal-hero::after {
     content: "";
     position: absolute;
@@ -272,28 +279,28 @@ section > p {
             rgba(5, 8, 5, 0.75)
         );
 }
-
+/* positions and sizes teh heros text and content area */
 .terminal-content {
     position: relative;
     z-index: 2;
     width: min(850px, 100%);
     padding: 55px 45px;
 }
-
+/* styles the termianl prompt text */
 .terminal-prompt {
     margin-bottom: 18px;
     color: #d5ff75;
     font-size: 13px;
     overflow-wrap: anywhere;
 }
-
+/* creates the hero button layout appearance */
 .hero-buttons {
     display: flex;
     flex-direction: column;
     gap: 6px;
     margin-top: 18px;
 }
-
+/* this styles the main website.action buttons to match the main scheme */
 .site-link {
     display: inline-flex;
     align-items: center;
@@ -313,7 +320,7 @@ section > p {
     transition: 0.15s ease;
     touch-action: manipulation;
 }
-
+/* this adds hover and focus to the buttons */
 .site-link:hover,
 .site-link:focus-visible {
     background: #00ff41;
@@ -322,7 +329,7 @@ section > p {
     box-shadow: 0 0 10px rgba(0, 255, 65, 0.35);
     outline: none;
 }
-
+/* creates statitics panel and information style using CSS grid */
 .stats {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -365,7 +372,7 @@ section > p {
     letter-spacing: 0.5px;
     overflow-wrap: anywhere;
 }
-
+/* creates and styles the game search and results */
 #search {
     margin: 12px 0;
     padding: 0px;
@@ -450,7 +457,7 @@ section > p {
     font-size: 10px;
     overflow-wrap: anywhere;
 }
-
+/* this section creates and styles the decade timeline section of the page */
 .decade-timeline {
     display: grid;
     grid-template-columns: 1fr;
@@ -501,6 +508,7 @@ section > p {
     color: #001900;
 }
 
+/* this tyles the computer part cards */
 .parts {
     display: grid;
     grid-template-columns: 1fr;
@@ -556,7 +564,7 @@ section > p {
     font-size: 11px;
     overflow-wrap: anywhere;
 }
-
+/* this styles the citations for all the images used on the webpage */
 .site-link-citation {
     padding-top: 8px;
     margin-top: 10px !important;
@@ -584,6 +592,7 @@ section > p {
     list-style: none;
 }
 
+/* styling used for the categorys of hardware shown */
 .category {
     display: flex;
     align-items: center;
@@ -619,7 +628,7 @@ section > p {
 .category:hover h3 {
     color: #001900;
 }
-
+/* Styles for systems and about text */
 #systems,
 #about {
     padding: 0px;
@@ -631,7 +640,7 @@ section > p {
     color: #6f9f76;
     overflow-wrap: anywhere;
 }
-
+/* this creates the terminal status bar for the theme */
 .terminal-status {
     display: flex;
     flex-wrap: wrap;
@@ -649,7 +658,7 @@ section > p {
 .terminal-status strong {
     color: #00ff41;
 }
-
+/* creates the 3d model viewer  */
 .model-viewer-container {
     display: none;
     position: relative;
@@ -666,12 +675,12 @@ section > p {
 .model-viewer-container.show {
     display: block;
 }
-
+/* displays the 3d model */
 .model-viewer-container model-viewer {
     width: 100%;
     height: 100%;
 }
-
+/* styles the 3d model close button */
 .model-close {
     position: absolute;
     top: 8px;
@@ -695,6 +704,7 @@ section > p {
     color: #001900;
 }
 
+/* game information layout style */
 .game-details {
     margin-top: 8px;
     padding: 12px;
@@ -709,7 +719,7 @@ section > p {
     grid-template-columns: 1fr;
     gap: 12px;
 }
-
+/* styles the game image */
 .game-header img {
     width: 100%;
     height: 180px;
@@ -718,7 +728,7 @@ section > p {
     border-radius: 0px;
     box-shadow: none;
 }
-
+/* this setion creates the game details panel */
 .game-info {
     min-width: 0px;
 }
@@ -775,7 +785,7 @@ section > p {
     background: #00ff41;
     color: #001900;
 }
-
+/* this is a big section on the light box, a theme used around the website which gives the user feedback when hovwering over an image or particular section of webpage. */
 .image-lightbox {
     display: none;
     position: fixed;
@@ -809,7 +819,7 @@ section > p {
     color: #00ff41;
     font-size: 30px;
 }
-
+/* this is the styling for the contact form and feedback */
 #contact {
     display: none;
     position: fixed;
@@ -980,7 +990,7 @@ section > p {
 .form-feedback.success {
     color: #00ff41;
 }
-
+/* styles the footer of the website */
 footer {
     width: calc(100% - 16px);
     max-width: 1100px;
@@ -996,7 +1006,7 @@ footer p {
     margin: 2px;
     overflow-wrap: anywhere;
 }
-
+/* this creates and styles the system collection panel */
 .system-collection {
     display: none;
     width: 100%;
@@ -1084,7 +1094,7 @@ footer p {
     padding: 25px 10px;
     overflow-wrap: anywhere;
 }
-
+/* this styles the appropriate hardware cards and images and implements image placeholders */
 .cpu-list,
 .sound-list,
 .gpu-list,
@@ -1208,7 +1218,7 @@ footer p {
     text-align: center;
     overflow-wrap: anywhere;
 }
-
+/* creates the system image gallaries */
 .system-images {
     display: flex;
     gap: 6px;
@@ -1239,7 +1249,7 @@ footer p {
     box-shadow: 0 0 10px rgba(0, 255, 65, 0.25);
     outline: none;
 }
-
+/* styles the contact expierence dropdown so its not the same white default one */
 #contactExperience {
     width: 100%;
     min-height: 42px;
@@ -1264,7 +1274,7 @@ footer p {
     background: #020502;
     color: #b8d8b8;
 }
-
+/* this styles and crreates the message popup */
 .message-popup {
     display: none;
     position: fixed;
@@ -1357,12 +1367,12 @@ footer p {
     box-shadow: 0 0 10px rgba(0, 255, 65, 0.35);
     outline: none;
 }
-
+/* this styles external links */
 a[target="_blank"] {
     color: #5fa967;
     overflow-wrap: anywhere;
 }
-
+/* this adds responsive styling for smaller screens iphone 6 for example */
 @media (min-width: 480px) {
     .hero-buttons {
         flex-direction: row;
@@ -1386,6 +1396,7 @@ a[target="_blank"] {
     }
 }
 
+/* adds desktop responsive styling, normal computers and high resoltion systems */
 @media (min-width: 701px) {
     body {
         font-size: 14px;
@@ -1529,7 +1540,7 @@ a[target="_blank"] {
         width: min(1100px, calc(100% - 24px));
     }
 }
-
+/* this reduces animation for accessiblity requirements */
 @media (prefers-reduced-motion: reduce) {
     html {
         scroll-behavior: auto;
