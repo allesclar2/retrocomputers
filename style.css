@@ -126,9 +126,11 @@ nav {
     scrollbar-width: none;
 }
 
-nav::-webkit-scrollbar {
-    display: none;
-}
+/* nav::-webkit-scrollbar { */
+    /* display: none; */
+/* } */
+
+
 /* the main navigation links and spacing for the page */
 nav ul {
     display: flex;
@@ -640,7 +642,7 @@ section > p {
     color: #6f9f76;
     overflow-wrap: anywhere;
 }
-/* this creates the terminal status bar for the theme */
+/* this creates the terminal status bar for the theme at the bottom of the page */
 .terminal-status {
     display: flex;
     flex-wrap: wrap;
@@ -650,7 +652,7 @@ section > p {
     padding: 7px 10px;
     background: #020502;
     border: 1px solid #123d1b;
-    color: #416946;
+    color: #e1f3e3;
     font-size: 9px;
     overflow-wrap: anywhere;
 }
