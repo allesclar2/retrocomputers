@@ -115,7 +115,7 @@ Skip to main content
 
     <form id="gameSearchForm">
 
-        <label for="gameSearch">C:\GAMES\SEARCH&gt;</label>
+        <label for="gameSearch" class="terminal-prompt"> C:\GAMES\SEARCH&gt; </label>
 
         <input
             type="search"
@@ -1152,6 +1152,22 @@ document.addEventListener("keydown", function (event) {
 </script>
 
 
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<!-- Terminal cursor effect on console address on home page -->
+<script>
+$(document).ready(function() {
+    $(".terminal-prompt").each(function() {
+        $(this).append('<span class="cursor">▋</span>');
+    });
+
+    function blinkCursor() {
+        $(".cursor").fadeTo(500, 0.1).fadeTo(500, 1);
+    }
+
+    setInterval(blinkCursor, 1000);
+});
+</script>
 
 
 
