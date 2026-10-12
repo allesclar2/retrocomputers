@@ -26,6 +26,10 @@ html {
     --font: "Courier New", Courier, monospace;
 }
 
+/* =========================
+   GLOBAL STYLES
+   ========================= */
+
 body {
     margin: 0;
     padding: 0;
@@ -60,6 +64,30 @@ body::before {
     background-size: 100% 4px;
 }
 
+/* this hides the heading by default but allows access to screen readers. */
+header h1 {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* main holder for the logo of the website */
+header {
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: transparent;
+    box-shadow: none;
+}
+
 /* this is an accesibiilty skip link. */
 .skip-link {
     position: absolute;
@@ -77,29 +105,9 @@ body::before {
     top: 10px;
 }
 
-/* main holder for the logo of the website */
-header {
-    width: 0;
-    height: 0;
-    margin: 0;
-    padding: 0;
-    border: none;
-    background: transparent;
-    box-shadow: none;
-}
-
-/* this hides the heading by default but allows access to screen readers. */
-header h1 {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
-}
+/* =========================
+   HEADER AND NAVIGATION
+   ========================= */
 
 /* ensures the logo is in the top left corner */
 .logo {
@@ -194,6 +202,10 @@ nav a:focus-visible,
     outline: none;
 }
 
+/* =========================
+   MAIN LAYOUT AND SECTIONS
+   ========================= */
+
 /* Centres the main conent and limits maxmimum width */
 main {
     width: calc(100% - 16px);
@@ -225,6 +237,22 @@ section > h2 {
 section > p {
     color: #82ad88;
 }
+
+#systems,
+#about {
+    padding: 0;
+}
+
+#systems p,
+#about p {
+    margin: 8px 10px;
+    color: var(--text-muted);
+    overflow-wrap: anywhere;
+}
+
+/* =========================
+   HOME HERO AND BUTTONS
+   ========================= */
 
 /* this is the home panel and terminal appearance (hero).*/
 #home {
@@ -348,6 +376,10 @@ section > p {
 
 /* this adds hover and focus to the buttons */
 
+/* =========================
+   STATISTICS
+   ========================= */
+
 /* creates statitics panel and information style using CSS grid */
 .stats {
     display: grid;
@@ -391,6 +423,10 @@ section > p {
     letter-spacing: 0.5px;
     overflow-wrap: anywhere;
 }
+
+/* =========================
+   GAME SEARCH AND RESULTS
+   ========================= */
 
 /* creates and styles the game search and results */
 #search {
@@ -474,6 +510,10 @@ section > p {
     overflow-wrap: anywhere;
 }
 
+/* =========================
+   DECADE TIMELINE
+   ========================= */
+
 /* this section creates and styles the decade timeline section of the page */
 .decade-timeline {
     display: grid;
@@ -524,45 +564,69 @@ section > p {
     color: var(--green-dark);
 }
 
+/* =========================
+   HARDWARE CARDS
+   ========================= */
+
 /* this tyles the computer part cards */
-.parts {
+.parts,
+.cpu-list,
+.sound-list,
+.gpu-list,
+.motherboard-list,
+.os-list,
+.tower-list {
     display: grid;
     grid-template-columns: 1fr;
     gap: 7px;
 }
 
-.parts article {
+.parts article,
+.cpu-card,
+.sound-card,
+.gpu-card,
+.motherboard-card,
+.os-card,
+.tower-card {
     min-width: 0;
     padding: 12px;
     background: var(--bg-card);
     color: #9bc49f;
     border: 1px solid var(--border);
     text-align: left;
+}
+
+.parts article {
     transition: 0.15s ease;
 }
 
-.parts article:hover {
+.parts article:hover,
+.cpu-card:hover,
+.sound-card:hover,
+.gpu-card:hover,
+.motherboard-card:hover,
+.os-card:hover,
+.tower-card:hover {
     border-color: var(--green);
     box-shadow:
         0 0 12px rgba(0, 255, 65, 0.12),
         inset 0 0 15px rgba(0, 255, 65, 0.025);
-    transform: none;
 }
 
-.parts img {
+.parts img,
+.cpu-card img,
+.sound-card img,
+.gpu-card img,
+.motherboard-card img,
+.os-card img,
+.tower-card img {
+    display: block;
     width: 100%;
     height: 155px;
-    object-fit: contain;
-    display: block;
     margin: 0 0 10px;
+    object-fit: contain;
     background: var(--bg-dark);
     border: 1px solid var(--border-dark);
-}
-
-.card-label {
-    color: var(--green-light);
-    font-size: 9px;
-    letter-spacing: 1px;
 }
 
 .parts h3,
@@ -592,6 +656,12 @@ section > p {
     overflow-wrap: anywhere;
 }
 
+.card-label {
+    color: var(--green-light);
+    font-size: 9px;
+    letter-spacing: 1px;
+}
+
 /* this styles the citations for all the images used on the webpage */
 .site-link-citation {
     padding-top: 8px;
@@ -605,6 +675,78 @@ a[target="_blank"] {
     color: #5fa967;
     overflow-wrap: anywhere;
 }
+
+/* =========================
+   IMAGE BUTTONS AND PLACEHOLDERS
+   ========================= */
+
+.image-button {
+    display: block;
+    width: 100%;
+    height: 155px;
+    padding: 0;
+    margin: 0 0 10px;
+    background: var(--bg-dark);
+    border: 1px solid var(--border-dark);
+    cursor: pointer;
+    overflow: hidden;
+    touch-action: manipulation;
+}
+
+.image-button img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    object-fit: contain;
+}
+
+.image-button:hover,
+.image-button:focus-visible,
+.system-images .image-button:hover,
+.system-images .image-button:focus-visible {
+    border-color: var(--green);
+    box-shadow: var(--glow);
+    outline: none;
+}
+
+.sound-image-placeholder,
+.cpu-image-placeholder,
+.gpu-image-placeholder,
+.motherboard-image-placeholder,
+.os-image-placeholder,
+.tower-image-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 155px;
+    margin-bottom: 10px;
+    background: var(--bg-dark);
+    color: #416946;
+    border: 1px solid var(--border-dark);
+    text-align: center;
+    overflow-wrap: anywhere;
+}
+
+/* creates the system image gallaries */
+.system-images {
+    display: flex;
+    gap: 6px;
+}
+
+.system-images .image-button {
+    width: 50%;
+    height: 130px;
+    padding: 0;
+    margin: 0;
+    border: 1px solid var(--border-dark);
+    background: transparent;
+}
+
+/* =========================
+   HARDWARE CATEGORIES
+   ========================= */
 
 .categories {
     display: grid;
@@ -657,25 +799,107 @@ a[target="_blank"] {
     color: var(--green-dark);
 }
 
-/* Styles for systems and about text */
-#systems,
-#about {
-    padding: 0;
+/* =========================
+   SYSTEM COLLECTION
+   ========================= */
+
+/* this creates and styles the system collection panel */
+.system-collection {
+    display: none;
+    width: 100%;
+    max-width: 1100px;
+    margin: 20px auto 0;
+    padding: 12px;
+    background: #050805;
+    border: 1px solid var(--border);
+    box-shadow:
+        0 0 20px rgba(0, 255, 65, 0.12),
+        inset 0 0 30px rgba(0, 255, 65, 0.03);
 }
 
-#systems p,
-#about p {
-    margin: 8px 10px;
-    color: var(--text-muted);
+.system-collection.show {
+    display: block;
+}
+
+.system-collection h3 {
+    margin: 0 0 18px;
+    padding-bottom: 10px;
+    color: var(--green);
+    font-family: var(--font);
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--border);
     overflow-wrap: anywhere;
 }
+
+.system-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+}
+
+.system-card {
+    min-width: 0;
+    padding: 12px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    transition: 0.2s;
+}
+
+.system-card:hover {
+    transform: none;
+    border-color: var(--green);
+    box-shadow: 0 0 15px rgba(0, 255, 65, 0.25);
+}
+
+.system-card img {
+    display: block;
+    width: 100%;
+    height: 160px;
+    margin-bottom: 12px;
+    object-fit: contain;
+    background: #080808;
+    border: 1px solid #333;
+}
+
+.system-card h4 {
+    margin: 0 0 8px;
+    color: var(--green);
+    font-family: var(--font);
+    font-size: 1.1rem;
+    overflow-wrap: anywhere;
+}
+
+.system-card p {
+    margin: 8px 0;
+    color: #b7ffbf;
+    font-size: 0.9rem;
+    overflow-wrap: anywhere;
+}
+
+.system-card .system-year {
+    color: var(--green);
+    font-family: var(--font);
+}
+
+.system-placeholder {
+    padding: 25px 10px;
+    color: #5f8f65;
+    text-align: center;
+    font-family: var(--font);
+    overflow-wrap: anywhere;
+}
+
+/* =========================
+   TERMINAL STATUS
+   ========================= */
 
 /* this creates the terminal status bar for the theme at the bottom of the page */
 .terminal-status {
     display: flex;
     flex-wrap: wrap;
-    gap: 5px 12px;
     align-items: center;
+    gap: 5px 12px;
     margin: 10px 0;
     padding: 7px 10px;
     background: var(--bg-dark);
@@ -689,7 +913,11 @@ a[target="_blank"] {
     color: var(--green);
 }
 
-/* creates the 3d model viewer  */
+/* =========================
+   3D MODEL VIEWER
+   ========================= */
+
+/* creates the 3d model viewer */
 .model-viewer-container {
     display: none;
     position: relative;
@@ -734,6 +962,10 @@ a[target="_blank"] {
     background: var(--green);
     color: var(--green-dark);
 }
+
+/* =========================
+   GAME DETAILS
+   ========================= */
 
 /* game information layout style */
 .game-details {
@@ -816,6 +1048,10 @@ a[target="_blank"] {
     color: var(--green-dark);
 }
 
+/* =========================
+   IMAGE LIGHTBOX
+   ========================= */
+
 /* this is a big section on the light box, a theme used around the website which gives the user feedback when hovwering over an image or particular section of webpage. */
 .image-lightbox {
     display: none;
@@ -850,6 +1086,10 @@ a[target="_blank"] {
     font-size: 30px;
 }
 
+/* =========================
+   CONTACT FORM
+   ========================= */
+
 /* this is the styling for the contact form and feedback */
 #contact {
     display: none;
@@ -879,18 +1119,6 @@ a[target="_blank"] {
     box-shadow: 0 0 25px rgba(0, 255, 65, 0.18);
 }
 
-.contact-box input[type="text"] {
-    background: var(--bg-dark);
-}
-
-.contact-box [required] {
-    border-left: 2px solid var(--border);
-}
-
-.contact-box input[type="email"] {
-    border-left: 2px solid var(--green);
-}
-
 .contact-box h2 {
     margin: 0 35px 15px 0;
     padding-bottom: 7px;
@@ -918,6 +1146,18 @@ a[target="_blank"] {
     border: 1px solid var(--border);
     font-family: var(--font);
     font-size: 12px;
+}
+
+.contact-box input[type="text"] {
+    background: var(--bg-dark);
+}
+
+.contact-box [required] {
+    border-left: 2px solid var(--border);
+}
+
+.contact-box input[type="email"] {
+    border-left: 2px solid var(--green);
 }
 
 .contact-box textarea {
@@ -1007,239 +1247,9 @@ a[target="_blank"] {
     color: var(--green);
 }
 
-/* styles the footer of the website */
-footer {
-    width: calc(100% - 16px);
-    max-width: 1100px;
-    margin: 10px auto;
-    padding: 10px;
-    color: #416946;
-    border-top: 1px solid var(--border-dark);
-    text-align: center;
-    font-size: 9px;
-}
-
-footer p {
-    margin: 2px;
-    overflow-wrap: anywhere;
-}
-
-/* this creates and styles the system collection panel */
-.system-collection {
-    display: none;
-    width: 100%;
-    max-width: 1100px;
-    margin: 20px auto 0;
-    padding: 12px;
-    background: #050805;
-    border: 1px solid var(--border);
-    box-shadow:
-        0 0 20px rgba(0, 255, 65, 0.12),
-        inset 0 0 30px rgba(0, 255, 65, 0.03);
-}
-
-.system-collection.show {
-    display: block;
-}
-
-.system-collection h3 {
-    margin: 0 0 18px;
-    padding-bottom: 10px;
-    color: var(--green);
-    font-family: var(--font);
-    font-size: 1.25rem;
-    text-transform: uppercase;
-    border-bottom: 1px solid var(--border);
-    overflow-wrap: anywhere;
-}
-
-.system-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 12px;
-}
-
-.system-card {
-    min-width: 0;
-    padding: 12px;
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    transition: 0.2s;
-}
-
-.system-card:hover {
-    transform: none;
-    border-color: var(--green);
-    box-shadow: 0 0 15px rgba(0, 255, 65, 0.25);
-}
-
-.system-card img {
-    width: 100%;
-    height: 160px;
-    object-fit: contain;
-    display: block;
-    margin-bottom: 12px;
-    background: #080808;
-    border: 1px solid #333;
-}
-
-.system-card h4 {
-    margin: 0 0 8px;
-    color: var(--green);
-    font-family: var(--font);
-    font-size: 1.1rem;
-    overflow-wrap: anywhere;
-}
-
-.system-card p {
-    margin: 8px 0;
-    color: #b7ffbf;
-    font-size: 0.9rem;
-    overflow-wrap: anywhere;
-}
-
-.system-card .system-year {
-    color: var(--green);
-    font-family: var(--font);
-}
-
-.system-placeholder {
-    color: #5f8f65;
-    text-align: center;
-    font-family: var(--font);
-    padding: 25px 10px;
-    overflow-wrap: anywhere;
-}
-
-/* this styles the appropriate hardware cards and images and implements image placeholders */
-.cpu-list,
-.sound-list,
-.gpu-list,
-.motherboard-list,
-.os-list,
-.tower-list {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 7px;
-}
-
-.cpu-card,
-.sound-card,
-.gpu-card,
-.motherboard-card,
-.os-card,
-.tower-card {
-    min-width: 0;
-    padding: 12px;
-    background: var(--bg-card);
-    color: #9bc49f;
-    border: 1px solid var(--border);
-    text-align: left;
-}
-
-.cpu-card:hover,
-.sound-card:hover,
-.gpu-card:hover,
-.motherboard-card:hover,
-.os-card:hover,
-.tower-card:hover {
-    border-color: var(--green);
-    box-shadow:
-        0 0 12px rgba(0, 255, 65, 0.12),
-        inset 0 0 15px rgba(0, 255, 65, 0.025);
-}
-
-.cpu-card img,
-.sound-card img,
-.gpu-card img,
-.motherboard-card img,
-.os-card img,
-.tower-card img {
-    width: 100%;
-    height: 155px;
-    object-fit: contain;
-    display: block;
-    margin: 0 0 10px;
-    background: var(--bg-dark);
-    border: 1px solid var(--border-dark);
-}
-
-.image-button {
-    display: block;
-    width: 100%;
-    height: 155px;
-    padding: 0;
-    margin: 0 0 10px;
-    background: var(--bg-dark);
-    border: 1px solid var(--border-dark);
-    cursor: pointer;
-    overflow: hidden;
-    touch-action: manipulation;
-}
-
-.image-button img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    display: block;
-    margin: 0;
-}
-
-.image-button:hover,
-.image-button:focus-visible {
-    border-color: var(--green);
-    box-shadow: var(--glow);
-    outline: none;
-}
-
-.sound-image-placeholder,
-.cpu-image-placeholder,
-.gpu-image-placeholder,
-.motherboard-image-placeholder,
-.os-image-placeholder,
-.tower-image-placeholder {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 155px;
-    margin-bottom: 10px;
-    background: var(--bg-dark);
-    color: #416946;
-    border: 1px solid var(--border-dark);
-    text-align: center;
-    overflow-wrap: anywhere;
-}
-
-/* creates the system image gallaries */
-.system-images {
-    display: flex;
-    gap: 6px;
-}
-
-.system-images .image-button {
-    width: 50%;
-    height: 130px;
-    padding: 0;
-    margin: 0;
-    border: 1px solid var(--border-dark);
-    background: transparent;
-}
-
-.system-images .image-button img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    display: block;
-    margin: 0;
-}
-
-.system-images .image-button:hover,
-.system-images .image-button:focus-visible {
-    border-color: var(--green);
-    box-shadow: var(--glow);
-    outline: none;
-}
+/* =========================
+   MESSAGE POPUP
+   ========================= */
 
 /* this styles and crreates the message popup */
 .message-popup {
@@ -1324,7 +1334,32 @@ footer p {
     cursor: pointer;
 }
 
+/* =========================
+   FOOTER
+   ========================= */
+
+/* styles the footer of the website */
+footer {
+    width: calc(100% - 16px);
+    max-width: 1100px;
+    margin: 10px auto;
+    padding: 10px;
+    color: #416946;
+    border-top: 1px solid var(--border-dark);
+    text-align: center;
+    font-size: 9px;
+}
+
+footer p {
+    margin: 2px;
+    overflow-wrap: anywhere;
+}
+
 /* this styles external links */
+
+/* =========================
+   RESPONSIVE LAYOUT
+   ========================= */
 
 /* this adds responsive styling for smaller screens iphone 6 for example */
 @media (min-width: 480px) {
@@ -1444,7 +1479,15 @@ footer p {
         font-size: 2rem;
     }
 
-    .parts {
+    .parts,
+    .categories,
+    .system-grid,
+    .cpu-list,
+    .sound-list,
+    .gpu-list,
+    .motherboard-list,
+    .os-list,
+    .tower-list {
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
@@ -1467,16 +1510,6 @@ footer p {
 
     .system-collection {
         padding: 25px;
-    }
-
-    .system-grid,
-    .cpu-list,
-    .sound-list,
-    .gpu-list,
-    .motherboard-list,
-    .os-list,
-    .tower-list {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
     .system-card {
