@@ -32,6 +32,23 @@ function showMessagePopup(mailto) {
         window.location.href = mailto;
     };
 }
+// rather than a contact form for each page, when clicked, it loads the main page and contact form automatically. With error handling should the modeal element be empty
+// https://stackoverflow.com/questions/28079380/show-bootstrap-modal-only-if-url-has-certain-parameters
+
+function openContactModal() {
+    if (!contactModal) {
+        return;
+    }
+
+    contactModal.classList.add("show");
+    contactModal.setAttribute("aria-hidden", "false");
+}
+
+if (window.location.hash === "#contact") {
+    openContactModal();
+}
+
+
 
 // hides popup message
 function hideMessagePopup() {
@@ -54,12 +71,12 @@ function closeContactModal() {
     contactModal.setAttribute("aria-hidden", "true");
 }
 
-contactLink.addEventListener("click", function (event) {
-    event.preventDefault();
-
-    contactModal.classList.add("show");
-    contactModal.setAttribute("aria-hidden", "false");
-});
+if (contactLink) {
+    contactLink.addEventListener("click", function (event) {
+        event.preventDefault();
+        openContactModal();
+    });
+}
 
 closeContact.addEventListener("click", closeContactModal);
 
