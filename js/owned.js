@@ -1,3 +1,14 @@
+// <!-- ######### - Created by Adam Clark, final version 12-10-2026.
+// ######### - No form of AI has been used, Category AITS descriptor is 1(No AI)
+// ######### - Retro Computing is a hobby of mine, when this assignment was announced, I was able to use a vast amount of imagiary and information already available to hand.
+// ######### - All sources for reference accounted for. Previously used and known knowledge used for vast majority of logic.
+// ######### - Where further reading has been needed, i have included the reference link to the guide at the start of the appropriate area of code. -->
+// ######### - w3schools.com was used as a guidance for HTML, CSS and JS. -->
+
+
+// containts the constant data used to build the computer hardware owned for the website, with associated links and image locations.
+// future aspiration to allow visitors to add to this file to create an expandable hardware catalogue
+
 const owned = [
     {
         id: "system-01",

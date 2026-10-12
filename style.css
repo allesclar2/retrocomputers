@@ -1,3 +1,14 @@
+/* <!-- ######### - Created by Adam Clark, final version 12-10-2026.
+// ######### - No form of AI has been used, Category AITS descriptor is 1(No AI)
+// ######### - Retro Computing is a hobby of mine, when this assignment was announced, I was able to use a vast amount of imagiary and information already available to hand.
+// ######### - All sources for reference accounted for. Previously used and known knowledge used for vast majority of logic.
+// ######### - Where further reading has been needed, i have included the reference link to the guide at the start of the appropriate area of code. --> */
+/* ######### - w3schools.com was used as a guidance for HTML, CSS and JS. */
+
+/* Retro Computer Collection - main website styling.
+   Uses a green terminal theme with responsive layouts.
+   W3Schools was used as a reference for CSS properties and techniques. */
+   
 html {
     scrollbar-gutter: stable;
     scroll-behavior: smooth;
@@ -26,9 +37,7 @@ html {
     --font: "Courier New", Courier, monospace;
 }
 
-/* =========================
-   GLOBAL STYLES
-   ========================= */
+/* ########### Global styles for all the HTML pages ###########*/
 
 body {
     margin: 0;
@@ -50,7 +59,7 @@ body {
     overflow-x: hidden;
 }
 
-/* abit of CRT thrown in here */
+/* a bit of CRT thrown in here */
 body::before {
     content: "";
     position: fixed;
@@ -105,9 +114,8 @@ header {
     top: 10px;
 }
 
-/* =========================
-   HEADER AND NAVIGATION
-   ========================= */
+
+/* ########### CSS Settings for Header and Navigation ###########*/
 
 /* ensures the logo is in the top left corner */
 .logo {
@@ -202,9 +210,7 @@ nav a:focus-visible,
     outline: none;
 }
 
-/* =========================
-   MAIN LAYOUT AND SECTIONS
-   ========================= */
+/* ########### Main page layout and sections for the pages ########### */
 
 /* Centres the main conent and limits maxmimum width */
 main {
@@ -250,9 +256,7 @@ section > p {
     overflow-wrap: anywhere;
 }
 
-/* =========================
-   HOME HERO AND BUTTONS
-   ========================= */
+/* ########### Main page top section (hero) and buttons ########### */
 
 /* this is the home panel and terminal appearance (hero).*/
 #home {
@@ -309,7 +313,7 @@ section > p {
     z-index: 0;
 }
 
-/* this is a dark overlay used to improve text readibiliy over the background imiage, intiially used as a fadeout image for effect. */
+/* this is a dark overlay used to improve text readibiliy over the background imiage, transparancy increased on the image for effect. */
 .terminal-hero::after {
     content: "";
     position: absolute;
@@ -376,9 +380,7 @@ section > p {
 
 /* this adds hover and focus to the buttons */
 
-/* =========================
-   STATISTICS
-   ========================= */
+/* ########### CSS for Statstics on the web page ########### */
 
 /* creates statitics panel and information style using CSS grid */
 .stats {
@@ -424,11 +426,8 @@ section > p {
     overflow-wrap: anywhere;
 }
 
-/* =========================
-   GAME SEARCH AND RESULTS
-   ========================= */
+/* ########### CSS Styles for game search and results ########### */
 
-/* creates and styles the game search and results */
 #search {
     margin: 12px 0;
     padding: 0;
@@ -510,11 +509,7 @@ section > p {
     overflow-wrap: anywhere;
 }
 
-/* =========================
-   DECADE TIMELINE
-   ========================= */
-
-/* this section creates and styles the decade timeline section of the page */
+/* ########### this section creates and styles the decade timeline section of the page ###########*/
 .decade-timeline {
     display: grid;
     grid-template-columns: 1fr;
@@ -564,11 +559,8 @@ section > p {
     color: var(--green-dark);
 }
 
-/* =========================
-   HARDWARE CARDS
-   ========================= */
 
-/* this tyles the computer part cards */
+/* ########### this styles the computer hardware part cards across computer part catergories ###########*/
 .parts,
 .cpu-list,
 .sound-list,
@@ -676,9 +668,7 @@ a[target="_blank"] {
     overflow-wrap: anywhere;
 }
 
-/* =========================
-   IMAGE BUTTONS AND PLACEHOLDERS
-   ========================= */
+/* ########### Image buttons and placeholders for webpages ########### */
 
 .image-button {
     display: block;
@@ -744,9 +734,7 @@ a[target="_blank"] {
     background: transparent;
 }
 
-/* =========================
-   HARDWARE CATEGORIES
-   ========================= */
+/* ########### Hardware catgegories ########### */
 
 .categories {
     display: grid;
@@ -799,11 +787,8 @@ a[target="_blank"] {
     color: var(--green-dark);
 }
 
-/* =========================
-   SYSTEM COLLECTION
-   ========================= */
 
-/* this creates and styles the system collection panel */
+/* ########### this creates and styles the system collection panel ###########*/
 .system-collection {
     display: none;
     width: 100%;
@@ -890,11 +875,7 @@ a[target="_blank"] {
     overflow-wrap: anywhere;
 }
 
-/* =========================
-   TERMINAL STATUS
-   ========================= */
-
-/* this creates the terminal status bar for the theme at the bottom of the page */
+/* ########### this creates the terminal status bar for the theme at the bottom of the page ########### */
 .terminal-status {
     display: flex;
     flex-wrap: wrap;
@@ -913,11 +894,7 @@ a[target="_blank"] {
     color: var(--green);
 }
 
-/* =========================
-   3D MODEL VIEWER
-   ========================= */
-
-/* creates the 3d model viewer */
+/* ########### creates the 3d model viewer ########### */
 .model-viewer-container {
     display: none;
     position: relative;
@@ -963,11 +940,7 @@ a[target="_blank"] {
     color: var(--green-dark);
 }
 
-/* =========================
-   GAME DETAILS
-   ========================= */
-
-/* game information layout style */
+/* ########### game information layout style ########### */
 .game-details {
     margin-top: 8px;
     padding: 12px;
@@ -1048,11 +1021,9 @@ a[target="_blank"] {
     color: var(--green-dark);
 }
 
-/* =========================
-   IMAGE LIGHTBOX
-   ========================= */
+/* ########### Light Box CSS ########### */
 
-/* this is a big section on the light box, a theme used around the website which gives the user feedback when hovwering over an image or particular section of webpage. */
+/* a theme is used around the website which gives the user feedback when hovwering over an image or particular section of webpage. */
 .image-lightbox {
     display: none;
     position: fixed;
@@ -1086,11 +1057,8 @@ a[target="_blank"] {
     font-size: 30px;
 }
 
-/* =========================
-   CONTACT FORM
-   ========================= */
 
-/* this is the styling for the contact form and feedback */
+/* ########### this is the styling for the contact form and feedback ########### */
 #contact {
     display: none;
     position: fixed;
@@ -1247,11 +1215,8 @@ a[target="_blank"] {
     color: var(--green);
 }
 
-/* =========================
-   MESSAGE POPUP
-   ========================= */
 
-/* this styles and crreates the message popup */
+/* ########### this styles and crreates the message popup ###########*/
 .message-popup {
     display: none;
     position: fixed;
@@ -1334,11 +1299,7 @@ a[target="_blank"] {
     cursor: pointer;
 }
 
-/* =========================
-   FOOTER
-   ========================= */
-
-/* styles the footer of the website */
+/* ########### styles the footer of the website ########### */
 footer {
     width: calc(100% - 16px);
     max-width: 1100px;
@@ -1355,11 +1316,7 @@ footer p {
     overflow-wrap: anywhere;
 }
 
-/* this styles external links */
-
-/* =========================
-   RESPONSIVE LAYOUT
-   ========================= */
+/* ########### CSS for responsive styling ########### */
 
 /* this adds responsive styling for smaller screens iphone 6 for example */
 @media (min-width: 480px) {
@@ -1385,7 +1342,7 @@ footer p {
     }
 }
 
-/* adds desktop responsive styling, normal computers and high resoltion systems */
+/* adds desktop responsive styling, normal computers and high resolution systems */
 @media (min-width: 701px) {
     body {
         font-size: 14px;
@@ -1540,6 +1497,7 @@ footer p {
     }
 }
 
+/* This creates the blinker curser for the jQuery on the main page */
 .cursor {
     color: #33ff33;
     margin-left: 5px;

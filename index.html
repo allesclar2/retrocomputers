@@ -1,467 +1,377 @@
-<!-- ######### - Created by Adam Clark, final version 14-09-2026.
+<!-- ######### - Created by Adam Clark, final version 12-10-2026.
 ######### - No form of AI has been used, Category AITS descriptor is 1(No AI)
+######### - Retro Computing is a hobby of mine, when this assignment was announced, I was able to use a vast amount of imagiary and information already available to hand.
 ######### - All sources for reference accounted for. Previously used and known knowledge used for vast majority of logic.
-######### - Where further reading has been needed, i have included the reference link to the guide at the start of the appropriate area of code. -->
- 
+######### - Where further reading has been needed, i have included the reference link to the guide at the start of the appropriate area of code.
+######### - w3schools.com was used as a guidance for HTML, CSS and JS. For the API catalogue, https://api.rawg.io/docs/ was a point of reference -->
+
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Icon custom created to load with webpage -->
     <link rel="icon" href="favicon.png" type="image/x-icon">
     <title>Retro Computer Collection</title>
-<!-- Due to number of independent styles required for each asset, a css file has been created -->
+    <!-- Due to number of independent styles required for each asset, a css file has been created -->
     <link rel="stylesheet" href="style.css">
-<!-- A 3rd party 3d model viewer. Guide for futher reading and coding help, https://modelviewer.dev/ -->
-    <script type="module"
-        src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js">
+    <!-- A 3rd party 3d model viewer. Guide for futher reading and coding reference, https://modelviewer.dev/ -->
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js">
     </script>
 </head>
 
 <body>
-<!-- allows users to whom use keyboard and screen readers to bypass directly to main page -->
-    <a class="skip-link" href="#main-content">
-Skip to main content
-    </a>
+    <!-- allows users to whom use keyboard and screen readers to bypass directly to main page -->
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <header>
+        <!-- custom image created for Retro Computer Collection, top left of webpage  -->
+        <img src="images/logo.png" alt="Retro Computer Collection" class="logo">
+        <h1>Retro Computer Collection</h1>
+        <nav aria-label="Main navigation">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#featured">Featured</a></li>
+                <li><a href="#parts">Computer Parts</a></li>
+                <li><a href="#search">Search Retro Games</a></li>
+                <li><a href="#systems">Systems</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#" id="contactLink">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<header>
-
-    <img src="images/logo.png" alt="Retro Computer Collection" class="logo">
-
-    <h1>Retro Computer Collection</h1>
- 
-    <nav aria-label="Main navigation">
-        <ul>
-       <li><a href="#home">Home</a></li>
-       <li><a href="#featured">Featured</a></li>
-        <li><a href="#parts">Computer Parts</a></li>
-        <li><a href="#search">Search Retro Games</a></li>
-        <li><a href="#systems">Systems</a></li>
-       <li><a href="#about">About</a></li>
- <li><a href="#" id="contactLink">Contact</a></li>
-        </ul>
-    </nav>  
-   
-
-
-</header>
-
-
-<main id="main-content">
-
-    <section id="home" class="terminal-hero">
-
-    <img
-        src="images/computer-background.jpg"
-        alt=""
-        class="hero-background">
-
-    <div class="terminal-content">
-
-        <div class="terminal-prompt">
-            C:\RETRO_COLLECTION&gt;
-        </div>
-
-        <h2>RETRO COMPUTER<br>COLLECTION</h2>
-
-        <p>
-            An interactive website which shows my personal collection
-            of classic computer hardware from the 1990s, 2000s to early 2010.
-        </p>
-
-        <p>
-            Featuring a search API for reliving all those classic
-            computer games of the era.
-        </p>
-
-    </div>
-
-</section>
-
-
-
-    <section class="stats" aria-label="Collection statistics">
-
-        <div class="stat">
-            <strong>8 </strong>
-            <span>COMPUTERS</span>
-        </div>
-
-        <div class="stat">
-            <strong>100+</strong>
-            <span>COMPUTER PARTS</span>
-        </div>
-
-        <div class="stat">
-            <strong>200+</strong>
-            <span>GAMES</span>
-        </div>
-
-        <div class="stat">
-            <strong>1992–2014</strong>
-            <span>COLLECTION ERA</span>
-        </div>
-
-    </section>
-
-<!-- This section allows the user to search and pull data from the API data base for games (RAWG). The search results a then pulled from the system using javascript. -->
-<section id="search">
-
-    <h2>&gt; SEARCH THE GAME ARCHIVE</h2>
-
-    <p>
-        Search the RAWG database for classic and modern games.
-    </p>
-
-    <form id="gameSearchForm">
-
-        <label for="gameSearch" class="terminal-prompt"> C:\GAMES\SEARCH&gt; </label>
-
-        <input
-            type="search"
-            id="gameSearch"
-            name="game"
-            placeholder="Enter a game title...Doom, Quake, Sim City etc"
-            autocomplete="off"
-        >
-
-        <button type="submit" class="site-link">
-            Search
-        </button>
-
-    </form>
-
-    <div id="searchResults">
-        <p>Enter a game title to search.</p>
-    </div>
-
-</section>
-
-
-<section id="systems">
-
-    <h2>&gt; EXPLORE SYSTEMS</h2>
-
-    <p>Browse the collection by computer era.</p>
-
-    <div class="decade-timeline">
-
-        <!-- buttons have been created to allow the user to show a specific time period of computer system, using Javascript the relevent informaitno is pulled from the website. -->
-    <button type="button" class="decade" data-decade="1990s">
-        <strong>1990</strong>
-        <span>THE BEGINNING</span>
-    </button>
-
-    <button type="button" class="decade" data-decade="2000s">
-        <strong>2000</strong>
-        <span>THE GOLDEN AGE</span>
-    </button>
-
-    <button type="button" class="decade" data-decade="2010s">
-        <strong>2010</strong>
-        <span>THE NEXT GENERATION</span>
-    </button>
-
-</div>
-
-<!-- this uses a container which uses a placeholder to show the user a default layout for decade, when the user selects a specifc decade, javascript is used to load the selected period computer systems. -->
-
-    <div id="systemCollection" class="system-collection" aria-live="polite">
-
-        <p class="system-placeholder">
-            Select a decade to view the systems in the collection.
-        </p>
-
-    </div>
-
-</section>
-
-
-<!-- this is the featured part of the website, this loads three historical items i owned, and loads a 3d model into the browser for the user to interactive with. 3d models are not my own but cited.
- Further reading on implementing the 3d viewer and javascript coding was obtained from  https://modelviewer.dev/ -->
-
-    <section id="featured">
-
-        <h2>&gt; FEATURED HARDWARE</h2>
-
-        <div class="parts">
-
-            <article>
-
-                <img
-                    src="featured/voodoo.jpg"
-                    alt="3dfx Voodoo 2 graphics card">
-
-                <div class="card-label">
-                    GRAPHICS
-                </div>
-
-                <h3>3dfx Voodoo 2 12MB</h3>
-
+    <main id="main-content">
+        <!-- Creates the terminal "hero" at the top of the page home page area - https://www.w3schools.com/howto/howto_css_hero_image.asp-->
+         
+        <section id="home" class="terminal-hero">
+            <img src="images/computer-background.jpg" alt="" class="hero-background">
+            <div class="terminal-content">
+                <div class="terminal-prompt"> C:\RETRO_COLLECTION&gt; </div>
+                <h2>RETRO COMPUTER<br>COLLECTION</h2>
                 <p>
-                    A legendary 1990s 3D graphics card.
+                    An interactive website which shows my personal collection
+                    of classic computer hardware from the 1990s, 2000s to early 2010.
                 </p>
-
-                <button
-                    type="button"
-                    class="model-link site-link"
-                    data-model="featured/voodoo.glb">
-                    [ VIEW 3D MODEL ]
-                </button>
-
-                <p class="site-link-citation">
-                    3D model:
-                    <a
-                        href="https://sketchfab.com/3d-models/videocard-3dfx-voodoo-2-6d3f9151b11b46f184dcae4c0ed22479"
-                        target="_blank"
-                        rel="noopener">
-                        VideoCard 3Dfx VooDoo 2
-                    </a>
-                    by Хлюпич, licensed under
-                    <a
-                        href="https://creativecommons.org/licenses/by/4.0/"
-                        target="_blank"
-                        rel="noopener">
-                        CC BY
-                    </a>.
-                </p>
-
-            </article>
-
-
-            <article>
-
-                <img
-                    src="featured/motherboard.jpg"
-                    alt="Socket AM3 M3A770DE motherboard">
-
-                <div class="card-label">
-                    MOTHERBOARD
-                </div>
-
-                <h3>Socket AM3 M3A770DE</h3>
-
                 <p>
-                    A classic motherboard from the 2000s.
+                    Featuring a search API for reliving all those classic
+                    computer games of the era.
                 </p>
+            </div>
+        </section>
 
-                <button
-                    type="button"
-                    class="model-link site-link"
-                    data-model="featured/motherboard.glb">
-                    [ VIEW 3D MODEL ]
-                </button>
+        <section class="stats" aria-label="Collection statistics">
+            <div class="stat">
+                <strong>8 </strong>
+                <span>COMPUTERS</span>
+            </div>
+            <div class="stat">
+                <strong>100+</strong>
+                <span>COMPUTER PARTS</span>
+            </div>
+            <div class="stat">
+                <strong>200+</strong>
+                <span>GAMES</span>
+            </div>
+            <div class="stat">
+                <strong>1992–2014</strong>
+                <span>COLLECTION ERA</span>
+            </div>
+        </section>
 
-                <p class="site-link-citation">
-                    3D model:
-                    <a
-                        href="https://sketchfab.com/3d-models/motherboard-cd605439b788488d83d1c97d4547c9fc"
-                        target="_blank"
-                        rel="noopener">
-                        Motherboard
-                    </a>
-                    by Nadya Sarieva, licensed under
-                    <a
-                        href="https://creativecommons.org/licenses/by/4.0/"
-                        target="_blank"
-                        rel="noopener">
-                        CC BY
-                    </a>.
-                </p>
+        <!-- This section allows the user to search and pull data from the API data base for games (RAWG). The search results a then pulled from the system using javascript. -->
+        <section id="search">
 
-            </article>
-
-
-            <article>
-
-                <img
-                    src="featured/amdathlon3000.jpg"
-                    alt="AMD Athlon XP 3000+ processor">
-
-                <div class="card-label">
-                    PROCESSOR
-                </div>
-
-                <h3>AMD Athlon XP 3000+</h3>
-
-                <p>
-                    A popular processor from the early 2000s.
-                </p>
-
-                <button
-                    type="button"
-                    class="model-link site-link"
-                    data-model="featured/amdathlonxp.glb">
-                    [ VIEW 3D MODEL ]
-                </button>
-
-                <p class="site-link-citation">
-                    3D model:
-                    <a
-                        href="https://sketchfab.com/3d-models/amd-athlon-xp-3000-socket462-8713dd83f1434eb2a84fe0ce3e3744a7"
-                        target="_blank"
-                        rel="noopener">
-                        AMD Athlon XP 3000+ Socket462
-                    </a>
-                    by Хлюпич, licensed under
-                    <a
-                        href="https://creativecommons.org/licenses/by/4.0/"
-                        target="_blank"
-                        rel="noopener">
-                        CC BY
-                    </a>.
-                </p>
-
-            </article>
-
-        </div>
-
-
-        <div
-            id="modelViewer"
-            class="model-viewer-container">
-
-            <button
-                id="closeModel"
-                class="model-close">
-                [ CLOSE 3D MODEL ]
-            </button>
-
-            <model-viewer
-                id="model3D"
-                alt="3D computer component"
-                camera-controls
-                auto-rotate
-                shadow-intensity="1"
-                exposure="1"
-                loading="eager"
-                reveal="auto"
-                style="width: 100%; height: 100%; background: #101510;">
-            </model-viewer>
-
-        </div>
-
-    </section>
-
-<!-- placeholder at the bottom of the website to allow the user to navigate to pages to specific types of hardware -->
-    <section id="parts">
-
-        <h2>&gt; COMPUTER HARDWARE</h2>
-
-        <ul class="categories">
-
-            <li>
-            <a href="cpu.html" class="category">
-                <h3>CPU</h3>
-            </a>
-            </li>
-            <li>
-            <a href="gpu.html" class="category">
-                <h3>GRAPHICS</h3>
-            </a>
-            </li>
-            <li>
-            <a href="sound.html" class="category">
-                <h3>SOUND</h3>
-            </a>
-            </li>
-            <li>
-            <a href="motherboard.html" class="category">
-                <h3>MOTHERBOARDS</h3>
-            </a>
-            </li>
-            <li>
-            <a href="os.html" class="category">
-                <h3>OPERATING SYSTEMS</h3>
-            </a>
-            </li>
-            <li>
-            <a href="tower.html" class="category">
-                <h3>CASES</h3>
-            </a>
-            </li>
-        </ul>
-
-    </section>
-
-    <section id="about">
-
-        <h2>&gt; ABOUT THE COLLECTION</h2>
-
-        <p>
-            A small archive dedicated to classic computer hardware,
-            software and technology.
-        </p>
-
-    </section>
-
-<!-- styling at the bottom of the webpage to mimic a terminal connection status -->
-    <section class="terminal-status">
-
-        <span>STATUS:</span>
-        <strong>ONLINE</strong>
-
-        <span>DATABASE:</span>
-        <strong>CONNECTED</strong>
-
-        <span>SYSTEM:</span>
-        <strong>RETRO_COLLECTION</strong>
-
-    </section>
-
-<!-- contact form used to collect information from the user and allow them to send a message via a default mailing application. It uses a seperate js file in contact.js -->
-    <div id="contact" aria-hidden="true">
-
-        <div class="contact-box">
-
-            <button
-                type="button"
-                id="closeContact"
-                class="contact-close"
-                aria-label="Close contact form">
-                &times;
-            </button>
-
-            <h2 id="contactTitle">CONTACT</h2>
+            <h2>&gt; SEARCH THE GAME ARCHIVE</h2>
 
             <p>
-                Send a message about the Retro Computer Collection.
+                Search the RAWG database for classic and modern games.
             </p>
 
-            <p
-                id="formFeedback"
-                class="form-feedback"
-                aria-live="polite">
+            <form id="gameSearchForm">
+
+                <label for="gameSearch" class="terminal-prompt"> C:\GAMES\SEARCH&gt; </label>
+
+                <input type="search" id="gameSearch" name="game"
+                    placeholder="Enter a game title...Doom, Quake, Sim City etc" autocomplete="off">
+
+                <button type="submit" class="site-link">
+                    Search
+                </button>
+
+            </form>
+
+            <div id="searchResults">
+                <p>Enter a game title to search.</p>
+            </div>
+
+        </section>
+
+
+        <section id="systems">
+
+            <h2>&gt; EXPLORE SYSTEMS</h2>
+
+            <p>Browse the collection by computer era.</p>
+
+            <div class="decade-timeline">
+
+                <!-- buttons have been created to allow the user to show a specific time period of computer system, using Javascript the relevent informaitno is pulled from the website. -->
+                <button type="button" class="decade" data-decade="1990s">
+                    <strong>1990</strong>
+                    <span>THE BEGINNING</span>
+                </button>
+
+                <button type="button" class="decade" data-decade="2000s">
+                    <strong>2000</strong>
+                    <span>THE GOLDEN AGE</span>
+                </button>
+
+                <button type="button" class="decade" data-decade="2010s">
+                    <strong>2010</strong>
+                    <span>THE NEXT GENERATION</span>
+                </button>
+
+            </div>
+
+            <!-- this uses a container which uses a placeholder to show the user a default layout for decade, when the user selects a specifc decade, javascript is used to load the selected period computer systems. -->
+
+            <div id="systemCollection" class="system-collection" aria-live="polite">
+
+                <p class="system-placeholder">
+                    Select a decade to view the systems in the collection.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- this is the featured part of the website, this loads three historical items i owned, and loads a 3d model into the browser for the user to interactive with. 3d models are not my own but cited.
+ Further reading on implementing the 3d viewer and javascript coding was obtained from  https://modelviewer.dev/ -->
+
+        <section id="featured">
+
+            <h2>&gt; FEATURED HARDWARE</h2>
+
+            <div class="parts">
+
+                <article>
+
+                    <img src="featured/voodoo.jpg" alt="3dfx Voodoo 2 graphics card">
+
+                    <div class="card-label">
+                        GRAPHICS
+                    </div>
+
+                    <h3>3dfx Voodoo 2 12MB</h3>
+
+                    <p>
+                        A legendary 1990s 3D graphics card.
+                    </p>
+
+                    <button type="button" class="model-link site-link" data-model="featured/voodoo.glb">
+                        [ VIEW 3D MODEL ]
+                    </button>
+
+                    <p class="site-link-citation">
+                        3D model:
+                        <a href="https://sketchfab.com/3d-models/videocard-3dfx-voodoo-2-6d3f9151b11b46f184dcae4c0ed22479"
+                            target="_blank" rel="noopener">
+                            VideoCard 3Dfx VooDoo 2
+                        </a>
+                        by Хлюпич, licensed under
+                        <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">
+                            CC BY
+                        </a>.
+                    </p>
+
+                </article>
+
+
+                <article>
+
+                    <img src="featured/motherboard.jpg" alt="Socket AM3 M3A770DE motherboard">
+
+                    <div class="card-label">
+                        MOTHERBOARD
+                    </div>
+
+                    <h3>Socket AM3 M3A770DE</h3>
+
+                    <p>
+                        A classic motherboard from the 2000s.
+                    </p>
+
+                    <button type="button" class="model-link site-link" data-model="featured/motherboard.glb">
+                        [ VIEW 3D MODEL ]
+                    </button>
+
+                    <p class="site-link-citation">
+                        3D model:
+                        <a href="https://sketchfab.com/3d-models/motherboard-cd605439b788488d83d1c97d4547c9fc"
+                            target="_blank" rel="noopener">
+                            Motherboard
+                        </a>
+                        by Nadya Sarieva, licensed under
+                        <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">
+                            CC BY
+                        </a>.
+                    </p>
+
+                </article>
+
+
+                <article>
+
+                    <img src="featured/amdathlon3000.jpg" alt="AMD Athlon XP 3000+ processor">
+
+                    <div class="card-label">
+                        PROCESSOR
+                    </div>
+
+                    <h3>AMD Athlon XP 3000+</h3>
+
+                    <p>
+                        A popular processor from the early 2000s.
+                    </p>
+
+                    <button type="button" class="model-link site-link" data-model="featured/amdathlonxp.glb">
+                        [ VIEW 3D MODEL ]
+                    </button>
+
+                    <p class="site-link-citation">
+                        3D model:
+                        <a href="https://sketchfab.com/3d-models/amd-athlon-xp-3000-socket462-8713dd83f1434eb2a84fe0ce3e3744a7"
+                            target="_blank" rel="noopener">
+                            AMD Athlon XP 3000+ Socket462
+                        </a>
+                        by Хлюпич, licensed under
+                        <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">
+                            CC BY
+                        </a>.
+                    </p>
+
+                </article>
+
+            </div>
+
+
+            <div id="modelViewer" class="model-viewer-container">
+
+                <button id="closeModel" class="model-close">
+                    [ CLOSE 3D MODEL ]
+                </button>
+
+                <model-viewer id="model3D" alt="3D computer component" camera-controls auto-rotate shadow-intensity="1"
+                    exposure="1" loading="eager" reveal="auto" style="width: 100%; height: 100%; background: #101510;">
+                </model-viewer>
+
+            </div>
+
+        </section>
+
+        <!-- placeholder at the bottom of the website to allow the user to navigate to pages to specific types of hardware -->
+        <section id="parts">
+
+            <h2>&gt; COMPUTER HARDWARE</h2>
+
+            <ul class="categories">
+
+                <li>
+                    <a href="cpu.html" class="category">
+                        <h3>CPU</h3>
+                    </a>
+                </li>
+                <li>
+                    <a href="gpu.html" class="category">
+                        <h3>GRAPHICS</h3>
+                    </a>
+                </li>
+                <li>
+                    <a href="sound.html" class="category">
+                        <h3>SOUND</h3>
+                    </a>
+                </li>
+                <li>
+                    <a href="motherboard.html" class="category">
+                        <h3>MOTHERBOARDS</h3>
+                    </a>
+                </li>
+                <li>
+                    <a href="os.html" class="category">
+                        <h3>OPERATING SYSTEMS</h3>
+                    </a>
+                </li>
+                <li>
+                    <a href="tower.html" class="category">
+                        <h3>CASES</h3>
+                    </a>
+                </li>
+            </ul>
+
+        </section>
+
+        <section id="about">
+
+            <h2>&gt; ABOUT THE COLLECTION</h2>
+
+            <p>
+                A small archive dedicated to classic computer hardware,
+                software and technology.
             </p>
 
-            <form id="contactForm">
+        </section>
 
-                <label for="contactName">NAME</label>
+        <!-- styling at the bottom of the webpage to mimic a terminal connection status -->
+        <section class="terminal-status">
 
-                <input
-                    type="text"
-                    id="contactName"
-                    name="name"
-                    required>
+            <span>STATUS:</span>
+            <strong>ONLINE</strong>
 
-                <label for="contactEmail">EMAIL</label>
+            <span>DATABASE:</span>
+            <strong>CONNECTED</strong>
 
-                <input
-                    type="email"
-                    id="contactEmail"
-                    name="email"
-                    required>
+            <span>SYSTEM:</span>
+            <strong>RETRO_COLLECTION</strong>
 
-                <label for="contactSubject">SUBJECT</label>
+        </section>
 
-                <input
-                    type="text"
-                    id="contactSubject"
-                    name="subject"
-                    required>
+        <!-- contact form used to collect information from the user and allow them to send a message via a default mailing application. It uses a seperate js file in contact.js -->
+        <div id="contact" aria-hidden="true">
+
+            <div class="contact-box">
+
+                <button type="button" id="closeContact" class="contact-close" aria-label="Close contact form">
+                    &times;
+                </button>
+
+                <h2 id="contactTitle">CONTACT</h2>
+
+                <p>
+                    Send a message about the Retro Computer Collection.
+                </p>
+
+                <p id="formFeedback" class="form-feedback" aria-live="polite">
+                </p>
+
+                <form id="contactForm">
+
+                    <label for="contactName">NAME</label>
+
+                    <input type="text" id="contactName" name="name" required>
+
+                    <label for="contactEmail">EMAIL</label>
+
+                    <input type="email" id="contactEmail" name="email" required>
+
+                    <label for="contactSubject">SUBJECT</label>
+
+                    <input type="text" id="contactSubject" name="subject" required>
 
 
-                 <label for="contactExperience">Computer experience</label>
+                    <label for="contactExperience">Computer experience</label>
 
                     <select id="contactExperience" name="experience" required>
                         <option value="">Please select</option>
@@ -472,74 +382,52 @@ Skip to main content
                     </select>
 
 
-                <label for="contactMessage">MESSAGE</label>
+                    <label for="contactMessage">MESSAGE</label>
 
-                <textarea
-                    id="contactMessage"
-                    name="message"
-                    rows="7"
-                    required></textarea>
+                    <textarea id="contactMessage" name="message" rows="7" required></textarea>
 
-                <button
-                    type="submit"
-                    class="contact-submit">
-                    [ SEND MESSAGE ]
-                </button>
+                    <button type="submit" class="contact-submit">
+                        [ SEND MESSAGE ]
+                    </button>
 
-            </form>
+                </form>
+
+            </div>
 
         </div>
 
-    </div>
+        <div id="messagePopup" class="message-popup" aria-hidden="true">
 
-    <div id="messagePopup" class="message-popup" aria-hidden="true">
+            <div class="message-popup-box">
 
-    <div class="message-popup-box">
+                <button type="button" id="closeMessagePopup" class="message-popup-close" aria-label="Close message">
+                    &times;
+                </button>
 
-        <button
-            type="button"
-            id="closeMessagePopup"
-            class="message-popup-close"
-            aria-label="Close message">
-            &times;
-        </button>
+                <h2>&gt; MESSAGE SENT</h2>
 
-        <h2>&gt; MESSAGE SENT</h2>
+                <p>
+                    Your message has been prepared successfully.
+                </p>
 
-        <p>
-            Your message has been prepared successfully.
-        </p>
+                <button type="button" id="messagePopupOk" class="message-popup-ok">
+                    [ OK ]
+                </button>
 
-        <button
-            type="button"
-            id="messagePopupOk"
-            class="message-popup-ok">
-            [ OK ]
-        </button>
+            </div>
 
-    </div>
+        </div>
+    </main>
 
-</div>
-</main>
+    <footer>
+        <p>© 2026 Retro Computer Parts by A.Clark</p>
+        <p>Academic Purposes Only</p>
+    </footer>
 
-<footer>
-    <p>© 2026 Retro Computer Parts by A.Clark</p>
-    <p>Academic Purposes Only</p>
-</footer>
-
-<div
-        class="image-lightbox"
-        id="image-lightbox"
-        role="dialog"
-        aria-modal="true"
-        aria-label="Enlarged sound card image"
-    >
-        <button
-            class="close-button"
-            id="close-lightbox"
-            type="button"
-            aria-label="Close image"
-        >
+    <!-- Lightbox creation and reading / coding guide from https://www.w3schools.com/howto/howto_js_lightbox.asp -->
+    <div class="image-lightbox" id="image-lightbox" role="dialog" aria-modal="true"
+        aria-label="Enlarged sound card image">
+        <button class="close-button" id="close-lightbox" type="button" aria-label="Close image">
             &times;
         </button>
 
@@ -547,630 +435,632 @@ Skip to main content
     </div>
 
     <script src="js/contact.js">
-            
+
     </script>
 
-  <script type="text/javascript" src="https://counter.websiteout.com/js/2/0/0/1"></script>
+    <script type="text/javascript" src="https://counter.websiteout.com/js/2/0/0/1"></script>
 
-<!-- A 3rd party 3d model viewer. Guide for futher reading and coding help, https://modelviewer.dev/ -->
-<script>
-    const viewer = document.getElementById("modelViewer");
-    const model3D = document.getElementById("model3D");
-    const closeModel = document.getElementById("closeModel");
-    const modelLinks = document.querySelectorAll(".model-link");
+    <!-- A 3rd party 3d model viewer. Guide for futher reading and coding help, https://modelviewer.dev/ -->
+    <script>
+        const viewer = document.getElementById("modelViewer");
+        const model3D = document.getElementById("model3D");
+        const closeModel = document.getElementById("closeModel");
+        const modelLinks = document.querySelectorAll(".model-link");
 
-    modelLinks.forEach(function(link) {
-        link.addEventListener("click", function(event) {
-            event.preventDefault();
+        modelLinks.forEach(function (link) {
+            link.addEventListener("click", function (event) {
+                event.preventDefault();
 
-            const modelFile = link.getAttribute("data-model");
+                const modelFile = link.getAttribute("data-model");
 
-            model3D.src = "./" + modelFile;
+                model3D.src = "./" + modelFile;
 
-            viewer.classList.add("show");
+                viewer.classList.add("show");
 
-            viewer.scrollIntoView({
-                behavior: "smooth",
-                block: "start"
+                viewer.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
             });
         });
-    });
 
-    closeModel.addEventListener("click", function() {
-        viewer.classList.remove("show");
-    });
-</script>
+        closeModel.addEventListener("click", function () {
+            viewer.classList.remove("show");
+        });
+    </script>
 
-<!-- this is the api Javascript. RAWG API documentaitno was used as a refeferenced when implmenting the game searcha dn API detail pull requests. https://rawg.io/apidocs -->
-<script>
-const gameSearchForm = document.getElementById("gameSearchForm");
-const gameSearch = document.getElementById("gameSearch");
-const searchResults = document.getElementById("searchResults");
+    <!-- this is the api Javascript. RAWG API documentaitno was used as a refeferenced when implmenting the game searcha dn API detail pull requests. https://api.rawg.io/docs/ -->
+    <script>
+        const gameSearchForm = document.getElementById("gameSearchForm");
+        const gameSearch = document.getElementById("gameSearch");
+        const searchResults = document.getElementById("searchResults");
 
-gameSearchForm.addEventListener("submit", async function (event) {
-    event.preventDefault();
+        gameSearchForm.addEventListener("submit", async function (event) {
+            event.preventDefault();
 
-    const searchTerm = gameSearch.value.trim();
+            const searchTerm = gameSearch.value.trim();
 
-    if (!searchTerm) {
-        return;
-    }
+            if (!searchTerm) {
+                return;
+            }
 
-    searchRAWG(searchTerm);
+            searchRAWG(searchTerm);
 
-});
-// potential security flaw as anyone viewing the html code can see the api key. a stronger solution would be to have the service side keep the key private.
-const RAWG_API_KEY = "3a612cb3b10a46748b4b81778a5bce30";
-
+        });
+        // potential security flaw as anyone viewing the html code can see the api key. a stronger solution would be to have the service side keep the key private.
+        const RAWG_API_KEY = "3a612cb3b10a46748b4b81778a5bce30";
 
 
-// this sends the user search string to the RAWG API and processes the returned data
-async function searchRAWG(searchTerm) {
 
-    searchResults.innerHTML =
-        "<p>Searching...</p>";
-
-    const url =
-        "https://api.rawg.io/api/games" +
-        "?key=" + encodeURIComponent(RAWG_API_KEY) +
-        "&search=" + encodeURIComponent(searchTerm) +
-        "&page_size=8";
-
-    try {
-
-        const response = await fetch(url);
-
-        const data = await response.json();
-
-        if (!response.ok) {
-
-            console.error("RAWG error:", data);
+        // this sends the user search string to the RAWG API and processes the returned data
+        async function searchRAWG(searchTerm) {
 
             searchResults.innerHTML =
-                "<p>RAWG error " +
-                response.status +
-                ": " +
-                (data.detail || "Request failed.") +
-                "</p>";
+                "<p>Searching...</p>";
 
-            return;
+            const url =
+                "https://api.rawg.io/api/games" +
+                "?key=" + encodeURIComponent(RAWG_API_KEY) +
+                "&search=" + encodeURIComponent(searchTerm) +
+                "&page_size=8";
+
+            try {
+
+                const response = await fetch(url);
+
+                const data = await response.json();
+
+                if (!response.ok) {
+
+                    console.error("RAWG error:", data);
+
+                    searchResults.innerHTML =
+                        "<p>RAWG error " +
+                        response.status +
+                        ": " +
+                        (data.detail || "Request failed.") +
+                        "</p>";
+
+                    return;
+                }
+
+                displayGames(data.results);
+                // catch errors and "no game data" checks are used to give the user useful error messages, ie no game found or error with database
+            } catch (error) {
+
+                console.error("Search error:", error);
+
+                searchResults.innerHTML =
+                    "<p>Unable to connect to the RAWG API.</p>";
+            }
         }
 
-        displayGames(data.results);
-// catch errors and "no game data" checks are used to give the user useful error messages, ie no game found or error with database
-    } catch (error) {
+        //this creates the result interface from the game searched in the API pull, allowing the user to select which game they want the detail to be shown.
+        function displayGames(games) {
 
-        console.error("Search error:", error);
+            if (!games || games.length === 0) {
 
-        searchResults.innerHTML =
-            "<p>Unable to connect to the RAWG API.</p>";
-    }
-}
+                searchResults.innerHTML =
+                    "<p>No games found.</p>";
 
-//this creates the result interface from the game searched in the API pull, allowing the user to select which game they want the detail to be shown.
-function displayGames(games) {
+                return;
+            }
 
-    if (!games || games.length === 0) {
+            searchResults.innerHTML = "";
 
-        searchResults.innerHTML =
-            "<p>No games found.</p>";
+            games.forEach(function (game) {
 
-        return;
-    }
+                const result = document.createElement("button");
 
-    searchResults.innerHTML = "";
+                result.type = "button";
+                result.className = "search-result";
 
-    games.forEach(function (game) {
+                const title = document.createElement("strong");
 
-        const result = document.createElement("button");
+                title.textContent = game.name;
 
-        result.type = "button";
-        result.className = "search-result";
+                const releaseDate = document.createElement("span");
 
-        const title = document.createElement("strong");
+                releaseDate.textContent =
+                    game.released
+                        ? "Released: " + game.released
+                        : "Release date unknown";
 
-        title.textContent = game.name;
+                result.appendChild(title);
+                result.appendChild(releaseDate);
 
-        const releaseDate = document.createElement("span");
+                result.addEventListener("click", function () {
 
-        releaseDate.textContent =
-            game.released
-                ? "Released: " + game.released
-                : "Release date unknown";
+                    getGameDetails(game.id);
 
-        result.appendChild(title);
-        result.appendChild(releaseDate);
+                });
 
-        result.addEventListener("click", function () {
+                searchResults.appendChild(result);
 
-            getGameDetails(game.id);
+            });
+        }
 
-        });
-
-        searchResults.appendChild(result);
-
-    });
-}
-
-// with the game selection now made, a full API pull is made for the game selected, this makes for more efficient data usage rather than pulling all the game data everytime a search is done.
-async function getGameDetails(gameId) {
-
-    searchResults.innerHTML =
-        "<p>Loading game information...</p>";
-
-    const url =
-        "https://api.rawg.io/api/games/" +
-        gameId +
-        "?key=" +
-        encodeURIComponent(RAWG_API_KEY);
-
-    try {
-
-        const response = await fetch(url);
-
-        const game = await response.json();
-
-        if (!response.ok) {
-
-            console.error("RAWG error:", game);
+        // with the game selection now made, a full API pull is made for the game selected, this makes for more efficient data usage rather than pulling all the game data everytime a search is done.
+        async function getGameDetails(gameId) {
 
             searchResults.innerHTML =
-                "<p>RAWG error " +
-                response.status +
-                ": " +
-                (game.detail || "Unable to load game.") +
-                "</p>";
+                "<p>Loading game information...</p>";
 
-            return;
+            const url =
+                "https://api.rawg.io/api/games/" +
+                gameId +
+                "?key=" +
+                encodeURIComponent(RAWG_API_KEY);
+
+            try {
+
+                const response = await fetch(url);
+
+                const game = await response.json();
+
+                if (!response.ok) {
+
+                    console.error("RAWG error:", game);
+
+                    searchResults.innerHTML =
+                        "<p>RAWG error " +
+                        response.status +
+                        ": " +
+                        (game.detail || "Unable to load game.") +
+                        "</p>";
+
+                    return;
+                }
+
+                displayGameDetails(game);
+
+            } catch (error) {
+
+                console.error("Game details error:", error);
+
+                searchResults.innerHTML =
+                    "<p>Unable to connect to the RAWG API.</p>";
+            }
         }
 
-        displayGameDetails(game);
+        // this constructs the detailed game information on the main web page. It pulls a default image of the game as well as background infomrmation on the game.
+        function displayGameDetails(game) {
 
-    } catch (error) {
+            searchResults.innerHTML = "";
 
-        console.error("Game details error:", error);
+            const details = document.createElement("div");
 
-        searchResults.innerHTML =
-            "<p>Unable to connect to the RAWG API.</p>";
-    }
-}
+            details.className = "game-details";
 
-// this constructs the detailed game information on the main web page. It pulls a default image of the game as well as background infomrmation on the game.
-function displayGameDetails(game) {
 
-    searchResults.innerHTML = "";
+            const gameHeader = document.createElement("div");
 
-    const details = document.createElement("div");
+            gameHeader.className = "game-header";
 
-    details.className = "game-details";
 
+            if (game.background_image) {
 
-    const gameHeader = document.createElement("div");
+                const image = document.createElement("img");
 
-    gameHeader.className = "game-header";
+                image.src = game.background_image;
 
+                image.alt = game.name;
 
-    if (game.background_image) {
+                gameHeader.appendChild(image);
+            }
 
-        const image = document.createElement("img");
+            // game information varies from metacritic, rating, genres, title, webpage etc. All pulled from the RAWG API. This is all shown in the main webpage for the user.
+            const gameInfo = document.createElement("div");
 
-        image.src = game.background_image;
+            gameInfo.className = "game-info";
 
-        image.alt = game.name;
 
-        gameHeader.appendChild(image);
-    }
+            const title = document.createElement("h3");
 
-// game information varies from metacritic, rating, genres, title, webpage etc. All pulled from the RAWG API. This is all shown in the main webpage for the user.
-    const gameInfo = document.createElement("div");
+            title.textContent = game.name;
 
-    gameInfo.className = "game-info";
+            gameInfo.appendChild(title);
 
 
-    const title = document.createElement("h3");
+            const release = document.createElement("p");
 
-    title.textContent = game.name;
+            release.innerHTML =
+                "<strong>Released:</strong> " +
+                (game.released || "Unknown");
 
-    gameInfo.appendChild(title);
+            gameInfo.appendChild(release);
 
 
-    const release = document.createElement("p");
+            const rating = document.createElement("p");
 
-    release.innerHTML =
-        "<strong>Released:</strong> " +
-        (game.released || "Unknown");
+            rating.innerHTML =
+                "<strong>Rating:</strong> " +
+                (game.rating ? game.rating + " / 5" : "Unknown");
 
-    gameInfo.appendChild(release);
+            gameInfo.appendChild(rating);
 
 
-    const rating = document.createElement("p");
+            if (game.genres && game.genres.length > 0) {
 
-    rating.innerHTML =
-        "<strong>Rating:</strong> " +
-        (game.rating ? game.rating + " / 5" : "Unknown");
+                const genres = document.createElement("p");
 
-    gameInfo.appendChild(rating);
+                genres.innerHTML =
+                    "<strong>Genre:</strong> " +
+                    game.genres
+                        .map(function (genre) {
+                            return genre.name;
+                        })
+                        .join(", ");
 
+                gameInfo.appendChild(genres);
+            }
 
-    if (game.genres && game.genres.length > 0) {
 
-        const genres = document.createElement("p");
+            if (game.developers && game.developers.length > 0) {
 
-        genres.innerHTML =
-            "<strong>Genre:</strong> " +
-            game.genres
-                .map(function (genre) {
-                    return genre.name;
-                })
-                .join(", ");
+                const developers = document.createElement("p");
 
-        gameInfo.appendChild(genres);
-    }
+                developers.innerHTML =
+                    "<strong>Developer:</strong> " +
+                    game.developers
+                        .map(function (developer) {
+                            return developer.name;
+                        })
+                        .join(", ");
 
+                gameInfo.appendChild(developers);
+            }
 
-    if (game.developers && game.developers.length > 0) {
 
-        const developers = document.createElement("p");
+            if (game.publishers && game.publishers.length > 0) {
 
-        developers.innerHTML =
-            "<strong>Developer:</strong> " +
-            game.developers
-                .map(function (developer) {
-                    return developer.name;
-                })
-                .join(", ");
+                const publishers = document.createElement("p");
 
-        gameInfo.appendChild(developers);
-    }
+                publishers.innerHTML =
+                    "<strong>Publisher:</strong> " +
+                    game.publishers
+                        .map(function (publisher) {
+                            return publisher.name;
+                        })
+                        .join(", ");
 
+                gameInfo.appendChild(publishers);
+            }
 
-    if (game.publishers && game.publishers.length > 0) {
 
-        const publishers = document.createElement("p");
+            if (game.platforms && game.platforms.length > 0) {
 
-        publishers.innerHTML =
-            "<strong>Publisher:</strong> " +
-            game.publishers
-                .map(function (publisher) {
-                    return publisher.name;
-                })
-                .join(", ");
+                const platforms = document.createElement("p");
 
-        gameInfo.appendChild(publishers);
-    }
+                platforms.innerHTML =
+                    "<strong>Platforms:</strong> " +
+                    game.platforms
+                        .map(function (platform) {
+                            return platform.platform.name;
+                        })
+                        .join(", ");
 
+                gameInfo.appendChild(platforms);
+            }
 
-    if (game.platforms && game.platforms.length > 0) {
 
-        const platforms = document.createElement("p");
+            gameHeader.appendChild(gameInfo);
 
-        platforms.innerHTML =
-            "<strong>Platforms:</strong> " +
-            game.platforms
-                .map(function (platform) {
-                    return platform.platform.name;
-                })
-                .join(", ");
+            details.appendChild(gameHeader);
 
-        gameInfo.appendChild(platforms);
-    }
 
+            if (game.description_raw) {
 
-    gameHeader.appendChild(gameInfo);
+                const descriptionTitle = document.createElement("h4");
 
-    details.appendChild(gameHeader);
+                descriptionTitle.textContent = "Description";
 
+                details.appendChild(descriptionTitle);
 
-    if (game.description_raw) {
 
-        const descriptionTitle = document.createElement("h4");
+                const description = document.createElement("p");
 
-        descriptionTitle.textContent = "Description";
+                description.textContent = game.description_raw;
 
-        details.appendChild(descriptionTitle);
+                details.appendChild(description);
+            }
 
 
-        const description = document.createElement("p");
+            if (game.metacritic) {
 
-        description.textContent = game.description_raw;
+                const metacritic = document.createElement("p");
 
-        details.appendChild(description);
-    }
+                metacritic.className = "metacritic";
 
+                metacritic.innerHTML =
+                    "<strong>Metacritic:</strong> " +
+                    game.metacritic;
 
-    if (game.metacritic) {
+                details.appendChild(metacritic);
+            }
 
-        const metacritic = document.createElement("p");
 
-        metacritic.className = "metacritic";
+            if (game.website) {
 
-        metacritic.innerHTML =
-            "<strong>Metacritic:</strong> " +
-            game.metacritic;
+                const website = document.createElement("a");
 
-        details.appendChild(metacritic);
-    }
+                website.href = game.website;
 
+                website.target = "_blank";
 
-    if (game.website) {
+                website.rel = "noopener";
 
-        const website = document.createElement("a");
+                website.textContent =
+                    "Official Game Website";
 
-        website.href = game.website;
+                website.className =
+                    "game-website";
 
-        website.target = "_blank";
+                details.appendChild(website);
+            }
 
-        website.rel = "noopener";
 
-        website.textContent =
-            "Official Game Website";
-
-        website.className =
-            "game-website";
-
-        details.appendChild(website);
-    }
-
-
-    searchResults.appendChild(details);
-}
-</script>
-
-
-<!-- this segement of javasript is used to population the decade/system owned section of the webpage. -->
-<script src="js/owned.js"></script>
-
-<script>
-const decadeButtons = document.querySelectorAll(".decade");
-const systemCollection = document.getElementById("systemCollection");
-
-decadeButtons.forEach(function(button) {
-
-    // when a decade period is selected, the default screen is hidden and the age period appropraite systems is shown to the user
-    button.addEventListener("click", function() {
-
-        const decade = button.dataset.decade;
-
-        if (button.classList.contains("active")) {
-
-            button.classList.remove("active");
-            systemCollection.classList.remove("show");
-
-            return;
+            searchResults.appendChild(details);
         }
+    </script>
 
-        decadeButtons.forEach(function(otherButton) {
-            otherButton.classList.remove("active");
+
+    <!-- this segement of javasript is used to populate the decade/system owned section of the webpage. -->
+    <script src="js/owned.js"></script>
+
+    <script>
+        const decadeButtons = document.querySelectorAll(".decade");
+        const systemCollection = document.getElementById("systemCollection");
+
+        decadeButtons.forEach(function (button) {
+
+            // when a decade period is selected, the default screen is hidden and the age period appropraite systems is shown to the user
+            button.addEventListener("click", function () {
+
+                const decade = button.dataset.decade;
+
+                if (button.classList.contains("active")) {
+
+                    button.classList.remove("active");
+                    systemCollection.classList.remove("show");
+
+                    return;
+                }
+
+                decadeButtons.forEach(function (otherButton) {
+                    otherButton.classList.remove("active");
+                });
+
+                button.classList.add("active");
+
+                const decadeStart = parseInt(decade.substring(0, 4));
+
+                const selectedSystems = owned.filter(function (system) {
+
+                    return system.year >= decadeStart &&
+                        system.year < decadeStart + 10;
+
+                });
+                    // In addition, when an element is created, it pulls the data from the owned.js file to build the elements
+                    // system cards are created using the informmation from the owned.js to hten populate the image and text fields later.
+                systemCollection.innerHTML = "";
+
+                const heading = document.createElement("h3");
+
+                heading.textContent = "> " + decade + " SYSTEMS";
+
+                systemCollection.appendChild(heading);
+
+                const grid = document.createElement("div");
+
+                grid.className = "system-grid";
+
+                selectedSystems.forEach(function (system) {
+
+                    const card = document.createElement("article");
+
+                    card.className = "system-card";
+
+                    const images = document.createElement("div");
+
+                    images.className = "system-images";
+
+                    const imageButton2 = document.createElement("button");
+
+                    imageButton2.type = "button";
+                    imageButton2.className = "image-button";
+                    imageButton2.setAttribute(
+                        "aria-label",
+                        "Enlarge " + system.tower.name + " image"
+                    );
+
+                    const image2 = document.createElement("img");
+
+                    image2.src = system.tower.image2;
+                    image2.alt = system.tower.name;
+
+                    imageButton2.appendChild(image2);
+
+
+                    const imageButton3 = document.createElement("button");
+
+                    imageButton3.type = "button";
+                    imageButton3.className = "image-button";
+                    imageButton3.setAttribute(
+                        "aria-label",
+                        "Enlarge " + system.tower.name + " image"
+                    );
+
+                    const image3 = document.createElement("img");
+
+                    image3.src = system.tower.image3;
+                    image3.alt = system.tower.name;
+
+                    imageButton3.appendChild(image3);
+
+
+                    images.appendChild(imageButton2);
+                    images.appendChild(imageButton3);
+
+
+                    const title = document.createElement("h4");
+
+                    title.textContent = system.motherboard.name;
+
+                    const year = document.createElement("p");
+
+                    year.className = "system-year";
+
+                    year.textContent = "YEAR: " + system.cpu.released;
+
+                    const tower = document.createElement("p");
+
+                    tower.innerHTML =
+                        "<strong>CASE:</strong> " +
+                        system.tower.name;
+
+                    const cpu = document.createElement("p");
+
+                    cpu.innerHTML =
+                        "<strong>CPU:</strong> " +
+                        system.cpu.name +
+                        " (" +
+                        system.cpu.clockspeed +
+                        ")";
+
+                    const gpu = document.createElement("p");
+
+                    gpu.innerHTML =
+                        "<strong>GPU:</strong> " +
+                        system.gpu.name +
+                        " (" +
+                        system.gpu.RamSize +
+                        ")";
+
+                    const sound = document.createElement("p");
+
+                    sound.innerHTML =
+                        "<strong>SOUND:</strong> " +
+                        system.sound.name;
+
+                    const os = document.createElement("p");
+
+                    os.innerHTML =
+                        "<strong>OS:</strong> " +
+                        system.os.name;
+
+                    // System cards are dynaimically generated and displayed in the webpages display grid, allowing the ability to show each individual component. This is how each system is broken down into manageable bits. All the cards are built using the data in owned.js
+
+                    // Keeping the hardware information in owned.js allows the same component to be displayed accournt multiple systsems when required. This aids the card system for when images and information are dynamically required, for example showing multiple systems at once.
+                    card.appendChild(images);
+                    card.appendChild(title);
+                    card.appendChild(year);
+                    card.appendChild(tower);
+                    card.appendChild(cpu);
+                    card.appendChild(gpu);
+                    card.appendChild(sound);
+                    card.appendChild(os);
+
+                    grid.appendChild(card);
+                });
+
+
+                if (selectedSystems.length === 0) {
+
+                    const emptyMessage = document.createElement("p");
+
+                    emptyMessage.textContent =
+                        "No systems found for this decade.";
+
+                    grid.appendChild(emptyMessage);
+                }
+
+                systemCollection.appendChild(grid);
+
+                systemCollection.classList.add("show");
+
+                systemCollection.scrollIntoView({
+                    behavior: "smooth",
+                    block: "nearest"
+                });
+            });
         });
 
-        button.classList.add("active");
+        // Light Box coding to allow the user to click over an image, select it and for it to pop up at 2x size.
 
-        const decadeStart = parseInt(decade.substring(0, 4));
+        const lightbox = document.getElementById("image-lightbox");
+        const lightboxImage = document.getElementById("lightbox-image");
+        const closeLightbox = document.getElementById("close-lightbox");
 
-        const selectedSystems = owned.filter(function(system) {
+        document.addEventListener("click", function (event) {
 
-            return system.year >= decadeStart &&
-                   system.year < decadeStart + 10;
+            const button = event.target.closest(".image-button");
 
+            if (!button) {
+                return;
+            }
+
+            const image = button.querySelector("img");
+
+            lightboxImage.src = image.src;
+            lightboxImage.alt = button.getAttribute("aria-label");
+
+            lightbox.classList.add("active");
+            closeLightbox.focus();
         });
 
-        systemCollection.innerHTML = "";
+        closeLightbox.addEventListener("click", function () {
 
-        const heading = document.createElement("h3");
+            lightbox.classList.remove("active");
 
-        heading.textContent = "> " + decade + " SYSTEMS";
-
-        systemCollection.appendChild(heading);
-
-        const grid = document.createElement("div");
-
-        grid.className = "system-grid";
-
-        selectedSystems.forEach(function(system) {
-
-    const card = document.createElement("article");
-
-    card.className = "system-card";
-
-const images = document.createElement("div");
-
-images.className = "system-images";
-
-const imageButton2 = document.createElement("button");
-
-imageButton2.type = "button";
-imageButton2.className = "image-button";
-imageButton2.setAttribute(
-    "aria-label",
-    "Enlarge " + system.tower.name + " image"
-);
-
-const image2 = document.createElement("img");
-
-image2.src = system.tower.image2;
-image2.alt = system.tower.name;
-
-imageButton2.appendChild(image2);
-
-
-const imageButton3 = document.createElement("button");
-
-imageButton3.type = "button";
-imageButton3.className = "image-button";
-imageButton3.setAttribute(
-    "aria-label",
-    "Enlarge " + system.tower.name + " image"
-);
-
-const image3 = document.createElement("img");
-
-image3.src = system.tower.image3;
-image3.alt = system.tower.name;
-
-imageButton3.appendChild(image3);
-
-
-images.appendChild(imageButton2);
-images.appendChild(imageButton3);
-
-
-    const title = document.createElement("h4");
-
-    title.textContent = system.motherboard.name;
-
-    const year = document.createElement("p");
-
-    year.className = "system-year";
-
-    year.textContent = "YEAR: " + system.cpu.released;
-
-    const tower = document.createElement("p");
-
-    tower.innerHTML =
-        "<strong>CASE:</strong> " +
-        system.tower.name;
-
-    const cpu = document.createElement("p");
-
-    cpu.innerHTML =
-        "<strong>CPU:</strong> " +
-        system.cpu.name +
-        " (" +
-        system.cpu.clockspeed +
-        ")";
-
-    const gpu = document.createElement("p");
-
-    gpu.innerHTML =
-        "<strong>GPU:</strong> " +
-        system.gpu.name +
-        " (" +
-        system.gpu.RamSize +
-        ")";
-
-    const sound = document.createElement("p");
-
-    sound.innerHTML =
-        "<strong>SOUND:</strong> " +
-        system.sound.name;
-
-    const os = document.createElement("p");
-
-    os.innerHTML =
-        "<strong>OS:</strong> " +
-        system.os.name;
-
-    // System cards are dynaimically generated and displayed in the webpages display grid, allowing the ability to show each individual component. This is how each system is broken down into manageable bits. All the cards are built using the data in owned.js
-
-    // Keeping the hardware infomraiton in owned.js allows the same component to be displayed accournt multiple systsems when required. This aids the card system for when images and information are dynamically required
-card.appendChild(images);
-    card.appendChild(title);
-    card.appendChild(year);
-    card.appendChild(tower);
-    card.appendChild(cpu);
-    card.appendChild(gpu);
-    card.appendChild(sound);
-    card.appendChild(os);
-
-    grid.appendChild(card);
-});
-
-
-        if (selectedSystems.length === 0) {
-
-            const emptyMessage = document.createElement("p");
-
-            emptyMessage.textContent =
-                "No systems found for this decade.";
-
-            grid.appendChild(emptyMessage);
-        }
-
-        systemCollection.appendChild(grid);
-
-        systemCollection.classList.add("show");
-
-        systemCollection.scrollIntoView({
-            behavior: "smooth",
-            block: "nearest"
+            lightboxImage.src = "";
         });
-    });
-});
 
-// Light Box coding to allow the user to click over an image, select it and for it to pop up at 2x size.
+        lightbox.addEventListener("click", function (event) {
 
-const lightbox = document.getElementById("image-lightbox");
-const lightboxImage = document.getElementById("lightbox-image");
-const closeLightbox = document.getElementById("close-lightbox");
+            if (event.target === lightbox) {
 
-document.addEventListener("click", function (event) {
+                lightbox.classList.remove("active");
 
-    const button = event.target.closest(".image-button");
+                lightboxImage.src = "";
+            }
+        });
 
-    if (!button) {
-        return;
-    }
+        document.addEventListener("keydown", function (event) {
 
-    const image = button.querySelector("img");
+            if (event.key === "Escape") {
 
-    lightboxImage.src = image.src;
-    lightboxImage.alt = button.getAttribute("aria-label");
+                lightbox.classList.remove("active");
 
-    lightbox.classList.add("active");
-    closeLightbox.focus();
-});
-
-closeLightbox.addEventListener("click", function () {
-
-    lightbox.classList.remove("active");
-
-    lightboxImage.src = "";
-});
-
-lightbox.addEventListener("click", function (event) {
-
-    if (event.target === lightbox) {
-
-        lightbox.classList.remove("active");
-
-        lightboxImage.src = "";
-    }
-});
-
-document.addEventListener("keydown", function (event) {
-
-    if (event.key === "Escape") {
-
-        lightbox.classList.remove("active");
-
-        lightboxImage.src = "";
-    }
-});
+                lightboxImage.src = "";
+            }
+        });
 
 
 
-</script>
+    </script>
 
 
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
-<!-- Terminal cursor effect on console address on home page -->
-<script>
-$(document).ready(function() {
-    $(".terminal-prompt").each(function() {
-        $(this).append('<span class="cursor">▋</span>');
-    });
+    <!-- Terminal cursor effect on console address on home page sing jQuery-->
+    <script>
+        $(document).ready(function () {
+            $(".terminal-prompt").each(function () {
+                $(this).append('<span class="cursor">▋</span>');
+            });
 
-    function blinkCursor() {
-        $(".cursor").fadeTo(500, 0.1).fadeTo(500, 1);
-    }
+            function blinkCursor() {
+                $(".cursor").fadeTo(500, 0.1).fadeTo(500, 1);
+            }
 
-    setInterval(blinkCursor, 1000);
-});
-</script>
+            setInterval(blinkCursor, 1000);
+        });
+    </script>
 
 
 
 
 </body>
+
 </html>

@@ -1,3 +1,11 @@
+// <!-- ######### - Created by Adam Clark, final version 12-10-2026.
+// ######### - No form of AI has been used, Category AITS descriptor is 1(No AI)
+// ######### - Retro Computing is a hobby of mine, when this assignment was announced, I was able to use a vast amount of imagiary and information already available to hand.
+// ######### - All sources for reference accounted for. Previously used and known knowledge used for vast majority of logic.
+// ######### - Where further reading has been needed, i have included the reference link to the guide at the start of the appropriate area of code. -->
+
+// Baseline for contact form is from https://www.w3schools.com/howto/howto_css_contact_form.asp
+// 
 const contactLink = document.getElementById("contactLink");
 const contactModal = document.getElementById("contact");
 const closeContact = document.getElementById("closeContact");
@@ -8,6 +16,9 @@ const messagePopup = document.getElementById("messagePopup");
 const closeMessagePopup = document.getElementById("closeMessagePopup");
 const messagePopupOk = document.getElementById("messagePopupOk");
 
+
+// Further reading from https://www.w3schools.com/howto/howto_js_popup.asp for message popup
+// shows popup message
 function showMessagePopup(mailto) {
 
     messagePopup.classList.add("show");
@@ -15,13 +26,14 @@ function showMessagePopup(mailto) {
 
     messagePopupOk.focus();
 
-    messagePopupOk.onclick = function() {
+    messagePopupOk.onclick = function () {
         hideMessagePopup();
         closeContactModal();
         window.location.href = mailto;
     };
 }
 
+// hides popup message
 function hideMessagePopup() {
     messagePopup.classList.remove("show");
     messagePopup.setAttribute("aria-hidden", "true");
@@ -30,17 +42,19 @@ function hideMessagePopup() {
 closeMessagePopup.addEventListener("click", hideMessagePopup);
 
 
-messagePopup.addEventListener("click", function(event) {
+messagePopup.addEventListener("click", function (event) {
     if (event.target === messagePopup) {
         hideMessagePopup();
     }
 });
+
+//closes popup contact modal
 function closeContactModal() {
     contactModal.classList.remove("show");
     contactModal.setAttribute("aria-hidden", "true");
 }
 
-contactLink.addEventListener("click", function(event) {
+contactLink.addEventListener("click", function (event) {
     event.preventDefault();
 
     contactModal.classList.add("show");
@@ -49,19 +63,20 @@ contactLink.addEventListener("click", function(event) {
 
 closeContact.addEventListener("click", closeContactModal);
 
-contactModal.addEventListener("click", function(event) {
+contactModal.addEventListener("click", function (event) {
     if (event.target === contactModal) {
         closeContactModal();
     }
 });
 
-document.addEventListener("keydown", function(event) {
+document.addEventListener("keydown", function (event) {
     if (event.key === "Escape") {
         closeContactModal();
     }
 });
 
-contactForm.addEventListener("submit", function(event) {
+// form validtion function, checks user input data and prompts the vistor on any errors
+contactForm.addEventListener("submit", function (event) {
     event.preventDefault();
 
     const name = document.getElementById("contactName").value.trim();
@@ -75,11 +90,11 @@ contactForm.addEventListener("submit", function(event) {
 
 
     if (experience === "") {
-    formFeedback.textContent = "Please select your level of experience.";
-    formFeedback.classList.add("error");
-    document.getElementById("contactExperience").focus();
-    return;
-}
+        formFeedback.textContent = "Please select your level of experience.";
+        formFeedback.classList.add("error");
+        document.getElementById("contactExperience").focus();
+        return;
+    }
     if (name.length < 2) {
         formFeedback.textContent = "Please enter your name.";
         formFeedback.classList.add("error");
@@ -108,6 +123,7 @@ contactForm.addEventListener("submit", function(event) {
         return;
     }
 
+    // this area of the code prepares the email to be sent on in the vistiors default email browser software.
     const body =
         "Name: " + name + "\n\n" +
         "Email: " + email + "\n\n" +
@@ -118,7 +134,7 @@ contactForm.addEventListener("submit", function(event) {
         "?subject=" + encodeURIComponent(subject) +
         "&body=" + encodeURIComponent(body);
 
-   
+
 
     showMessagePopup(mailto);
 });

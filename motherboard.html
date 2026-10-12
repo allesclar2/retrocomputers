@@ -1,6 +1,13 @@
+<!-- ######### - Created by Adam Clark, final version 12-10-2026.
+######### - No form of AI has been used, Category AITS descriptor is 1(No AI)
+######### - Retro Computing is a hobby of mine, when this assignment was announced, I was able to use a vast amount of imagiary and information already available to hand.
+######### - All sources for reference accounted for. Previously used and known knowledge used for vast majority of logic.
+######### - Where further reading has been needed, i have included the reference link to the guide at the start of the appropriate area of code.
+######### - w3schools.com was used as a guidance for HTML, CSS and JS. -->
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -36,6 +43,8 @@
     </header>
 
     <main id="main-content">
+        <!-- A generic template used, based on "cards" to populate computer hardware information in the CSS Grid -->
+         <!-- Allows the user to open images, click on links for specific hardware related to the page -->
 
         <section id="motherboard-archive">
 
@@ -53,11 +62,7 @@
 
             <div class="contact-box">
 
-                <button
-                    type="button"
-                    id="closeContact"
-                    class="contact-close"
-                    aria-label="Close contact form">
+                <button type="button" id="closeContact" class="contact-close" aria-label="Close contact form">
                     &times;
                 </button>
 
@@ -67,49 +72,28 @@
                     Send a message about the Retro Computer Collection.
                 </p>
 
-                <p
-                    id="formFeedback"
-                    class="form-feedback"
-                    aria-live="polite">
+                <p id="formFeedback" class="form-feedback" aria-live="polite">
                 </p>
 
                 <form id="contactForm">
 
                     <label for="contactName">NAME</label>
 
-                    <input
-                        type="text"
-                        id="contactName"
-                        name="name"
-                        required>
+                    <input type="text" id="contactName" name="name" required>
 
                     <label for="contactEmail">EMAIL</label>
 
-                    <input
-                        type="email"
-                        id="contactEmail"
-                        name="email"
-                        required>
+                    <input type="email" id="contactEmail" name="email" required>
 
                     <label for="contactSubject">SUBJECT</label>
 
-                    <input
-                        type="text"
-                        id="contactSubject"
-                        name="subject"
-                        required>
+                    <input type="text" id="contactSubject" name="subject" required>
 
                     <label for="contactMessage">MESSAGE</label>
 
-                    <textarea
-                        id="contactMessage"
-                        name="message"
-                        rows="7"
-                        required></textarea>
+                    <textarea id="contactMessage" name="message" rows="7" required></textarea>
 
-                    <button
-                        type="submit"
-                        class="contact-submit">
+                    <button type="submit" class="contact-submit">
                         [ SEND MESSAGE ]
                     </button>
 
@@ -126,19 +110,11 @@
         <p>Academic Purposes Only</p>
         <script type="text/javascript" src="https://counter.websiteout.com/js/2/0/0/1"></script>
     </footer>
-
-    <div
-        class="image-lightbox"
-        id="image-lightbox"
-        role="dialog"
-        aria-modal="true"
+   <!-- Lightbox creation and reading / coding guide from https://www.w3schools.com/howto/howto_js_lightbox.asp -->
+    <div class="image-lightbox" id="image-lightbox" role="dialog" aria-modal="true"
         aria-label="Enlarged motherboard image">
 
-        <button
-            class="close-button"
-            id="close-lightbox"
-            type="button"
-            aria-label="Close image">
+        <button class="close-button" id="close-lightbox" type="button" aria-label="Close image">
             &times;
         </button>
 
@@ -151,4 +127,5 @@
     <script src="js/contact.js"></script>
 
 </body>
+
 </html>
