@@ -2,15 +2,33 @@ html {
     scrollbar-gutter: stable;
     scroll-behavior: smooth;
 }
+
 /* applies the same box sizing to all elements */
 * {
     box-sizing: border-box;
 }
 
 /* this is the main webpage layout, this is based on a retro computer terminal theme */
+:root {
+    --bg: #030603;
+    --bg-dark: #020502;
+    --bg-panel: #040904;
+    --bg-card: #050b05;
+    --bg-button: #061006;
+    --green: #00ff41;
+    --green-dark: #001900;
+    --green-light: #d5ff75;
+    --text: #b8d8b8;
+    --text-muted: #6f9f76;
+    --border: #185f28;
+    --border-dark: #123d1b;
+    --glow: 0 0 10px rgba(0, 255, 65, 0.25);
+    --font: "Courier New", Courier, monospace;
+}
+
 body {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     background:
         repeating-linear-gradient(
             0deg,
@@ -19,9 +37,9 @@ body {
             transparent 1px,
             transparent 3px
         ),
-        #030603;
-    color: #b8d8b8;
-    font-family: "Courier New", Courier, monospace;
+        var(--bg);
+    color: var(--text);
+    font-family: var(--font);
     font-size: 12px;
     line-height: 1.5;
     min-height: 100vh;
@@ -32,16 +50,16 @@ body {
 body::before {
     content: "";
     position: fixed;
-    inset: 0px;
+    inset: 0;
     pointer-events: none;
     z-index: 9998;
-    background:
-        linear-gradient(
-            rgba(18, 255, 80, 0.015) 50%,
-            rgba(0, 0, 0, 0.025) 50%
-        );
+    background: linear-gradient(
+        rgba(18, 255, 80, 0.015) 50%,
+        rgba(0, 0, 0, 0.025) 50%
+    );
     background-size: 100% 4px;
 }
+
 /* this is an accesibiilty skip link. */
 .skip-link {
     position: absolute;
@@ -49,8 +67,8 @@ body::before {
     left: 10px;
     z-index: 9999;
     padding: 8px 12px;
-    background: #00ff41;
-    color: #020602;
+    background: var(--green);
+    color: var(--green-dark);
     text-decoration: none;
     font-weight: bold;
 }
@@ -61,10 +79,10 @@ body::before {
 
 /* main holder for the logo of the website */
 header {
-    width: 0px;
-    height: 0px;
-    margin: 0px;
-    padding: 0px;
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
     border: none;
     background: transparent;
     box-shadow: none;
@@ -75,28 +93,28 @@ header h1 {
     position: absolute;
     width: 1px;
     height: 1px;
-    padding: 0px;
+    padding: 0;
     margin: -1px;
     overflow: hidden;
     clip: rect(0, 0, 0, 0);
     white-space: nowrap;
-    border: 0px;
+    border: 0;
 }
 
 /* ensures the logo is in the top left corner */
 .logo {
     display: block;
     position: fixed;
-    top: 0px;
-    left: 0px;
+    top: 0;
+    left: 0;
     width: 72px;
     height: 52px;
     padding: 4px;
-    margin: 0px;
+    margin: 0;
     object-fit: contain;
     z-index: 1001;
-    background: #030603;
-    border: 1px solid #185f28;
+    background: var(--bg);
+    border: 1px solid var(--border);
     box-shadow:
         inset 0 0 15px rgba(0, 255, 65, 0.04),
         0 0 10px rgba(0, 255, 65, 0.08);
@@ -107,14 +125,14 @@ nav {
     display: flex;
     align-items: center;
     position: fixed;
-    top: 0px;
+    top: 0;
     left: 72px;
     width: calc(100% - 72px);
     min-height: 52px;
     padding: 5px;
     z-index: 1000;
-    background: #030603;
-    border: 1px solid #185f28;
+    background: var(--bg);
+    border: 1px solid var(--border);
     border-left: none;
     box-shadow:
         inset 0 0 15px rgba(0, 255, 65, 0.04),
@@ -126,25 +144,20 @@ nav {
     scrollbar-width: none;
 }
 
-/* nav::-webkit-scrollbar { */
-    /* display: none; */
-/* } */
-
-
 /* the main navigation links and spacing for the page */
 nav ul {
     display: flex;
     align-items: center;
     gap: 4px;
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     list-style: none;
     flex-wrap: nowrap;
 }
 
 nav li {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     list-style: none;
 }
 
@@ -157,8 +170,7 @@ nav a {
     padding: 6px 8px;
     color: #71c77c;
     background: #071007;
-    border: 1px solid #185f28;
-    border-radius: 0px;
+    border: 1px solid var(--border);
     text-decoration: none;
     font-size: 9px;
     line-height: 1.2;
@@ -166,17 +178,23 @@ nav a {
     white-space: nowrap;
     touch-action: manipulation;
 }
+
 /* this allows the user to highlight a navigation link when hovered over. */
 nav a:hover,
-nav a:focus-visible {
-    color: #001900;
-    background: #00ff41;
-    border-color: #00ff41;
-    box-shadow: 0 0 10px rgba(0, 255, 65, 0.35);
+nav a:focus-visible,
+.site-link:hover,
+.site-link:focus-visible,
+.contact-submit:hover,
+.message-popup-ok:hover,
+.message-popup-ok:focus {
+    color: var(--green-dark);
+    background: var(--green);
+    border-color: var(--green);
+    box-shadow: var(--glow);
     outline: none;
 }
-/* Centres the main conent and limits maxmimum width */
 
+/* Centres the main conent and limits maxmimum width */
 main {
     width: calc(100% - 16px);
     max-width: 1100px;
@@ -187,15 +205,16 @@ section {
     margin: 35px 0 10px;
     scroll-margin-top: 62px;
 }
+
 /* adds spacing between sections*/
 section > h2 {
     margin: 0 0 8px;
     padding: 8px 10px;
-    color: #00ff41;
+    color: var(--green);
     background: #061006;
-    border-top: 1px solid #185f28;
-    border-bottom: 1px solid #185f28;
-    font-family: "Courier New", monospace;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    font-family: var(--font);
     font-size: 14px;
     font-weight: bold;
     text-transform: uppercase;
@@ -206,6 +225,7 @@ section > h2 {
 section > p {
     color: #82ad88;
 }
+
 /* this is the home panel and terminal appearance (hero).*/
 #home {
     position: relative;
@@ -213,20 +233,19 @@ section > p {
     max-width: none;
     min-height: 430px;
     margin: 10px 0 15px;
-    padding: 0px;
+    padding: 0;
     overflow: hidden;
-    background: #040904;
-    border: 1px solid #185f28;
-    border-radius: 0px;
+    background: var(--bg-panel);
+    border: 1px solid var(--border);
     box-shadow: inset 0 0 40px rgba(0, 255, 65, 0.025);
 }
 
 #home h2 {
     margin: 0 0 25px;
-    padding: 0px;
+    padding: 0;
     border: none;
     background: transparent;
-    color: #00ff41;
+    color: var(--green);
     font-size: clamp(32px, 5vw, 58px);
     line-height: 0.95;
     letter-spacing: 2px;
@@ -253,24 +272,25 @@ section > p {
 
 .hero-background {
     position: absolute;
-    inset: 0px;
+    inset: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
     opacity: 0.65;
     filter: grayscale(60%) contrast(1.2);
-    z-index: 0px;
+    z-index: 0;
 }
+
 /* this is a dark overlay used to improve text readibiliy over the background imiage, intiially used as a fadeout image for effect. */
 .terminal-hero::after {
     content: "";
     position: absolute;
-    inset: 0px;
+    inset: 0;
     z-index: 1;
     background:
         linear-gradient(
             90deg,
-            #040904 0%,
+            var(--bg-panel) 0%,
             rgba(4, 9, 4, 0.94) 35%,
             rgba(4, 9, 4, 0.70) 65%,
             rgba(4, 9, 4, 0.40) 100%
@@ -281,6 +301,7 @@ section > p {
             rgba(5, 8, 5, 0.75)
         );
 }
+
 /* positions and sizes teh heros text and content area */
 .terminal-content {
     position: relative;
@@ -288,13 +309,15 @@ section > p {
     width: min(850px, 100%);
     padding: 55px 45px;
 }
+
 /* styles the termianl prompt text */
 .terminal-prompt {
     margin-bottom: 18px;
-    color: #d5ff75;
+    color: var(--green-light);
     font-size: 13px;
     overflow-wrap: anywhere;
 }
+
 /* creates the hero button layout appearance */
 .hero-buttons {
     display: flex;
@@ -302,6 +325,7 @@ section > p {
     gap: 6px;
     margin-top: 18px;
 }
+
 /* this styles the main website.action buttons to match the main scheme */
 .site-link {
     display: inline-flex;
@@ -312,36 +336,29 @@ section > p {
     margin-top: 8px;
     padding: 8px 10px;
     background: #071007;
-    color: #00ff41;
+    color: var(--green);
     border: 1px solid #1c7c31;
-    border-radius: 0px;
     text-decoration: none;
-    font-family: "Courier New", monospace;
+    font-family: var(--font);
     font-size: 11px;
     cursor: pointer;
     transition: 0.15s ease;
     touch-action: manipulation;
 }
+
 /* this adds hover and focus to the buttons */
-.site-link:hover,
-.site-link:focus-visible {
-    background: #00ff41;
-    color: #001900;
-    border-color: #00ff41;
-    box-shadow: 0 0 10px rgba(0, 255, 65, 0.35);
-    outline: none;
-}
+
 /* creates statitics panel and information style using CSS grid */
 .stats {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     margin: 0 0 15px;
-    background: #040904;
-    border: 1px solid #185f28;
+    background: var(--bg-panel);
+    border: 1px solid var(--border);
 }
 
 .stat {
-    min-width: 0px;
+    min-width: 0;
     min-height: 70px;
     padding: 12px 5px;
     text-align: center;
@@ -359,8 +376,8 @@ section > p {
 
 .stat strong {
     display: block;
-    color: #00ff41;
-    font-family: "Courier New", monospace;
+    color: var(--green);
+    font-family: var(--font);
     font-size: 17px;
     line-height: 1.2;
     overflow-wrap: anywhere;
@@ -374,10 +391,11 @@ section > p {
     letter-spacing: 0.5px;
     overflow-wrap: anywhere;
 }
+
 /* creates and styles the game search and results */
 #search {
     margin: 12px 0;
-    padding: 0px;
+    padding: 0;
 }
 
 #search > p {
@@ -387,23 +405,21 @@ section > p {
 #search label {
     display: block;
     margin-bottom: 5px;
-    color: #d5ff75;
+    color: var(--green-light);
     font-size: 12px;
 }
 
 #gameSearch {
     display: block;
     width: 100%;
-    max-width: none;
     min-height: 42px;
     padding: 9px 11px;
-    margin: 0px;
-    background: #020502;
-    color: #00ff41;
+    margin: 0;
+    background: var(--bg-dark);
+    color: var(--green);
     border: 1px solid #1c7c31;
-    border-radius: 0px;
     outline: none;
-    font-family: "Courier New", monospace;
+    font-family: var(--font);
     font-size: 13px;
 }
 
@@ -412,9 +428,8 @@ section > p {
 }
 
 #gameSearch:focus {
-    border-color: #00ff41;
+    border-color: var(--green);
     box-shadow: 0 0 10px rgba(0, 255, 65, 0.2);
-    outline: none;
 }
 
 #searchResults {
@@ -431,9 +446,8 @@ section > p {
     background: #050b05;
     color: #8fba94;
     border: 1px solid #164e23;
-    border-radius: 0px;
     cursor: pointer;
-    font-family: "Courier New", monospace;
+    font-family: var(--font);
     transition: 0.15s ease;
     touch-action: manipulation;
 }
@@ -441,15 +455,15 @@ section > p {
 .search-result:hover,
 .search-result:focus-visible {
     background: #071807;
-    border-color: #00ff41;
-    box-shadow: inset 3px 0 0 #00ff41;
+    border-color: var(--green);
+    box-shadow: inset 3px 0 0 var(--green);
     outline: none;
 }
 
 .search-result strong {
     display: block;
-    color: #00ff41;
-    font-family: "Courier New", monospace;
+    color: var(--green);
+    font-family: var(--font);
     font-size: 13px;
     overflow-wrap: anywhere;
 }
@@ -459,6 +473,7 @@ section > p {
     font-size: 10px;
     overflow-wrap: anywhere;
 }
+
 /* this section creates and styles the decade timeline section of the page */
 .decade-timeline {
     display: grid;
@@ -474,10 +489,9 @@ section > p {
     min-height: 100px;
     padding: 18px;
     background: #050b05;
-    color: #00ff41;
-    border: 1px solid #185f28;
-    border-radius: 0px;
-    font-family: "Courier New", monospace;
+    color: var(--green);
+    border: 1px solid var(--border);
+    font-family: var(--font);
     cursor: pointer;
     transition: 0.15s ease;
     touch-action: manipulation;
@@ -499,15 +513,15 @@ section > p {
 
 .decade:hover,
 .decade.active {
-    background: #00ff41;
-    color: #001900;
-    border-color: #00ff41;
+    background: var(--green);
+    color: var(--green-dark);
+    border-color: var(--green);
     box-shadow: 0 0 15px rgba(0, 255, 65, 0.3);
 }
 
 .decade:hover span,
 .decade.active span {
-    color: #001900;
+    color: var(--green-dark);
 }
 
 /* this tyles the computer part cards */
@@ -518,18 +532,17 @@ section > p {
 }
 
 .parts article {
-    min-width: 0px;
+    min-width: 0;
     padding: 12px;
-    background: #050b05;
+    background: var(--bg-card);
     color: #9bc49f;
-    border: 1px solid #185f28;
-    border-radius: 0px;
+    border: 1px solid var(--border);
     text-align: left;
     transition: 0.15s ease;
 }
 
 .parts article:hover {
-    border-color: #00ff41;
+    border-color: var(--green);
     box-shadow:
         0 0 12px rgba(0, 255, 65, 0.12),
         inset 0 0 15px rgba(0, 255, 65, 0.025);
@@ -542,39 +555,53 @@ section > p {
     object-fit: contain;
     display: block;
     margin: 0 0 10px;
-    background: #020502;
-    border: 1px solid #123d1b;
+    background: var(--bg-dark);
+    border: 1px solid var(--border-dark);
 }
 
 .card-label {
-    color: #d5ff75;
+    color: var(--green-light);
     font-size: 9px;
     letter-spacing: 1px;
 }
 
-.parts h3 {
+.parts h3,
+.cpu-card h3,
+.sound-card h3,
+.gpu-card h3,
+.motherboard-card h3,
+.os-card h3,
+.tower-card h3 {
     margin: 4px 0;
-    color: #00ff41;
+    color: var(--green);
     font-size: 14px;
     line-height: 1.3;
     overflow-wrap: anywhere;
 }
 
-.parts p {
+.parts p,
+.cpu-card p,
+.sound-card p,
+.gpu-card p,
+.motherboard-card p,
+.os-card p,
+.tower-card p {
     margin: 5px 0;
-    color: #6f9f76;
+    color: var(--text-muted);
     font-size: 11px;
     overflow-wrap: anywhere;
 }
+
 /* this styles the citations for all the images used on the webpage */
 .site-link-citation {
     padding-top: 8px;
     margin-top: 10px !important;
-    border-top: 1px solid #123d1b;
+    border-top: 1px solid var(--border-dark);
     font-size: 8px !important;
 }
 
-.site-link-citation a {
+.site-link-citation a,
+a[target="_blank"] {
     color: #5fa967;
     overflow-wrap: anywhere;
 }
@@ -583,14 +610,14 @@ section > p {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 5px;
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     list-style: none;
 }
 
 .categories li {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     list-style: none;
 }
 
@@ -600,12 +627,11 @@ section > p {
     align-items: center;
     justify-content: center;
     min-height: 55px;
-    min-width: 0px;
+    min-width: 0;
     padding: 10px 5px;
-    background: #040904;
-    color: #00ff41;
-    border: 1px solid #185f28;
-    border-radius: 0px;
+    background: var(--bg-panel);
+    color: var(--green);
+    border: 1px solid var(--border);
     text-align: center;
     text-decoration: none;
     transition: 0.15s ease;
@@ -613,7 +639,7 @@ section > p {
 }
 
 .category h3 {
-    margin: 0px;
+    margin: 0;
     font-size: 10px;
     font-weight: normal;
     letter-spacing: 0.3px;
@@ -621,27 +647,29 @@ section > p {
 }
 
 .category:hover {
-    background: #00ff41;
-    color: #001900;
-    border-color: #00ff41;
+    background: var(--green);
+    color: var(--green-dark);
+    border-color: var(--green);
     box-shadow: 0 0 10px rgba(0, 255, 65, 0.25);
 }
 
 .category:hover h3 {
-    color: #001900;
+    color: var(--green-dark);
 }
+
 /* Styles for systems and about text */
 #systems,
 #about {
-    padding: 0px;
+    padding: 0;
 }
 
 #systems p,
 #about p {
     margin: 8px 10px;
-    color: #6f9f76;
+    color: var(--text-muted);
     overflow-wrap: anywhere;
 }
+
 /* this creates the terminal status bar for the theme at the bottom of the page */
 .terminal-status {
     display: flex;
@@ -650,16 +678,17 @@ section > p {
     align-items: center;
     margin: 10px 0;
     padding: 7px 10px;
-    background: #020502;
-    border: 1px solid #123d1b;
+    background: var(--bg-dark);
+    border: 1px solid var(--border-dark);
     color: #e1f3e3;
     font-size: 9px;
     overflow-wrap: anywhere;
 }
 
 .terminal-status strong {
-    color: #00ff41;
+    color: var(--green);
 }
+
 /* creates the 3d model viewer  */
 .model-viewer-container {
     display: none;
@@ -670,18 +699,19 @@ section > p {
     margin-top: 8px;
     overflow: hidden;
     background: #020402;
-    border: 1px solid #185f28;
-    border-radius: 0px;
+    border: 1px solid var(--border);
 }
 
 .model-viewer-container.show {
     display: block;
 }
+
 /* displays the 3d model */
 .model-viewer-container model-viewer {
     width: 100%;
     height: 100%;
 }
+
 /* styles the 3d model close button */
 .model-close {
     position: absolute;
@@ -691,28 +721,26 @@ section > p {
     min-width: 44px;
     min-height: 38px;
     padding: 5px 9px;
-    background: #061006;
-    color: #00ff41;
+    background: var(--bg-button);
+    color: var(--green);
     border: 1px solid #1c7c31;
-    border-radius: 0px;
-    font-family: "Courier New", monospace;
+    font-family: var(--font);
     font-size: 10px;
     cursor: pointer;
     touch-action: manipulation;
 }
 
 .model-close:hover {
-    background: #00ff41;
-    color: #001900;
+    background: var(--green);
+    color: var(--green-dark);
 }
 
 /* game information layout style */
 .game-details {
     margin-top: 8px;
     padding: 12px;
-    background: #040904;
-    border: 1px solid #185f28;
-    border-radius: 0px;
+    background: var(--bg-panel);
+    border: 1px solid var(--border);
     box-shadow: none;
 }
 
@@ -721,23 +749,24 @@ section > p {
     grid-template-columns: 1fr;
     gap: 12px;
 }
+
 /* styles the game image */
 .game-header img {
     width: 100%;
     height: 180px;
     object-fit: cover;
-    border: 1px solid #185f28;
-    border-radius: 0px;
+    border: 1px solid var(--border);
     box-shadow: none;
 }
+
 /* this setion creates the game details panel */
 .game-info {
-    min-width: 0px;
+    min-width: 0;
 }
 
 .game-info h3 {
     margin: 0 0 10px;
-    color: #00ff41;
+    color: var(--green);
     font-size: 18px;
     overflow-wrap: anywhere;
 }
@@ -751,21 +780,21 @@ section > p {
 }
 
 .game-info strong {
-    color: #d5ff75;
+    color: var(--green-light);
 }
 
 .game-details h4 {
     margin: 15px 0 7px;
     padding-bottom: 5px;
-    color: #00ff41;
-    border-bottom: 1px solid #185f28;
+    color: var(--green);
+    border-bottom: 1px solid var(--border);
     font-size: 12px;
 }
 
 .metacritic {
     display: inline-block;
     padding: 5px 8px;
-    border: 1px solid #185f28;
+    border: 1px solid var(--border);
 }
 
 .game-website {
@@ -774,24 +803,24 @@ section > p {
     justify-content: center;
     min-height: 40px;
     padding: 6px 9px;
-    background: #061006;
-    color: #00ff41;
-    border: 1px solid #185f28;
-    border-radius: 0px;
+    background: var(--bg-button);
+    color: var(--green);
+    border: 1px solid var(--border);
     text-decoration: none;
     font-size: 10px;
     touch-action: manipulation;
 }
 
 .game-website:hover {
-    background: #00ff41;
-    color: #001900;
+    background: var(--green);
+    color: var(--green-dark);
 }
+
 /* this is a big section on the light box, a theme used around the website which gives the user feedback when hovwering over an image or particular section of webpage. */
 .image-lightbox {
     display: none;
     position: fixed;
-    inset: 0px;
+    inset: 0;
     z-index: 9999;
     align-items: center;
     justify-content: center;
@@ -808,9 +837,8 @@ section > p {
     width: auto;
     max-width: 96vw;
     max-height: 82vh;
-    background: #030603;
-    border: 2px solid #00ff41;
-    border-radius: 0px;
+    background: var(--bg);
+    border: 2px solid var(--green);
     box-shadow: 0 0 25px rgba(0, 255, 65, 0.25);
 }
 
@@ -818,14 +846,15 @@ section > p {
     position: absolute;
     top: 8px;
     right: 12px;
-    color: #00ff41;
+    color: var(--green);
     font-size: 30px;
 }
+
 /* this is the styling for the contact form and feedback */
 #contact {
     display: none;
     position: fixed;
-    inset: 0px;
+    inset: 0;
     z-index: 9999;
     align-items: center;
     justify-content: center;
@@ -844,50 +873,50 @@ section > p {
     max-height: 92vh;
     overflow-y: auto;
     padding: 16px;
-    background: #040904;
+    background: var(--bg-panel);
     color: #9bc49f;
-    border: 1px solid #00ff41;
-    border-radius: 0px;
+    border: 1px solid var(--green);
     box-shadow: 0 0 25px rgba(0, 255, 65, 0.18);
 }
 
 .contact-box input[type="text"] {
-    background: #020502;
+    background: var(--bg-dark);
 }
 
 .contact-box [required] {
-    border-left: 2px solid #185f28;
+    border-left: 2px solid var(--border);
 }
 
 .contact-box input[type="email"] {
-    border-left: 2px solid #00ff41;
+    border-left: 2px solid var(--green);
 }
 
 .contact-box h2 {
     margin: 0 35px 15px 0;
     padding-bottom: 7px;
-    color: #00ff41;
-    border-bottom: 1px solid #185f28;
+    color: var(--green);
+    border-bottom: 1px solid var(--border);
     font-size: 15px;
 }
 
 .contact-box label {
     display: block;
     margin: 12px 0 4px;
-    color: #d5ff75;
+    color: var(--green-light);
     font-size: 11px;
 }
 
 .contact-box input,
-.contact-box textarea {
+.contact-box textarea,
+.contact-box select,
+#contactExperience {
     width: 100%;
     min-height: 42px;
     padding: 8px;
-    background: #020502;
-    color: #b8d8b8;
-    border: 1px solid #185f28;
-    border-radius: 0px;
-    font-family: "Courier New", monospace;
+    background: var(--bg-dark);
+    color: var(--text);
+    border: 1px solid var(--border);
+    font-family: var(--font);
     font-size: 12px;
 }
 
@@ -897,48 +926,39 @@ section > p {
 }
 
 .contact-box input:focus,
-.contact-box textarea:focus {
-    border-color: #00ff41;
+.contact-box textarea:focus,
+.contact-box select:focus,
+#contactExperience:focus {
+    border-color: var(--green);
     outline: none;
     box-shadow: 0 0 7px rgba(0, 255, 65, 0.15);
 }
 
 .contact-box select {
-    width: 100%;
-    min-height: 42px;
-    padding: 8px 35px 8px 8px;
-    background-color: #020502;
-    color: #b8d8b8;
-    border: 1px solid #185f28;
-    border-radius: 0px;
-    font-family: "Courier New", monospace;
-    font-size: 12px;
-    box-sizing: border-box;
+    padding-right: 35px;
     cursor: pointer;
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
     background-image:
-        linear-gradient(45deg, transparent 50%, #00ff41 50%),
-        linear-gradient(135deg, #00ff41 50%, transparent 50%);
+        linear-gradient(45deg, transparent 50%, var(--green) 50%),
+        linear-gradient(135deg, var(--green) 50%, transparent 50%);
     background-position:
         calc(100% - 14px) 50%,
         calc(100% - 9px) 50%;
-    background-size:
-        5px 5px,
-        5px 5px;
+    background-size: 5px 5px;
     background-repeat: no-repeat;
 }
 
-.contact-box select:focus {
-    border-color: #00ff41;
-    outline: none;
-    box-shadow: 0 0 7px rgba(0, 255, 65, 0.15);
+.contact-box select option,
+#contactExperience option {
+    background: var(--bg-dark);
+    color: var(--text);
 }
 
-.contact-box select option {
-    background-color: #020502;
-    color: #b8d8b8;
+/* styles the contact experience dropdown so its not the same white default one */
+#contactExperience {
+    cursor: pointer;
 }
 
 .contact-close {
@@ -949,7 +969,7 @@ section > p {
     min-height: 44px;
     border: none;
     background: transparent;
-    color: #00ff41;
+    color: var(--green);
     font-size: 25px;
     cursor: pointer;
     touch-action: manipulation;
@@ -964,19 +984,13 @@ section > p {
     min-height: 42px;
     margin-top: 15px;
     padding: 7px 12px;
-    background: #061006;
-    color: #00ff41;
+    background: var(--bg-button);
+    color: var(--green);
     border: 1px solid #1c7c31;
-    border-radius: 0px;
-    font-family: "Courier New", monospace;
+    font-family: var(--font);
     font-size: 11px;
     cursor: pointer;
     touch-action: manipulation;
-}
-
-.contact-submit:hover {
-    background: #00ff41;
-    color: #001900;
 }
 
 .form-feedback {
@@ -990,8 +1004,9 @@ section > p {
 }
 
 .form-feedback.success {
-    color: #00ff41;
+    color: var(--green);
 }
+
 /* styles the footer of the website */
 footer {
     width: calc(100% - 16px);
@@ -999,7 +1014,7 @@ footer {
     margin: 10px auto;
     padding: 10px;
     color: #416946;
-    border-top: 1px solid #123d1b;
+    border-top: 1px solid var(--border-dark);
     text-align: center;
     font-size: 9px;
 }
@@ -1008,6 +1023,7 @@ footer p {
     margin: 2px;
     overflow-wrap: anywhere;
 }
+
 /* this creates and styles the system collection panel */
 .system-collection {
     display: none;
@@ -1016,8 +1032,7 @@ footer p {
     margin: 20px auto 0;
     padding: 12px;
     background: #050805;
-    border: 1px solid #185f28;
-    border-radius: 0px;
+    border: 1px solid var(--border);
     box-shadow:
         0 0 20px rgba(0, 255, 65, 0.12),
         inset 0 0 30px rgba(0, 255, 65, 0.03);
@@ -1028,14 +1043,13 @@ footer p {
 }
 
 .system-collection h3 {
-    margin-top: 0px;
-    margin-bottom: 18px;
-    color: #00ff41;
-    font-family: "Courier New", monospace;
+    margin: 0 0 18px;
+    padding-bottom: 10px;
+    color: var(--green);
+    font-family: var(--font);
     font-size: 1.25rem;
     text-transform: uppercase;
-    border-bottom: 1px solid #185f28;
-    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
     overflow-wrap: anywhere;
 }
 
@@ -1046,16 +1060,16 @@ footer p {
 }
 
 .system-card {
-    min-width: 0px;
-    background: #050b05;
-    border: 1px solid #185f28;
+    min-width: 0;
     padding: 12px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
     transition: 0.2s;
 }
 
 .system-card:hover {
     transform: none;
-    border-color: #00ff41;
+    border-color: var(--green);
     box-shadow: 0 0 15px rgba(0, 255, 65, 0.25);
 }
 
@@ -1071,8 +1085,8 @@ footer p {
 
 .system-card h4 {
     margin: 0 0 8px;
-    color: #00ff41;
-    font-family: "Courier New", monospace;
+    color: var(--green);
+    font-family: var(--font);
     font-size: 1.1rem;
     overflow-wrap: anywhere;
 }
@@ -1085,17 +1099,18 @@ footer p {
 }
 
 .system-card .system-year {
-    color: #00ff41;
-    font-family: "Courier New", monospace;
+    color: var(--green);
+    font-family: var(--font);
 }
 
 .system-placeholder {
     color: #5f8f65;
     text-align: center;
-    font-family: "Courier New", monospace;
+    font-family: var(--font);
     padding: 25px 10px;
     overflow-wrap: anywhere;
 }
+
 /* this styles the appropriate hardware cards and images and implements image placeholders */
 .cpu-list,
 .sound-list,
@@ -1114,11 +1129,11 @@ footer p {
 .motherboard-card,
 .os-card,
 .tower-card {
-    min-width: 0px;
+    min-width: 0;
     padding: 12px;
-    background: #050b05;
+    background: var(--bg-card);
     color: #9bc49f;
-    border: 1px solid #185f28;
+    border: 1px solid var(--border);
     text-align: left;
 }
 
@@ -1128,7 +1143,7 @@ footer p {
 .motherboard-card:hover,
 .os-card:hover,
 .tower-card:hover {
-    border-color: #00ff41;
+    border-color: var(--green);
     box-shadow:
         0 0 12px rgba(0, 255, 65, 0.12),
         inset 0 0 15px rgba(0, 255, 65, 0.025);
@@ -1145,43 +1160,18 @@ footer p {
     object-fit: contain;
     display: block;
     margin: 0 0 10px;
-    background: #020502;
-    border: 1px solid #123d1b;
-}
-
-.cpu-card h3,
-.sound-card h3,
-.gpu-card h3,
-.motherboard-card h3,
-.os-card h3,
-.tower-card h3 {
-    margin: 4px 0;
-    color: #00ff41;
-    font-size: 14px;
-    line-height: 1.3;
-    overflow-wrap: anywhere;
-}
-
-.cpu-card p,
-.sound-card p,
-.gpu-card p,
-.motherboard-card p,
-.os-card p,
-.tower-card p {
-    margin: 5px 0;
-    color: #6f9f76;
-    font-size: 11px;
-    overflow-wrap: anywhere;
+    background: var(--bg-dark);
+    border: 1px solid var(--border-dark);
 }
 
 .image-button {
     display: block;
     width: 100%;
     height: 155px;
-    padding: 0px;
+    padding: 0;
     margin: 0 0 10px;
-    background: #020502;
-    border: 1px solid #123d1b;
+    background: var(--bg-dark);
+    border: 1px solid var(--border-dark);
     cursor: pointer;
     overflow: hidden;
     touch-action: manipulation;
@@ -1192,13 +1182,13 @@ footer p {
     height: 100%;
     object-fit: contain;
     display: block;
-    margin: 0px;
+    margin: 0;
 }
 
 .image-button:hover,
 .image-button:focus-visible {
-    border-color: #00ff41;
-    box-shadow: 0 0 10px rgba(0, 255, 65, 0.25);
+    border-color: var(--green);
+    box-shadow: var(--glow);
     outline: none;
 }
 
@@ -1214,12 +1204,13 @@ footer p {
     width: 100%;
     height: 155px;
     margin-bottom: 10px;
-    background: #020502;
+    background: var(--bg-dark);
     color: #416946;
-    border: 1px solid #123d1b;
+    border: 1px solid var(--border-dark);
     text-align: center;
     overflow-wrap: anywhere;
 }
+
 /* creates the system image gallaries */
 .system-images {
     display: flex;
@@ -1229,12 +1220,10 @@ footer p {
 .system-images .image-button {
     width: 50%;
     height: 130px;
-    padding: 0px;
-    margin: 0px;
-    border: 1px solid #123d1b;
+    padding: 0;
+    margin: 0;
+    border: 1px solid var(--border-dark);
     background: transparent;
-    cursor: pointer;
-    overflow: hidden;
 }
 
 .system-images .image-button img {
@@ -1242,45 +1231,21 @@ footer p {
     height: 100%;
     object-fit: contain;
     display: block;
-    margin: 0px;
+    margin: 0;
 }
 
 .system-images .image-button:hover,
 .system-images .image-button:focus-visible {
-    border-color: #00ff41;
-    box-shadow: 0 0 10px rgba(0, 255, 65, 0.25);
+    border-color: var(--green);
+    box-shadow: var(--glow);
     outline: none;
 }
-/* styles the contact expierence dropdown so its not the same white default one */
-#contactExperience {
-    width: 100%;
-    min-height: 42px;
-    padding: 8px;
-    background: #020502;
-    color: #b8d8b8;
-    border: 1px solid #185f28;
-    border-radius: 0px;
-    font-family: "Courier New", monospace;
-    font-size: 12px;
-    box-sizing: border-box;
-    cursor: pointer;
-}
 
-#contactExperience:focus {
-    border-color: #00ff41;
-    outline: none;
-    box-shadow: 0 0 7px rgba(0, 255, 65, 0.15);
-}
-
-#contactExperience option {
-    background: #020502;
-    color: #b8d8b8;
-}
 /* this styles and crreates the message popup */
 .message-popup {
     display: none;
     position: fixed;
-    inset: 0px;
+    inset: 0;
     z-index: 10000;
     align-items: center;
     justify-content: center;
@@ -1299,9 +1264,9 @@ footer p {
     max-height: 90vh;
     overflow-y: auto;
     padding: 20px 15px;
-    background: #040904;
-    color: #b8d8b8;
-    border: 1px solid #00ff41;
+    background: var(--bg-panel);
+    color: var(--text);
+    border: 1px solid var(--green);
     box-shadow:
         0 0 25px rgba(0, 255, 65, 0.25),
         inset 0 0 20px rgba(0, 255, 65, 0.03);
@@ -1311,9 +1276,9 @@ footer p {
 .message-popup-box h2 {
     margin: 0 0 15px;
     padding-bottom: 8px;
-    color: #00ff41;
-    border-bottom: 1px solid #185f28;
-    font-family: "Courier New", monospace;
+    color: var(--green);
+    border-bottom: 1px solid var(--border);
+    font-family: var(--font);
     font-size: 16px;
     overflow-wrap: anywhere;
 }
@@ -1321,7 +1286,7 @@ footer p {
 .message-popup-box p {
     margin: 15px 0;
     color: #9bc49f;
-    font-family: "Courier New", monospace;
+    font-family: var(--font);
     font-size: 12px;
     overflow-wrap: anywhere;
 }
@@ -1334,8 +1299,8 @@ footer p {
     min-height: 44px;
     border: none;
     background: transparent;
-    color: #00ff41;
-    font-family: "Courier New", monospace;
+    color: var(--green);
+    font-family: var(--font);
     font-size: 24px;
     cursor: pointer;
     touch-action: manipulation;
@@ -1351,29 +1316,16 @@ footer p {
     min-height: 42px;
     margin-top: 10px;
     padding: 7px 15px;
-    background: #061006;
-    color: #00ff41;
+    background: var(--bg-button);
+    color: var(--green);
     border: 1px solid #1c7c31;
-    border-radius: 0px;
-    font-family: "Courier New", monospace;
+    font-family: var(--font);
     font-size: 11px;
     cursor: pointer;
-    touch-action: manipulation;
 }
 
-.message-popup-ok:hover,
-.message-popup-ok:focus {
-    background: #00ff41;
-    color: #001900;
-    border-color: #00ff41;
-    box-shadow: 0 0 10px rgba(0, 255, 65, 0.35);
-    outline: none;
-}
 /* this styles external links */
-a[target="_blank"] {
-    color: #5fa967;
-    overflow-wrap: anywhere;
-}
+
 /* this adds responsive styling for smaller screens iphone 6 for example */
 @media (min-width: 480px) {
     .hero-buttons {
@@ -1442,7 +1394,7 @@ a[target="_blank"] {
     }
 
     nav a {
-        min-height: 0px;
+        min-height: 0;
         font-size: 12px;
         padding: 5px 10px;
         line-height: 1.5;
@@ -1517,14 +1469,7 @@ a[target="_blank"] {
         padding: 25px;
     }
 
-    .system-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
-    .system-card {
-        padding: 15px;
-    }
-
+    .system-grid,
     .cpu-list,
     .sound-list,
     .gpu-list,
@@ -1532,6 +1477,10 @@ a[target="_blank"] {
     .os-list,
     .tower-list {
         grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .system-card {
+        padding: 15px;
     }
 
     .system-images .image-button {
@@ -1542,6 +1491,7 @@ a[target="_blank"] {
         width: min(1100px, calc(100% - 24px));
     }
 }
+
 /* this reduces animation for accessiblity requirements */
 @media (prefers-reduced-motion: reduce) {
     html {
