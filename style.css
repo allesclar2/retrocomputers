@@ -561,7 +561,7 @@ section > p {
 
 
 /* ########### this styles the computer hardware part cards across computer part catergories ###########*/
-.parts,
+/* comment out as this feature parts section is managed by the bootloader .parts, */
 .cpu-list,
 .sound-list,
 .gpu-list,
