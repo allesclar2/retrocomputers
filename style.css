@@ -561,7 +561,7 @@ section > p {
 
 
 /* ########### this styles the computer hardware part cards across computer part catergories ###########*/
-.parts,
+/* removed as it is now handled by bootloader.parts, */
 .cpu-list,
 .sound-list,
 .gpu-list,
@@ -1436,7 +1436,7 @@ footer p {
         font-size: 2rem;
     }
 
-    .parts,
+    /* commented out as bootloader is managing the styling.parts, */
     .categories,
     .system-grid,
     .cpu-list,
