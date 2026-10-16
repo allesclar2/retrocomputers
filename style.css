@@ -720,6 +720,7 @@ a[target="_blank"] {
 }
 
 /* creates the system image gallaries */
+/* Applies scaling to the images within the bootloader */
 .system-images {
     display: flex;
     gap: 6px;
