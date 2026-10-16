@@ -723,17 +723,26 @@ a[target="_blank"] {
 .system-images {
     display: flex;
     gap: 6px;
+    align-items: stretch;
 }
 
 .system-images .image-button {
-    width: 50%;
-    height: 130px;
+    flex: 1 1 0;
+    min-width: 0;
+    width: auto;
+    height: auto;
     padding: 0;
     margin: 0;
     border: 1px solid var(--border-dark);
     background: transparent;
 }
 
+.system-images .image-button img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cotain;    
+}
 /* ########### Hardware catgegories ########### */
 
 .categories {
